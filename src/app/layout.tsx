@@ -2,9 +2,8 @@ import { Inter, Poppins } from "next/font/google";
 import type { Metadata } from "next";
 import { Provider } from "@/components/ui/provider";
 
-import { LightMode } from "@/components/ui/color-mode";
-
 import "./globals.css";
+import { Box } from "@chakra-ui/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,10 +27,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <body className={`${inter.variable} ${poppins.variable} antialiased`}>
+    <html
+      suppressHydrationWarning
+      className={`${inter.variable} ${poppins.variable} antialiased`}
+      lang="en"
+    >
+      <body>
         <Provider>
-          <LightMode>{children}</LightMode>
+          <Box color={"blue"} fontSize={"xl"}>
+            {children}
+          </Box>
         </Provider>
       </body>
     </html>
