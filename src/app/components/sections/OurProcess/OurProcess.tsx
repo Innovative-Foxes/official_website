@@ -1,7 +1,6 @@
 "use client";
 import {
   Box,
-  HStack,
   Heading,
   Icon,
   Image,
@@ -99,175 +98,149 @@ const OurProcess = () => {
   ];
 
   return (
-    <Box bgColor={"darkBlue"} color={"offWhite"} mt={"180px"}>
+    <Box bgColor="darkBlue" color="offWhite" mt="180px">
       <CustomContainer>
-        <HStack
-          alignItems={"flex-start"}
-          gap={20}
-          pb={"100px"}
-          position={"relative"}
-          pt={"90px"}
-        >
-          <Box maxW={{ base: "auto", md: "400px" }}>
+        <VStack align="center" gap={12} py={20}>
+          {/* Header Section */}
+          <Box textAlign="center" maxW="800px">
             <Heading
               as="h2"
-              fontFamily={"poppins"}
-              fontSize={{ base: "3xl", md: "8xl" }}
-              fontWeight={"semibold"}
-              lineHeight={"100%"}
-              my={4}
+              fontFamily="poppins"
+              fontSize={{ base: "4xl", md: "6xl" }}
+              fontWeight="semibold"
+              lineHeight="100%"
+              mb={6}
             >
-              <Text alignItems={"center"} as={"span"} display={"flex"} gap={4}>
+              <Text alignItems="center" as="span" display="flex" gap={4} justifyContent="center">
                 Our
                 <Image
                   alt="Logo"
-                  maxW={{ base: "60px", md: "80px" }}
+                  maxW={{ base: "50px", md: "70px" }}
                   src="/images/svgs/process-logo.svg"
                   w="100%"
                 />
               </Text>
-              <Text as="span" color="orange" fontWeight={"semibold"}>
+              <Text as="span" color="orange" fontWeight="semibold">
                 Process
               </Text>
             </Heading>
-            <Text fontSize={"2xl"} mb={6}>
+            <Text fontSize={{ base: "lg", md: "2xl" }}>
               We strive to make your journey as smooth &amp; easy as possible
             </Text>
-
-            <Image
-              alt="Logo"
-              maxW={{ base: "60px", md: "600px" }}
-              src="/images/png/our-process.png"
-              w="100%"
-            />
           </Box>
 
-          <Box w={"full"} maxW={"600px"}>
-            <VStack align={"start"} gap={12} w={"full"}>
-              {processSteps.map((step, index) => (
-                <Box key={index} w={"full"}>
-                  <VStack align={"start"} gap={6} w={"full"}>
-                    <Heading
-                      as={"h3"}
-                      fontFamily={"poppins"}
-                      fontSize={{ base: "4xl", md: "5xl" }}
-                      fontWeight={"semibold"}
-                      color={"orange"}
-                    >
-                      {step.step}
-                    </Heading>
+          {/* Process Steps */}
+          {processSteps.map((step, index) => (
+            <Box key={index} w="full" maxW="800px">
+              <VStack align="start" gap={6} w="full">
+                <Heading
+                  as="h3"
+                  fontFamily="poppins"
+                  fontSize={{ base: "3xl", md: "4xl" }}
+                  fontWeight="semibold"
+                  color="orange"
+                >
+                  {step.step}
+                </Heading>
 
+                <Heading
+                  as="h4"
+                  fontFamily="poppins"
+                  fontSize={{ base: "xl", md: "2xl" }}
+                  fontWeight="medium"
+                  color="offWhite"
+                >
+                  {step.title}
+                </Heading>
+
+                <Text 
+                  fontSize={{ base: "md", md: "lg" }} 
+                  color="offWhite"
+                  lineHeight="1.6"
+                >
+                  {step.description}
+                </Text>
+
+                {step.subItems && (
+                  <VStack align="start" gap={3} w="full">
+                    {step.subItems.map((item, itemIndex) => (
+                      <Text
+                        key={itemIndex}
+                        fontSize={{ base: "sm", md: "md" }}
+                        color="offWhite"
+                        pl={6}
+                        borderLeft="3px solid"
+                        borderColor="orange"
+                        lineHeight="1.5"
+                      >
+                        {item}
+                      </Text>
+                    ))}
+                  </VStack>
+                )}
+
+                {step.additionalSections?.map((section, sectionIndex) => (
+                  <Box key={sectionIndex} w="full" mt={6}>
                     <Heading
-                      as={"h4"}
-                      fontFamily={"poppins"}
-                      fontSize={{ base: "2xl", md: "3xl" }}
-                      fontWeight={"medium"}
-                      color={"offWhite"}
+                      as="h4"
+                      fontFamily="poppins"
+                      fontSize={{ base: "lg", md: "xl" }}
+                      fontWeight="medium"
+                      mb={4}
+                      color="orange"
                     >
-                      {step.title}
+                      {section.title}
                     </Heading>
 
                     <Text 
-                      fontSize={{ base: "lg", md: "xl" }} 
-                      color={"offWhite"}
-                      lineHeight={"1.6"}
+                      fontSize={{ base: "sm", md: "md" }} 
+                      mb={4}
+                      color="offWhite"
+                      lineHeight="1.6"
                     >
-                      {step.description}
+                      {section.description}
                     </Text>
 
-                    {step.subItems && (
-                      <VStack align={"start"} gap={3} w={"full"}>
-                        {step.subItems.map((item, itemIndex) => (
+                    {section.subItems && (
+                      <VStack align="start" gap={3} w="full">
+                        {section.subItems.map((item, itemIndex) => (
                           <Text
                             key={itemIndex}
-                            fontSize={{ base: "md", md: "lg" }}
-                            color={"offWhite"}
+                            fontSize={{ base: "sm", md: "md" }}
+                            color="offWhite"
                             pl={6}
-                            borderLeft={"3px solid"}
-                            borderColor={"orange"}
-                            lineHeight={"1.5"}
+                            borderLeft="3px solid"
+                            borderColor="orange"
+                            lineHeight="1.5"
                           >
                             {item}
                           </Text>
                         ))}
                       </VStack>
                     )}
+                  </Box>
+                ))}
 
-                    {step.additionalSections?.map((section, sectionIndex) => (
-                      <Box key={sectionIndex} w={"full"} mt={6}>
-                        <Heading
-                          as={"h4"}
-                          fontFamily={"poppins"}
-                          fontSize={{ base: "xl", md: "2xl" }}
-                          fontWeight={"medium"}
-                          mb={4}
-                          color={"orange"}
-                        >
-                          {section.title}
-                        </Heading>
-
-                        <Text 
-                          fontSize={{ base: "md", md: "lg" }} 
-                          mb={6}
-                          color={"offWhite"}
-                          lineHeight={"1.6"}
-                        >
-                          {section.description}
-                        </Text>
-
-                        {section.subItems && (
-                          <VStack align={"start"} gap={3} w={"full"}>
-                            {section.subItems.map((item, itemIndex) => (
-                              <Text
-                                key={itemIndex}
-                                fontSize={{ base: "md", md: "lg" }}
-                                color={"offWhite"}
-                                pl={6}
-                                borderLeft={"3px solid"}
-                                borderColor={"orange"}
-                                lineHeight={"1.5"}
-                              >
-                                {item}
-                              </Text>
-                            ))}
-                          </VStack>
-                        )}
-                      </Box>
-                    ))}
-
-                    {step.showButton && (
-                      <Box mt={4}>
-                        <PrimaryButton
-                          fontSize="medium"
-                          icon={
-                            <Icon h={3}>
-                              <FaChevronRight />
-                            </Icon>
-                          }
-                          label={"Book A Call Now"}
-                          minHeight={50}
-                          px={24}
-                          url="#"
-                        />
-                      </Box>
-                    )}
-                  </VStack>
-                  
-                  {index < processSteps.length - 1 && (
-                    <Box 
-                      bg="orange" 
-                      h="2px" 
-                      maxW={"100px"} 
-                      my={8} 
-                      w={"full"} 
-                      opacity={0.6}
+                {step.showButton && (
+                  <Box mt={6}>
+                    <PrimaryButton
+                      fontSize="medium"
+                      icon={
+                        <Icon h={3}>
+                          <FaChevronRight />
+                        </Icon>
+                      }
+                      label="Book A Call Now"
+                      minHeight={50}
+                      px={24}
+                      url="#"
                     />
-                  )}
-                </Box>
-              ))}
-            </VStack>
-          </Box>
-        </HStack>
+                  </Box>
+                )}
+              </VStack>
+            </Box>
+          ))}
+        </VStack>
       </CustomContainer>
     </Box>
   );
