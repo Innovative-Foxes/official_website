@@ -31,6 +31,7 @@ export const PrimaryButton = ({
       color={variation === "primary" ? "offWhite" : "blue"}
       fontSize={fontSize}
       fontWeight={"medium"}
+      w={"fit-content"}
     >
       <Link
         _hover={{ gap: "8px", scale: "105%" }}

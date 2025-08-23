@@ -26,7 +26,11 @@ const Packages = () => {
           my={4}
           textTransform="uppercase"
         >
-          Our Marketo Landing Page &amp; Email Packages
+          Our{" "}
+          <Text as="span" color="orange" fontWeight={"semibold"}>
+            Marketo
+          </Text>{" "}
+          Landing Page &amp; Email Packages
         </Heading>
       </Box>
       <Grid gap="8" mt={16} templateColumns="repeat(3, 1fr)">
@@ -42,6 +46,7 @@ const Packages = () => {
           ]}
           bgColor="#E4EDF5"
           description="You bring the designs, we bring the development. A fully custom template ready to be used by your marketers right away."
+          slot={2}
           title="Development Only"
           turnAround="2-6 week"
         />
@@ -59,9 +64,32 @@ const Packages = () => {
           ]}
           bgColor="#D7ECFF"
           description="No design? No problem. Our expert designers will create a custom template based on your branding guidelines. Once approved, we’ll turn it into a fully functional, marketer-ready template."
+          slot={1}
           title="Design &amp; Development"
           turnAround="6-10 week"
         />
+        <Box>
+          <Heading as={"h3"} fontSize={"3xl"} lineHeight={"normal"}>
+            Not sure if these options are the right fit for you?
+          </Heading>
+          <Text fontSize={"md"} mb={5} mt={2}>
+            If your project or vision does not fit into one of these options
+            then feel free to schedule a call with us and we will try to find a
+            plan that fits better for you.
+          </Text>
+          <PrimaryButton
+            fontSize="base"
+            icon={
+              <Icon h={3}>
+                <FaChevronRight />
+              </Icon>
+            }
+            label={"Book A Call Now"}
+            minHeight={45}
+            px={24}
+            url="#"
+          />
+        </Box>
       </Grid>
     </CustomContainer>
   );
@@ -73,6 +101,7 @@ interface PackageCardProps {
   description: string;
   title: string;
   turnAround: string;
+  slot: number;
   popular?: boolean;
 }
 
@@ -83,6 +112,7 @@ const PackageCard = ({
   title,
   turnAround,
   popular = false,
+  slot,
 }: PackageCardProps) => {
   return (
     <Card.Root bgColor={bgColor} px={10} py={6}>
@@ -143,7 +173,9 @@ const PackageCard = ({
           />
           <HStack>
             <StatusPing />
-            <Text fontSize={"md"}>2 slots left</Text>
+            <Text fontSize={"md"}>
+              {slot} {slot > 1 ? "slots" : "slot"} left
+            </Text>
           </HStack>
         </Card.Footer>
       </VStack>

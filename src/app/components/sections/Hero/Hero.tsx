@@ -15,6 +15,11 @@ import { PrimaryButton } from "../../ui/Button/Button";
 import StatusPing from "../../ui/StatusPing/StatusPing";
 
 const Hero = () => {
+  const currentDate = new Date();
+  const monthNameLocale = currentDate.toLocaleString("default", {
+    month: "long",
+  });
+
   return (
     <CustomContainer>
       <VStack justifyContent="center" mt={20}>
@@ -71,7 +76,7 @@ const Hero = () => {
         <HStack mt={10}>
           <StatusPing />
           <Text fontSize={"md"} textTransform={"uppercase"}>
-            Now booking projects for October
+            Now booking projects for {monthNameLocale}
           </Text>
         </HStack>
       </VStack>

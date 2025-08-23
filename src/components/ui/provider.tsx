@@ -6,6 +6,7 @@ const system = createSystem(defaultConfig, {
   theme: {
     tokens: {
       colors: {
+        darkBlue: { value: "#031629" },
         blue: { value: "#01203F" },
         offWhite: { value: "#F2EEE6" },
         yellow: { value: "#FFDC60" },

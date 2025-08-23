@@ -31,7 +31,7 @@ const ChooseUs = () => {
               Built for Marketers. <br /> Engineered to Convert.
             </>
           }
-          imgSrc="/images/jpg/toggle-marketers.jpg"
+          imgSrc="/images/png/toggle-marketers.png"
         />
         <Content
           description="Stay informed every step of the way with direct 1:1 Slack access (optional), weekly progress updates, and rapid feedback cycles to keep your project on track and moving fast."
@@ -41,12 +41,12 @@ const ChooseUs = () => {
               We keep you informed.
             </>
           }
-          imgSrc="/images/jpg/slack-marketers.jpg"
+          imgSrc="/images/png/slack-marketers.png"
         />
         <Content
           description="From mobile to desktop, your Marketo landing pages never miss. From Outlook to Gmail, your Marketo emails always deliver flawlessly."
           heading={<>Blazing-fast &amp; reliable Marketo-ready templates.</>}
-          imgSrc="/images/jpg/marketo-marketers.jpg"
+          imgSrc="/images/png/marketo-marketers.png"
         />
       </Grid>
     </CustomContainer>
