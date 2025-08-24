@@ -2,6 +2,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import ChooseUs from "./components/sections/ChooseUs/ChooseUs";
 import Hero from "./components/sections/Hero/Hero";
 import MeetTeam from "./components/sections/MeetTeam/MeetTeam";
+import OurFocus from "./components/sections/OurFocus/OurFocus";
 import OurProcess from "./components/sections/OurProcess/OurProcess";
 import Packages from "./components/sections/Packages/Packages";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Packages />
       <OurProcess />
       <MeetTeam />
+      <OurFocus />
     </Box>
   );
 }
