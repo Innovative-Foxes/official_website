@@ -1,6 +1,8 @@
 "use client";
 import {
   Box,
+  Flex,
+  HStack,
   Heading,
   Icon,
   Image,
@@ -11,236 +13,264 @@ import CustomContainer from "../../ui/Container/Container";
 import { FaChevronRight } from "react-icons/fa";
 import { PrimaryButton } from "../../ui/Button/Button";
 
+interface IntroSlide {
+  step: string;
+  title: string;
+  description: string;
+  isIntro: boolean;
+}
+
 interface ProcessStep {
   step: string;
   title: string;
   description: string;
   showButton?: boolean;
-  subItems?: string[];
-  additionalSections?: Array<{
-    title: string;
-    description: string;
-    subItems?: string[];
-  }>;
+  highlights?: string[];
 }
 
 const OurProcess = () => {
+  const introSlide: IntroSlide = {
+    step: "Our Process",
+    title: "A smarter way to build with Marketo.",
+    description:
+      "From kickoff to launch in five simple steps—fast, focused, and built for measurable results.",
+    isIntro: true,
+  };
+
   const processSteps: ProcessStep[] = [
     {
-      step: "1. Intro",
-      title: "Free intro call",
+      step: "1. Discovery Call",
+      title: "A quick conversation to align",
       description:
-        "We&apos;ll hop on a quick call to get to know each other, talk through your Marketo goals, and see if we&apos;re a good fit.",
+        "We'll hop on a 15-minute intro call to learn about your Marketo goals and share how we work. It's a no-pressure space to see if there's a fit.",
       showButton: true,
-    },
-    {
-      step: "2. Pricing",
-      title: "Straightforward pricing &amp; quote",
-      description:
-        "We&apos;ll walk you through our pricing options and send over a transparent, no-strings-attached quote for your project.",
-    },
-    {
-      step: "3. Kickoff",
-      title: "Getting started",
-      description: "We&apos;ll gather what we need from you:",
-      subItems: [
-        "If we&apos;re designing, we&apos;ll grab your brand guidelines and custom fonts.",
-        "If we&apos;re developing, we&apos;ll take your design file.",
-        "We&apos;ll also request a single Marketo login so we can start building.",
-      ],
-      additionalSections: [
-        {
-          title: "Communication",
-          description:
-            "We&apos;ll set up clear communication channels for weekly check-ins and feedback, so your team always knows where things stand.",
-        },
+      highlights: [
+        "Clear, open discussion",
+        "Your goals, our focus",
+        "Fast alignment check",
       ],
     },
     {
-      step: "4. Execution",
-      title: "Design &amp; development",
+      step: "2. Transparent Proposal",
+      title: "Clarity from the start",
       description:
-        "Need design? We&apos;ll create a custom template tailored to your brand, with up to 3 rounds of feedback. Once approved, we&apos;ll code your template for top performance in Marketo.",
-      additionalSections: [
-        {
-          title: "Testing",
-          description: "We&apos;ll put your template through the wringer:",
-          subItems: [
-            "Email templates are tested with platforms like Litmus and Email on Acid.",
-            "Landing pages are tested across browsers, devices, and screen sizes to ensure a flawless experience.",
-          ],
-        },
-        {
-          title: "User testing (UAT)",
-          description:
-            "Your team gets time to test the template too. We&apos;ll capture your feedback and make any necessary tweaks.",
-        },
+        "No vague estimates or mystery line items. You'll get a clear breakdown of scope, pricing, and timelines so you know exactly what to expect.",
+      highlights: [
+        "Fixed, transparent pricing",
+        "Detailed cost breakdown",
+        "CFO-friendly clarity",
       ],
     },
     {
-      step: "5. Handoff &amp; Training",
-      title: "Handoff",
+      step: "3. Kickoff & Setup",
+      title: "Setting the foundation",
       description:
-        "We&apos;ll deliver links to all your new Marketo assets&mdash;templates, snippets, and more.",
-      additionalSections: [
-        {
-          title: "Training",
-          description:
-            "We&apos;ll host a complimentary training call to walk your team through using the new template with real-world examples. (We&apos;ll record it too, so you can revisit it anytime.)",
-        },
-        {
-          title: "Support",
-          description:
-            "Need help after launch? We&apos;ve got you covered. Post-handoff support includes bug fixes at no extra cost, plus answers to any questions that pop up.",
-        },
+        "Once we're a go, we'll collect everything needed to move quickly—brand assets, design files, and Marketo access. We'll also establish communication channels so you always know where things stand.",
+      highlights: [
+        "Brand guidelines, fonts, and design files",
+        "Secure Marketo login",
+        "Weekly check-ins, your way",
+      ],
+    },
+    {
+      step: "4. Design & Development",
+      title: "Where strategy meets execution",
+      description:
+        "This is the creative build phase. Our team designs and codes templates that reflect your brand, function seamlessly, and perform at scale.",
+      highlights: [
+        "Up to 3 design rounds",
+        "Pixel-perfect, performance-ready code",
+        "Rigorous QA & testing across devices, browsers, and inboxes",
+      ],
+    },
+    {
+      step: "5. Delivery & Support",
+      title: "From launch to long-term success",
+      description:
+        "We'll deliver polished, ready-to-use Marketo assets, train your team on implementation, and provide ongoing support to keep things running smoothly.",
+      highlights: [
+        "Full asset delivery",
+        "Live training (with recordings for later)",
+        "Post-launch support included",
       ],
     },
   ];
 
   return (
-    <Box bgColor="darkBlue" color="offWhite" mt="180px">
+    <Box bgColor="darkBlue" color="offWhite" mt="180px" py={20}>
       <CustomContainer>
-        <VStack align="center" gap={12} py={20}>
-          {/* Header Section */}
-          <Box textAlign="center" maxW="800px">
-            <Heading
-              as="h2"
-              fontFamily="poppins"
-              fontSize={{ base: "4xl", md: "6xl" }}
-              fontWeight="semibold"
-              lineHeight="100%"
-              mb={6}
-            >
-              <Text alignItems="center" as="span" display="flex" gap={4} justifyContent="center">
-                Our
+        <Flex
+          direction={{ base: "column", lg: "row" }}
+          gap={12}
+          justifyContent={"space-between"}
+          minH="600px"
+        >
+          {/* Left Section - Intro */}
+          <Box flex="1" maxW={{ base: "100%", lg: "40%" }}>
+            <VStack align="start" gap={8} h="full">
+              <Box>
+                <Heading
+                  as="h2"
+                  fontFamily="poppins"
+                  fontSize={{ base: "4xl", md: "6xl" }}
+                  fontWeight="semibold"
+                  lineHeight="100%"
+                  mb={6}
+                >
+                  <Text alignItems="center" as="span" display="flex" gap={4}>
+                    Our
+                    <Image
+                      alt="Logo"
+                      maxW={{ base: "50px", md: "70px" }}
+                      src="/images/svgs/process-logo.svg"
+                      w="100%"
+                    />
+                  </Text>
+                  <Text as="span" color="orange" fontWeight="semibold">
+                    Process
+                  </Text>
+                </Heading>
+                <Text
+                  fontSize={{ base: "2xl", md: "2xl" }}
+                  fontWeight="semibold"
+                  lineHeight="1.2"
+                  mb={2}
+                >
+                  {introSlide.title}
+                </Text>
+                <Text fontSize={{ base: "lg", md: "xl" }} mb={4} opacity={0.9}>
+                  {introSlide.description}
+                </Text>
+              </Box>
+
+              {/* Fox Image */}
+              <Box
+                alignItems="center"
+                display="flex"
+                flex="1"
+                justifyContent="center"
+                w="full"
+              >
                 <Image
-                  alt="Logo"
-                  maxW={{ base: "50px", md: "70px" }}
-                  src="/images/svgs/process-logo.svg"
+                  alt="Fox in car - Our Process"
+                  borderRadius="16px"
+                  src="/images/png/our-process-hz.png"
                   w="100%"
                 />
-              </Text>
-              <Text as="span" color="orange" fontWeight="semibold">
-                Process
-              </Text>
-            </Heading>
-            <Text fontSize={{ base: "lg", md: "2xl" }}>
-              We strive to make your journey as smooth &amp; easy as possible
-            </Text>
+              </Box>
+            </VStack>
           </Box>
 
-          {/* Process Steps */}
-          {processSteps.map((step, index) => (
-            <Box key={index} w="full" maxW="800px">
-              <VStack align="start" gap={6} w="full">
-                <Heading
-                  as="h3"
-                  fontFamily="poppins"
-                  fontSize={{ base: "3xl", md: "4xl" }}
-                  fontWeight="semibold"
-                  color="orange"
-                >
-                  {step.step}
-                </Heading>
-
-                <Heading
-                  as="h4"
-                  fontFamily="poppins"
-                  fontSize={{ base: "xl", md: "2xl" }}
-                  fontWeight="medium"
-                  color="offWhite"
-                >
-                  {step.title}
-                </Heading>
-
-                <Text 
-                  fontSize={{ base: "md", md: "lg" }} 
-                  color="offWhite"
-                  lineHeight="1.6"
-                >
-                  {step.description}
-                </Text>
-
-                {step.subItems && (
-                  <VStack align="start" gap={3} w="full">
-                    {step.subItems.map((item, itemIndex) => (
-                      <Text
-                        key={itemIndex}
-                        fontSize={{ base: "sm", md: "md" }}
-                        color="offWhite"
-                        pl={6}
-                        borderLeft="3px solid"
-                        borderColor="orange"
-                        lineHeight="1.5"
+          {/* Right Section - Scrollable Steps */}
+          <Box flex="1" maxW={{ base: "100%", lg: "55%" }}>
+            <Box
+              bg="rgba(255, 255, 255, 0.05)"
+              borderRadius="24px"
+              css={{
+                "&::-webkit-scrollbar": {
+                  width: "8px",
+                },
+                "&::-webkit-scrollbar-track": {
+                  background: "rgba(255, 255, 255, 0.1)",
+                  borderRadius: "4px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  background: "#FF6B35",
+                  borderRadius: "4px",
+                },
+                "&::-webkit-scrollbar-thumb:hover": {
+                  background: "#e55a2b",
+                },
+              }}
+              h={{ base: "auto", lg: "625px" }}
+              overflowY="auto"
+              p={8}
+            >
+              <VStack align="stretch" gap={8}>
+                {processSteps.map((step, index) => (
+                  <Box
+                    key={index}
+                    borderBottom={
+                      index !== processSteps.length - 1 ? "1px solid" : "none"
+                    }
+                    borderColor="rgba(255, 255, 255, 0.1)"
+                    pb={index !== processSteps.length - 1 ? 8 : 0}
+                  >
+                    <VStack align="start" gap={4}>
+                      <Heading
+                        as="h3"
+                        color="orange"
+                        fontFamily="poppins"
+                        fontSize={{ base: "xl", md: "2xl" }}
+                        fontWeight="semibold"
                       >
-                        {item}
+                        {step.step}
+                      </Heading>
+
+                      <Heading
+                        as="h4"
+                        color="offWhite"
+                        fontFamily="poppins"
+                        fontSize={{ base: "lg", md: "xl" }}
+                        fontWeight="medium"
+                      >
+                        {step.title}
+                      </Heading>
+
+                      <Text
+                        color="offWhite"
+                        fontSize={{ base: "sm", md: "md" }}
+                        lineHeight="1.6"
+                      >
+                        {step.description}
                       </Text>
-                    ))}
-                  </VStack>
-                )}
 
-                {step.additionalSections?.map((section, sectionIndex) => (
-                  <Box key={sectionIndex} w="full" mt={6}>
-                    <Heading
-                      as="h4"
-                      fontFamily="poppins"
-                      fontSize={{ base: "lg", md: "xl" }}
-                      fontWeight="medium"
-                      mb={4}
-                      color="orange"
-                    >
-                      {section.title}
-                    </Heading>
+                      {step.highlights && (
+                        <VStack align="start" gap={2} mt={2} w="full">
+                          {step.highlights.map((highlight, highlightIndex) => (
+                            <HStack key={highlightIndex} align="center" gap={3}>
+                              <Box
+                                bg="orange"
+                                borderRadius="full"
+                                flexShrink={0}
+                                h={2}
+                                w={2}
+                              />
+                              <Text
+                                color="offWhite"
+                                fontSize={{ base: "xs", md: "sm" }}
+                                fontWeight="medium"
+                              >
+                                {highlight}
+                              </Text>
+                            </HStack>
+                          ))}
+                        </VStack>
+                      )}
 
-                    <Text 
-                      fontSize={{ base: "sm", md: "md" }} 
-                      mb={4}
-                      color="offWhite"
-                      lineHeight="1.6"
-                    >
-                      {section.description}
-                    </Text>
-
-                    {section.subItems && (
-                      <VStack align="start" gap={3} w="full">
-                        {section.subItems.map((item, itemIndex) => (
-                          <Text
-                            key={itemIndex}
-                            fontSize={{ base: "sm", md: "md" }}
-                            color="offWhite"
-                            pl={6}
-                            borderLeft="3px solid"
-                            borderColor="orange"
-                            lineHeight="1.5"
-                          >
-                            {item}
-                          </Text>
-                        ))}
-                      </VStack>
-                    )}
+                      {step.showButton && (
+                        <Box mt={4}>
+                          <PrimaryButton
+                            fontSize="sm"
+                            icon={
+                              <Icon h={3}>
+                                <FaChevronRight />
+                              </Icon>
+                            }
+                            label="Book A Call Now"
+                            minHeight={40}
+                            px={16}
+                            url="#"
+                          />
+                        </Box>
+                      )}
+                    </VStack>
                   </Box>
                 ))}
-
-                {step.showButton && (
-                  <Box mt={6}>
-                    <PrimaryButton
-                      fontSize="medium"
-                      icon={
-                        <Icon h={3}>
-                          <FaChevronRight />
-                        </Icon>
-                      }
-                      label="Book A Call Now"
-                      minHeight={50}
-                      px={24}
-                      url="#"
-                    />
-                  </Box>
-                )}
               </VStack>
             </Box>
-          ))}
-        </VStack>
+          </Box>
+        </Flex>
       </CustomContainer>
     </Box>
   );
