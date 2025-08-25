@@ -20,7 +20,11 @@ const ChooseUs = () => {
           to get the job done
         </Heading>
       </Box>
-      <Grid gap="8" mt={16} templateColumns="repeat(3, 1fr)">
+      <Grid
+        gap={{ base: "12", md: "8" }}
+        mt={16}
+        templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+      >
         <Content
           description="Elevate your Marketo templates with up to 20 custom modules,
       intuitive show/hide content functionality, fully branded forms, and
@@ -61,8 +65,11 @@ interface ContentProps {
 
 const Content = ({ imgSrc, heading, description }: ContentProps) => {
   return (
-    <VStack alignItems={"start"}>
-      <Image alt="" src={imgSrc} />
+    <VStack
+      alignItems={{ base: "center", md: "start" }}
+      textAlign={{ base: "center", md: "left" }}
+    >
+      <Image alt="" maxW={{ base: "200px", md: "370px" }} src={imgSrc} />
       <Heading
         as={"h3"}
         fontSize={{ base: "xl", md: "3xl" }}
@@ -73,7 +80,7 @@ const Content = ({ imgSrc, heading, description }: ContentProps) => {
       >
         {heading}
       </Heading>
-      <Text fontSize={"md"}>{description}</Text>
+      <Text fontSize={{ base: "sm", md: "md" }}>{description}</Text>
     </VStack>
   );
 };

@@ -22,7 +22,7 @@ const Hero = () => {
 
   return (
     <CustomContainer>
-      <VStack justifyContent="center" mt={20}>
+      <VStack justifyContent="center" mt={{ base: 10, md: 20 }}>
         <Link
           _hover={{ scale: "105%" }}
           animation={"ease-in-out"}
@@ -31,12 +31,7 @@ const Hero = () => {
           outline={"none"}
           transition={"all"}
         >
-          <Image
-            alt="Logo"
-            maxW={{ base: "60px", md: "80px" }}
-            src="/images/svgs/hero-logo.svg"
-            w="100%"
-          />
+          <Image alt="Logo" src="/images/svgs/hero-logo.svg" w="80px" />
         </Link>
         <Box textAlign="center">
           <Heading
@@ -53,29 +48,35 @@ const Hero = () => {
             </Text>{" "}
             landing page &amp; email templates
           </Heading>
-          <Text fontSize={"2xl"}>
+          <Text fontSize={{ base: "lg", md: "2xl" }}>
             Launch faster, build better, and crush those marketing goals.
           </Text>
         </Box>
-        <HStack gap={4} mt={4}>
-          <PrimaryButton
-            label="View Our Packages"
-            url="#"
-            variation="secondary"
-          />
-          <PrimaryButton
-            icon={
-              <Icon h={4}>
-                <FaChevronRight />
-              </Icon>
-            }
-            label={"Book A Free Intro Call"}
-            url="#"
-          />
-        </HStack>
-        <HStack mt={10}>
+        <VStack gap={4} mt={4} w="full">
+          <HStack
+            flexDirection={{ base: "column", md: "row" }}
+            gap={4}
+            w={{ base: "full", md: "auto" }}
+          >
+            <PrimaryButton
+              label="View Our Packages"
+              url="#"
+              variation="secondary"
+            />
+            <PrimaryButton
+              icon={
+                <Icon h={4}>
+                  <FaChevronRight />
+                </Icon>
+              }
+              label={"Book A Free Intro Call"}
+              url="#"
+            />
+          </HStack>
+        </VStack>
+        <HStack mt={10} textAlign={{ base: "left", md: "center" }}>
           <StatusPing />
-          <Text fontSize={"md"} textTransform={"uppercase"}>
+          <Text fontSize={{ base: "sm", md: "md" }} textTransform={"uppercase"}>
             Now booking projects for {monthNameLocale}
           </Text>
         </HStack>

@@ -31,8 +31,9 @@ export const PrimaryButton = ({
       color={variation === "primary" ? "offWhite" : "blue"}
       fontSize={fontSize}
       fontWeight={"medium"}
+      maxW={{ base: "300px", md: "100%" }}
       textDecoration={"none"}
-      w={"fit-content"}
+      w={{ base: "100%", md: "fit-content" }}
     >
       <Link
         _hover={{ gap: "8px", scale: "105%" }}
@@ -41,10 +42,12 @@ export const PrimaryButton = ({
         display={"flex"}
         gap={1}
         href={url}
+        justifyContent="center"
         minH={`${minHeight}px`}
-        px={`${px}px`}
+        px={{ base: "20px", md: `${px}px` }}
         py={`${py}px`}
         textDecoration={"none"}
+        textWrap={"wrap"}
         transition={"all"}
       >
         {label}

@@ -29,31 +29,49 @@ const OurFocus = () => {
 
   return (
     <CustomContainer>
-      <VStack alignItems={"flex-start"} mb={8} mt={12}>
+      <VStack
+        alignItems={"flex-start"}
+        mb={{ base: 6, md: 8 }}
+        mt={{ base: 8, md: 12 }}
+        textAlign={{ base: "center", md: "left" }}
+      >
         <Heading
           alignItems={"center"}
           as="h2"
           color="navy.800"
           display={"flex"}
-          fontSize={{ base: "3xl", md: "4xl" }}
+          flexWrap="wrap"
+          fontSize={{ base: "2xl", md: "4xl" }}
           fontWeight="semibold"
-          gap={4}
+          gap={{ base: 2, md: 4 }}
+          justifyContent={{ base: "center", md: "flex-start" }}
           lineHeight="shorter"
         >
           All our focus is on you <FaHeart fill="orange" />
         </Heading>
-        <Text color="gray.600" fontSize="xl" maxW="600px">
+        <Text color="gray.600" fontSize={{ base: "lg", md: "xl" }} maxW="600px">
           See why we are our client&apos;s first choice
         </Text>
       </VStack>
 
-      <Box bg="gray.100" borderRadius="2xl" maxW="1200px" mx="auto" p={8}>
-        {/* Header Row */}
-        <Grid gap={0} mb={6} templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
+      <Box
+        bg="gray.100"
+        borderRadius="2xl"
+        maxW="1200px"
+        mx="auto"
+        p={{ base: 4, md: 8 }}
+      >
+        {/* Header Row - Desktop Only */}
+        <Grid
+          display={{ base: "none", md: "grid" }}
+          gap={0}
+          mb={6}
+          templateColumns="1fr 1fr"
+        >
           <HStack justifyContent="flex-start" pl={0}>
             <Image
               alt="Logo"
-              maxW={{ base: "150px", md: "180px" }}
+              maxW="180px"
               src="/images/svgs/our-focus-logo.svg"
               w="100%"
             />
@@ -65,8 +83,76 @@ const OurFocus = () => {
           </HStack>
         </Grid>
 
-        {/* Comparison Rows */}
-        <VStack gap={4}>
+        {/* Mobile Layout */}
+        <Box display={{ base: "block", md: "none" }}>
+          {/* Innovative Foxes Section */}
+          <VStack align="start" gap={4} mb={8}>
+            <HStack justifyContent="center" w="full">
+              <Image
+                alt="Logo"
+                maxW="120px"
+                src="/images/svgs/our-focus-logo.svg"
+                w="100%"
+              />
+            </HStack>
+            <VStack align="stretch" gap={3} w="full">
+              {comparisons.map((comparison, index) => (
+                <HStack
+                  key={index}
+                  alignItems="center"
+                  bg="green.50"
+                  borderRadius="md"
+                  gap={3}
+                  p={3}
+                >
+                  <Icon
+                    as={FaCheck}
+                    boxSize={3}
+                    fill={"orange"}
+                    flexShrink={0}
+                  />
+                  <Text color="gray.700" fontSize="sm" lineHeight="tall">
+                    {comparison}
+                  </Text>
+                </HStack>
+              ))}
+            </VStack>
+          </VStack>
+
+          {/* Large Agencies Section */}
+          <VStack align="start" gap={4}>
+            <HStack justifyContent="center" w="full">
+              <Text color="gray.700" fontSize="lg" fontWeight="semibold">
+                Large Agencies
+              </Text>
+            </HStack>
+            <VStack align="stretch" gap={3} w="full">
+              {otherAgenciesText.map((item, index) => (
+                <HStack
+                  key={index}
+                  alignItems="center"
+                  bg="red.100"
+                  borderRadius="md"
+                  gap={3}
+                  p={3}
+                >
+                  <Icon
+                    as={FaTimes}
+                    boxSize={3}
+                    fill="red.500"
+                    flexShrink={0}
+                  />
+                  <Text color="gray.700" fontSize="sm" lineHeight="tall">
+                    {item}
+                  </Text>
+                </HStack>
+              ))}
+            </VStack>
+          </VStack>
+        </Box>
+
+        {/* Desktop Layout */}
+        <VStack display={{ base: "none", md: "flex" }} gap={4}>
           {comparisons.map((comparison, index) => (
             <Grid
               key={index}
@@ -76,7 +162,7 @@ const OurFocus = () => {
               borderColor="gray.200"
               gap={0}
               pb={4}
-              templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+              templateColumns="1fr 1fr"
               w="full"
             >
               <HStack alignItems="center" gap={3}>

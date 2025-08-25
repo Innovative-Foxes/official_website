@@ -17,10 +17,10 @@ import StatusPing from "../../ui/StatusPing/StatusPing";
 const Packages = () => {
   return (
     <CustomContainer>
-      <Box mt={32} textAlign="center">
+      <Box mt={{ base: 16, md: 32 }} textAlign="center">
         <Heading
           as="h2"
-          fontSize={{ base: "3xl", md: "5xl" }}
+          fontSize={{ base: "2xl", md: "5xl" }}
           fontWeight={"medium"}
           lineHeight={"shorter"}
           my={4}
@@ -33,7 +33,11 @@ const Packages = () => {
           Landing Page &amp; Email Packages
         </Heading>
       </Box>
-      <Grid gap="8" mt={16} templateColumns="repeat(3, 1fr)">
+      <Grid
+        gap={{ base: "8", md: "8" }}
+        mt={16}
+        templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }}
+      >
         <PackageCard
           benefits={[
             "Landing Page or Email Template",
@@ -68,27 +72,33 @@ const Packages = () => {
           title="Design &amp; Development"
           turnAround="6-10 week"
         />
-        <Box>
-          <Heading as={"h3"} fontSize={"3xl"} lineHeight={"normal"}>
+        <Box px={{ base: 4, lg: 0 }} textAlign={{ base: "center", lg: "left" }}>
+          <Heading
+            as={"h3"}
+            fontSize={{ base: "xl", md: "3xl" }}
+            lineHeight={"normal"}
+          >
             Not sure if these options are the right fit for you?
           </Heading>
-          <Text fontSize={"md"} mb={5} mt={2}>
+          <Text fontSize={{ base: "sm", md: "md" }} mb={5} mt={2}>
             If your project or vision does not fit into one of these options
             then feel free to schedule a call with us and we will try to find a
             plan that fits better for you.
           </Text>
-          <PrimaryButton
-            fontSize="base"
-            icon={
-              <Icon h={3}>
-                <FaChevronRight />
-              </Icon>
-            }
-            label={"Book A Call Now"}
-            minHeight={45}
-            px={24}
-            url="#"
-          />
+          <Box m={{ base: "auto", md: "0" }} w="fit-content">
+            <PrimaryButton
+              fontSize="base"
+              icon={
+                <Icon h={3}>
+                  <FaChevronRight />
+                </Icon>
+              }
+              label={"Book A Call Now"}
+              minHeight={45}
+              px={24}
+              url="#"
+            />
+          </Box>
         </Box>
       </Grid>
     </CustomContainer>
@@ -115,7 +125,7 @@ const PackageCard = ({
   slot,
 }: PackageCardProps) => {
   return (
-    <Card.Root bgColor={bgColor} px={10} py={6}>
+    <Card.Root bgColor={bgColor} px={{ base: 6, md: 10 }} py={6}>
       {popular && (
         <Box
           bgColor={"orange"}
@@ -129,16 +139,25 @@ const PackageCard = ({
           <Text fontSize={"sm"}>Most Popular</Text>
         </Box>
       )}
-      <VStack justifyContent={"space-between"} minH={"800px"}>
+      <VStack
+        justifyContent={"space-between"}
+        minH={{ base: "auto", md: "800px" }}
+      >
         <Card.Body gap="2">
-          <Text fontSize={"14px"} fontStyle={"italic"}>
+          <Text fontSize={"14px"} fontStyle={"italic"} mt={{ base: 4, md: 0 }}>
             {turnAround} turn around 🚀
           </Text>
-          <Box minH={"200px"}>
-            <Card.Title fontSize={"xl"} fontWeight={"bold"} my="2">
+          <Box minH={{ base: "auto", md: "200px" }}>
+            <Card.Title
+              fontSize={{ base: "lg", md: "xl" }}
+              fontWeight={"bold"}
+              my="2"
+            >
               {title}
             </Card.Title>
-            <Card.Description fontSize={"md"}>{description}</Card.Description>
+            <Card.Description fontSize={{ base: "sm", md: "md" }}>
+              {description}
+            </Card.Description>
           </Box>
           <Box bg="blue" h="2px" mb={4} minW={"50px"} w={"25%"} />
           <VStack alignItems={"flex-start"}>
@@ -152,13 +171,20 @@ const PackageCard = ({
                     src="/images/svgs/check-orange.svg"
                     w="auto"
                   />
-                  <Text fontSize={"md"}>{item}</Text>
+                  <Text fontSize={{ base: "sm", md: "md" }}>{item}</Text>
                 </HStack>
               );
             })}
           </VStack>
         </Card.Body>
-        <Card.Footer gap={2} justifyContent="space-between" w={"100%"}>
+        <Card.Footer
+          alignItems={{ base: "center", md: "flex-end" }}
+          flexDirection={{ base: "column", md: "row" }}
+          gap={2}
+          justifyContent="space-between"
+          mt={{ base: 4, md: 0 }}
+          w={"100%"}
+        >
           <PrimaryButton
             fontSize="base"
             icon={
@@ -171,9 +197,9 @@ const PackageCard = ({
             px={24}
             url="#"
           />
-          <HStack>
+          <HStack mt={{ base: 4, md: 0 }}>
             <StatusPing />
-            <Text fontSize={"md"}>
+            <Text fontSize={{ base: "sm", md: "md" }}>
               {slot} {slot > 1 ? "slots" : "slot"} left
             </Text>
           </HStack>

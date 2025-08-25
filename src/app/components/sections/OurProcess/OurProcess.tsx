@@ -97,13 +97,13 @@ const OurProcess = () => {
   ];
 
   return (
-    <Box bgColor="darkBlue" color="offWhite" mt="180px" py={20}>
+    <Box bgColor="darkBlue" color="offWhite" mt={{ base: "120px", md: "180px" }} py={{ base: 12, md: 20 }}>
       <CustomContainer>
         <Flex
           direction={{ base: "column", lg: "row" }}
-          gap={12}
+          gap={{ base: 8, md: 12 }}
           justifyContent={"space-between"}
-          minH="600px"
+          minH={{ base: "auto", md: "600px" }}
         >
           {/* Left Section - Intro */}
           <Box flex="1" maxW={{ base: "100%", lg: "40%" }}>
@@ -112,16 +112,16 @@ const OurProcess = () => {
                 <Heading
                   as="h2"
                   fontFamily="poppins"
-                  fontSize={{ base: "4xl", md: "6xl" }}
+                  fontSize={{ base: "3xl", md: "6xl" }}
                   fontWeight="semibold"
                   lineHeight="100%"
                   mb={6}
                 >
-                  <Text alignItems="center" as="span" display="flex" gap={4}>
+                  <Text alignItems="center" as="span" display="flex" flexWrap="wrap" gap={{ base: 2, md: 4 }}>
                     Our
                     <Image
                       alt="Logo"
-                      maxW={{ base: "50px", md: "70px" }}
+                      maxW={{ base: "40px", md: "70px" }}
                       src="/images/svgs/process-logo.svg"
                       w="100%"
                     />
@@ -131,14 +131,14 @@ const OurProcess = () => {
                   </Text>
                 </Heading>
                 <Text
-                  fontSize={{ base: "2xl", md: "2xl" }}
+                  fontSize={{ base: "xl", md: "2xl" }}
                   fontWeight="semibold"
                   lineHeight="1.2"
                   mb={2}
                 >
                   {introSlide.title}
                 </Text>
-                <Text fontSize={{ base: "lg", md: "xl" }} mb={4} opacity={0.9}>
+                <Text fontSize={{ base: "md", md: "xl" }} mb={4} opacity={0.9}>
                   {introSlide.description}
                 </Text>
               </Box>
@@ -183,8 +183,9 @@ const OurProcess = () => {
                 },
               }}
               h={{ base: "auto", lg: "625px" }}
+              maxH={{ base: "70vh", lg: "625px" }}
               overflowY="auto"
-              p={8}
+              p={{ base: 6, md: 8 }}
             >
               <VStack align="stretch" gap={8}>
                 {processSteps.map((step, index) => (

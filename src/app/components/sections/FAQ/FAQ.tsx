@@ -18,6 +18,7 @@ import { useState } from "react";
 import { FaMinus, FaPlus, FaUser } from "react-icons/fa";
 
 import CustomContainer from "../../ui/Container/Container";
+import { FaChevronRight } from "react-icons/fa6";
 import { PrimaryButton } from "../../ui/Button/Button";
 
 interface FAQItem {
@@ -32,31 +33,31 @@ const faqItems: FAQItem[] = [
     title: "What exactly do you build for Marketo?",
     text: "We specialize in creating custom Marketo landing page templates and email templates that are fully responsive, conversion-optimized, and brand-aligned. Our templates are built with clean HTML/CSS code, include guided landing page functionality, and are designed to integrate seamlessly with your existing Marketo instance and marketing automation workflows.",
   },
-  {
-    value: "timeline-delivery",
-    title: "How long does it take to complete a project?",
-    text: "Timeline depends on project scope. A single landing page template typically takes 3-5 business days, while email template sets take 2-3 days. Larger projects with multiple templates or complex functionality may take 1-2 weeks. We always provide realistic timelines upfront and keep you updated throughout the process.",
-  },
+  // {
+  //   value: "timeline-delivery",
+  //   title: "How long does it take to complete a project?",
+  //   text: "Timeline depends on project scope. A single landing page template typically takes 3-5 business days, while email template sets take 2-3 days. Larger projects with multiple templates or complex functionality may take 1-2 weeks. We always provide realistic timelines upfront and keep you updated throughout the process.",
+  // },
   {
     value: "marketo-compatibility",
     title: "Are your templates compatible with all Marketo features?",
     text: "Absolutely! All our templates are built specifically for Marketo and include full compatibility with guided landing pages, email 2.0 templates, dynamic content, tokens, and A/B testing. We ensure seamless integration with Marketo's form functionality, tracking pixels, and all standard marketing automation features.",
   },
-  {
-    value: "revisions-support",
-    title: "What's included in terms of revisions and ongoing support?",
-    text: "Every project includes unlimited revisions during the initial development phase until you're completely satisfied. After delivery, we provide 30 days of complimentary support for any technical issues or minor adjustments. We also offer ongoing maintenance packages for clients who need regular updates or additional templates.",
-  },
+  // {
+  //   value: "revisions-support",
+  //   title: "What's included in terms of revisions and ongoing support?",
+  //   text: "Every project includes unlimited revisions during the initial development phase until you're completely satisfied. After delivery, we provide 30 days of complimentary support for any technical issues or minor adjustments. We also offer ongoing maintenance packages for clients who need regular updates or additional templates.",
+  // },
   {
     value: "brand-customization",
     title: "Can you match our existing brand and design requirements?",
     text: "Yes! We work closely with your brand guidelines, existing design assets, and style preferences to create templates that perfectly align with your brand identity. Whether you have a complete brand guide or just a logo and color palette, we'll ensure your Marketo templates maintain consistent branding across all touchpoints.",
   },
-  {
-    value: "pricing-packages",
-    title: "How does pricing work? Do you offer package deals?",
-    text: "We offer both individual template pricing and discounted package deals for multiple templates. Single landing pages start at $1,200, email templates at $800, and we provide significant savings on multi-template packages. All pricing is transparent with no hidden fees, and we're happy to create custom packages based on your specific needs.",
-  },
+  // {
+  //   value: "pricing-packages",
+  //   title: "How does pricing work? Do you offer package deals?",
+  //   text: "We offer both individual template pricing and discounted package deals for multiple templates. Single landing pages start at $1,200, email templates at $800, and we provide significant savings on multi-template packages. All pricing is transparent with no hidden fees, and we're happy to create custom packages based on your specific needs.",
+  // },
 ];
 
 const FAQ = () => {
@@ -114,6 +115,11 @@ const FAQ = () => {
                   </VStack>
 
                   <PrimaryButton
+                    icon={
+                      <Icon h={4}>
+                        <FaChevronRight />
+                      </Icon>
+                    }
                     label="Let's chat"
                     url="#"
                     variation="primary"
@@ -178,7 +184,7 @@ const FAQ = () => {
                       <Span
                         color="blue"
                         flex="1"
-                        fontSize={{ base: "md", md: "lg" }}
+                        fontSize={{ base: "sm", md: "lg" }}
                         fontWeight="medium"
                         textAlign="left"
                       >
@@ -198,7 +204,11 @@ const FAQ = () => {
                     </Accordion.ItemTrigger>
                     <Accordion.ItemContent>
                       <Accordion.ItemBody p={4} pt={0}>
-                        <Text color="blue" fontSize="md" lineHeight="tall">
+                        <Text
+                          color="blue"
+                          fontSize={{ base: "sm", md: "md" }}
+                          lineHeight="tall"
+                        >
                           {item.text}
                         </Text>
                       </Accordion.ItemBody>

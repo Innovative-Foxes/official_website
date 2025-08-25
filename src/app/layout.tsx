@@ -17,7 +17,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Innovative Foxes | Marketo Landing Page & Email Templates",
+  title: "Innovative Foxes | Marketo Landing Page & Email Template Agency",
   description: "Marketo Landing Page & Email Template Design & Development.",
 };
 

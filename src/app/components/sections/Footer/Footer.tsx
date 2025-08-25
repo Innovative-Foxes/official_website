@@ -11,18 +11,47 @@ import CustomContainer from "../../ui/Container/Container";
 
 const Footer = () => {
   return (
-    <Box bg="darkBlue" mt={40} pt={24} py={20}>
+    <Box bg="darkBlue" mt={{ base: 20, md: 40 }} pt={{ base: 12, md: 24 }} py={{ base: 12, md: 20 }}>
       <CustomContainer>
-        <VStack alignItems={"flex-start"} gap={0}>
+        <VStack alignItems={{ base: "center", md: "flex-start" }} gap={0}>
           <Image
             alt="Logo"
             borderRadius={"16px"}
+            maxW={{ base: "200px", md: "none" }}
             src="/images/svgs/footer-logo.svg"
             w="100%"
           />
+          <VStack
+            alignItems="center"
+            color={"offWhite"}
+            display={{ base: "flex", md: "none" }}
+            gap={{ base: 6, lg: 16 }}
+            my={{ base: 12, md: 20 }}
+            w="full"
+          >
+            <Box textAlign="center">
+              <Text fontSize={{ base: "sm", md: "md" }}>© Innovative Foxes</Text>
+            </Box>
+            <Box textAlign="center">
+              <Text fontSize={{ base: "sm", md: "md" }}>Lorem</Text>
+              <Text fontSize={{ base: "sm", md: "md" }}>Lorem</Text>
+            </Box>
+            <Box textAlign="center">
+              <Link
+                _hover={{ textDecoration: "underline" }}
+                color="orange"
+                fontSize={{ base: "sm", md: "md" }}
+                fontWeight="medium"
+                href="mailto:hello@innovativefoxes.com"
+              >
+                hello@innovativefoxes.com
+              </Link>
+            </Box>
+          </VStack>
           <HStack
             alignItems="center"
             color={"offWhite"}
+            display={{ base: "none", md: "flex" }}
             gap={{ base: 8, lg: 16 }}
             justifyContent={"space-between"}
             my={20}

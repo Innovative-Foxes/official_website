@@ -14,7 +14,7 @@ export default function Home() {
       <Box as={"main"}>
         <Flex align="center" direction="column" gap={4}>
           <Hero />
-          <Box bg="orange" height="25vh" my={8} width="1px" />
+          <Box bg="orange" height={{ base: "15vh", md: "25vh" }} my={{ base: 6, md: 8 }} width="1px" />
         </Flex>
         <ChooseUs />
         <Packages />

@@ -1,4 +1,4 @@
-import { Box, HStack, Heading, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, HStack, Heading, Image, Text, VStack } from "@chakra-ui/react";
 import CustomContainer from "../../ui/Container/Container";
 
 const MeetTeam = () => {
@@ -12,12 +12,12 @@ const MeetTeam = () => {
   ];
 
   return (
-    <Box bg="white" my={40}>
+    <Box bg="white" my={{ base: 20, md: 40 }}>
       <CustomContainer>
-        <VStack gap={0} mb={24}>
+        <VStack gap={0} mb={{ base: 12, md: 24 }}>
           <Heading
             as="h2"
-            fontSize={{ base: "3xl", md: "5xl" }}
+            fontSize={{ base: "2xl", md: "5xl" }}
             fontWeight={"bold"}
             lineHeight={"shorter"}
             textAlign="center"
@@ -27,8 +27,9 @@ const MeetTeam = () => {
           </Heading>
         </VStack>
 
-        <HStack
+        <Flex
           alignItems="start"
+          direction={{ base: "column", lg: "row" }}
           gap={{ base: 8, lg: 16 }}
           justifyContent={"space-between"}
         >
@@ -38,7 +39,7 @@ const MeetTeam = () => {
             gap={6}
             maxW={{ base: "100%", lg: "700px" }}
           >
-            <Text fontSize={{ base: "4xl", md: "5xl" }} fontWeight="bold">
+            <Text fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
               Hello 👋
             </Text>
 
@@ -46,7 +47,7 @@ const MeetTeam = () => {
               I&apos;m Ty, the founder of Innovative Foxes.
             </Text>
 
-            <Text color="gray.700" fontSize="lg" lineHeight="tall">
+            <Text color="gray.700" fontSize={{ base: "md", md: "lg" }} lineHeight="tall">
               My developer journey first started when a friendly customer
               approached while I was bartending in my early 20&apos;s suggesting
               that I give coding a try. From the minute I wrote my first line of
@@ -64,7 +65,7 @@ const MeetTeam = () => {
               .
             </Text>
 
-            <Text color="gray.700" fontSize="lg" lineHeight="tall">
+            <Text color="gray.700" fontSize={{ base: "md", md: "lg" }} lineHeight="tall">
               Today I bring all my experience to Innovative Foxes for you. While
               it may sound like a grand establishment, it&apos;s entirely run by
               me working alongside talented Marketo developers and designers
@@ -78,7 +79,7 @@ const MeetTeam = () => {
               solutions at a comfortable rate delivered on time.
             </Text>
 
-            <Text color="gray.700" fontSize="lg" lineHeight="tall">
+            <Text color="gray.700" fontSize={{ base: "md", md: "lg" }} lineHeight="tall">
               Moreover, I deeply value building long-term relationships with my
               clients, fostering a partnership that grows and evolves over time.
               I look forward to collaborating with you and I truly believe we
@@ -86,19 +87,19 @@ const MeetTeam = () => {
             </Text>
           </VStack>
 
-          <Box minW={{ base: "100%", lg: "fit-content" }}>
+          <Box minW={{ base: "100%", lg: "fit-content" }} order={{ base: -1, lg: 0 }}>
             {/* Right Column - Image and Specialties */}
-            <VStack alignItems="start" gap={8}>
+            <VStack alignItems={{ base: "center", lg: "start" }} gap={8}>
               <Image
                 alt="Logo"
                 borderRadius={"16px"}
-                maxW={{ base: "100%", lg: "350px" }}
+                maxW={{ base: "280px", lg: "350px" }}
                 src="/images/png/meet-team-ty.png"
                 w="100%"
               />
               {/* Specialties */}
               <VStack alignItems="start" gap={4} width="100%">
-                <Text fontSize="lg" fontWeight="bold">
+                <Text fontSize={{ base: "md", lg: "lg" }} fontWeight="bold">
                   Specialties
                 </Text>
                 <VStack alignItems="start" gap={3} width="100%">
@@ -110,14 +111,14 @@ const MeetTeam = () => {
                         src="/images/svgs/check-orange.svg"
                         width="18px"
                       />
-                      <Text fontSize="md">{specialty}</Text>
+                      <Text fontSize={{ base: "sm", md: "md" }}>{specialty}</Text>
                     </HStack>
                   ))}
                 </VStack>
               </VStack>
             </VStack>
           </Box>
-        </HStack>
+        </Flex>
       </CustomContainer>
     </Box>
   );
