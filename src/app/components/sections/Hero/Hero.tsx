@@ -59,7 +59,7 @@ const Hero = () => {
         </Box>
         <HStack gap={4} mt={4}>
           <PrimaryButton
-            label="View Our Services"
+            label="View Our Packages"
             url="#"
             variation="secondary"
           />

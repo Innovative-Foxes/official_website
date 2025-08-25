@@ -261,6 +261,7 @@ const OurProcess = () => {
                             minHeight={40}
                             px={16}
                             url="#"
+                            variation="secondary"
                           />
                         </Box>
                       )}

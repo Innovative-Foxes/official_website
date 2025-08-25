@@ -31,6 +31,7 @@ export const PrimaryButton = ({
       color={variation === "primary" ? "offWhite" : "blue"}
       fontSize={fontSize}
       fontWeight={"medium"}
+      textDecoration={"none"}
       w={"fit-content"}
     >
       <Link
@@ -43,6 +44,7 @@ export const PrimaryButton = ({
         minH={`${minHeight}px`}
         px={`${px}px`}
         py={`${py}px`}
+        textDecoration={"none"}
         transition={"all"}
       >
         {label}

@@ -1,165 +1,102 @@
 "use client";
-import { Box, Grid, Heading, Text, VStack, HStack, Icon } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  HStack,
+  Heading,
+  Icon,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import { FaCheck, FaHeart, FaTimes } from "react-icons/fa";
 import CustomContainer from "../../ui/Container/Container";
-import { FaCheck, FaTimes } from "react-icons/fa";
 
 const OurFocus = () => {
+  const comparisons = [
+    "High quality at a comfortable price",
+    "Locally run, focusing on only one project at a time",
+    "Direct line of communication with consistent updates",
+    "No hidden costs or fees with a focus on hitting deadlines",
+  ];
+
+  const otherAgenciesText = [
+    "Varying quality with expensive pricing",
+    "Offshoring and managing many projects all at once",
+    "No clear communication lacking consistent updates",
+    "Surprise costs and fees with inconsistent deadlines",
+  ];
+
   return (
     <CustomContainer>
-      <VStack spacing={8} textAlign="center" mb={12}>
+      <VStack alignItems={"flex-start"} mb={8} mt={12}>
         <Heading
+          alignItems={"center"}
           as="h2"
-          fontSize={{ base: "3xl", md: "5xl" }}
-          fontWeight="medium"
-          lineHeight="shorter"
           color="navy.800"
+          display={"flex"}
+          fontSize={{ base: "3xl", md: "4xl" }}
+          fontWeight="semibold"
+          gap={4}
+          lineHeight="shorter"
         >
-          All our focus is on you 🧡
+          All our focus is on you <FaHeart fill="orange" />
         </Heading>
-        <Text fontSize="xl" color="gray.600" maxW="600px">
-          See why we are our client's first choice
+        <Text color="gray.600" fontSize="xl" maxW="600px">
+          See why we are our client&apos;s first choice
         </Text>
       </VStack>
 
-      <Box
-        bg="gray.50"
-        borderRadius="2xl"
-        p={8}
-        maxW="1200px"
-        mx="auto"
-      >
-        <Grid templateColumns={{ base: "1fr", md: "200px 1fr 1fr" }} gap={0}>
-          {/* Header Row */}
-          <Box></Box>
-          <VStack spacing={4} p={6} textAlign="center">
-            {/* Placeholder for logo */}
-            <Box
-              w="120px"
-              h="60px"
-              bg="gray.200"
-              borderRadius="md"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              color="gray.500"
-              fontSize="sm"
-            >
-              Logo Placeholder
-            </Box>
-            <Text fontSize="sm" color="gray.600" fontWeight="medium">
-              INNOVATIVE<br />FOXES
-            </Text>
-          </VStack>
-          <VStack spacing={4} p={6} textAlign="center">
-            <Text fontSize="xl" fontWeight="semibold" color="gray.800">
+      <Box bg="gray.100" borderRadius="2xl" maxW="1200px" mx="auto" p={8}>
+        {/* Header Row */}
+        <Grid gap={0} mb={6} templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
+          <HStack justifyContent="flex-start" pl={0}>
+            <Image
+              alt="Logo"
+              maxW={{ base: "150px", md: "180px" }}
+              src="/images/svgs/our-focus-logo.svg"
+              w="100%"
+            />
+          </HStack>
+          <HStack alignItems={"flex-end"} justifyContent="flex-start" pl={0}>
+            <Text color="gray.700" fontSize="xl" fontWeight="semibold">
               Large Agencies
             </Text>
-          </VStack>
-
-          {/* Divider */}
-          <Box gridColumn="1 / -1" h="1px" bg="gray.200" my={4}></Box>
-
-          {/* Comparison Rows */}
-          <ComparisonRow
-            feature="High quality at a comfortable price"
-            innovativeFoxes={true}
-            largeAgencies={false}
-            largeAgenciesText="Varying quality with expensive pricing"
-          />
-
-          <ComparisonRow
-            feature="Locally run, focusing on only one project at a time"
-            innovativeFoxes={true}
-            largeAgencies={false}
-            largeAgenciesText="Offshoring and managing many projects all at once"
-          />
-
-          <ComparisonRow
-            feature="Direct line of communication with consistant updates"
-            innovativeFoxes={true}
-            largeAgencies={false}
-            largeAgenciesText="No clear communication lacking consistent updates"
-          />
-
-          <ComparisonRow
-            feature="No hidden costs or fees with a focus on hitting deadlines"
-            innovativeFoxes={true}
-            largeAgencies={false}
-            largeAgenciesText="Surprise costs and fees with inconsistent deadlines"
-          />
+          </HStack>
         </Grid>
+
+        {/* Comparison Rows */}
+        <VStack gap={4}>
+          {comparisons.map((comparison, index) => (
+            <Grid
+              key={index}
+              borderBottom={
+                index === comparisons.length - 1 ? "none" : "1px solid"
+              }
+              borderColor="gray.200"
+              gap={0}
+              pb={4}
+              templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+              w="full"
+            >
+              <HStack alignItems="center" gap={3}>
+                <Icon as={FaCheck} boxSize={3} fill={"orange"} />
+                <Text color="gray.700" flex="1" fontSize="md" lineHeight="tall">
+                  {comparison}
+                </Text>
+              </HStack>
+
+              <HStack alignItems="center" gap={3}>
+                <Icon as={FaTimes} boxSize={3} fill="red.500" />
+                <Text color="gray.700" flex="1" fontSize="md" lineHeight="tall">
+                  {otherAgenciesText[index]}
+                </Text>
+              </HStack>
+            </Grid>
+          ))}
+        </VStack>
       </Box>
     </CustomContainer>
-  );
-};
-
-interface ComparisonRowProps {
-  feature: string;
-  innovativeFoxes: boolean;
-  largeAgencies: boolean;
-  largeAgenciesText: string;
-}
-
-const ComparisonRow = ({ 
-  feature, 
-  innovativeFoxes, 
-  largeAgencies, 
-  largeAgenciesText 
-}: ComparisonRowProps) => {
-  return (
-    <>
-      <Box p={4} display={{ base: "none", md: "block" }}></Box>
-      
-      <HStack 
-        p={4} 
-        spacing={3} 
-        alignItems="flex-start"
-        borderBottom="1px solid"
-        borderColor="gray.200"
-      >
-        <Box
-          p={1}
-          borderRadius="sm"
-          bg={innovativeFoxes ? "orange.50" : "red.50"}
-          border="1px solid"
-          borderColor={innovativeFoxes ? "orange.200" : "red.200"}
-        >
-          <Icon
-            as={innovativeFoxes ? FaCheck : FaTimes}
-            color={innovativeFoxes ? "orange.500" : "red.500"}
-            boxSize={3}
-          />
-        </Box>
-        <Text fontSize="sm" color="gray.700" flex="1">
-          {feature}
-        </Text>
-      </HStack>
-
-      <HStack 
-        p={4} 
-        spacing={3} 
-        alignItems="flex-start"
-        borderBottom="1px solid"
-        borderColor="gray.200"
-      >
-        <Box
-          p={1}
-          borderRadius="sm"
-          bg={largeAgencies ? "orange.50" : "red.50"}
-          border="1px solid"
-          borderColor={largeAgencies ? "orange.200" : "red.200"}
-        >
-          <Icon
-            as={largeAgencies ? FaCheck : FaTimes}
-            color={largeAgencies ? "orange.500" : "red.500"}
-            boxSize={3}
-          />
-        </Box>
-        <Text fontSize="sm" color="gray.700" flex="1">
-          {largeAgenciesText}
-        </Text>
-      </HStack>
-    </>
   );
 };
 

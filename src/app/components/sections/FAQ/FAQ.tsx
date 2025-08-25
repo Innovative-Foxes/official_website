@@ -14,7 +14,9 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { FaPlus, FaMinus, FaUser } from "react-icons/fa";
+
+import { FaMinus, FaPlus, FaUser } from "react-icons/fa";
+
 import CustomContainer from "../../ui/Container/Container";
 import { PrimaryButton } from "../../ui/Button/Button";
 
@@ -60,8 +62,12 @@ const faqItems: FAQItem[] = [
 const FAQ = () => {
   const [accordionValue, setAccordionValue] = useState<string[]>([]);
 
+  const handleValueChange = (details: { value: string[] }) => {
+    setAccordionValue(details.value);
+  };
+
   return (
-    <Box bg="white" py={{ base: 16, md: 24 }}>
+    <Box bg="white" my={{ base: 16, md: 40 }}>
       <CustomContainer>
         <Grid
           gap={{ base: 8, md: 16 }}
@@ -103,7 +109,7 @@ const FAQ = () => {
                     </Heading>
                     <Text color="blue" fontSize="md" lineHeight="tall">
                       Explore what working together could look like, and whether
-                      it's the right move.
+                      it&apos;s the right move.
                     </Text>
                   </VStack>
 
@@ -142,20 +148,20 @@ const FAQ = () => {
                 fontWeight="medium"
                 textAlign={{ base: "center", lg: "left" }}
               >
-                Frequently asked
+                Frequently Asked Questions
               </Heading>
 
               <Accordion.Root
                 collapsible
                 multiple
-                onValueChange={(details) => setAccordionValue(details.value)}
                 value={accordionValue}
                 variant="plain"
                 width="100%"
+                onValueChange={handleValueChange}
               >
                 {faqItems.map((item, index) => (
                   <Accordion.Item
-                    key={index}
+                    key={item.value}
                     borderBottom="1px solid"
                     borderColor="blue"
                     borderTop={index === 0 ? "1px solid" : "none"}
