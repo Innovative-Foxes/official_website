@@ -42,7 +42,7 @@ const faqItems: FAQItem[] = [
   {
     value: "marketo-compatibility",
     title: "Are your templates compatible with all Marketo features?",
-    text: "Absolutely! All our templates are built specifically for Marketo and include full compatibility with guided landing pages, email 2.0 templates, dynamic content, tokens, and A/B testing. We ensure seamless integration with Marketo's form functionality, tracking pixels, and all standard marketing automation features.",
+    text: "Absolutely! All our templates are built specifically for Marketo and include full compatibility with guided landing pages, email templates, dynamic content, tokens, and A/B testing. We ensure seamless integration with Marketo's form functionality, tracking pixels, and all standard marketing automation features.",
   },
   // {
   //   value: "revisions-support",
