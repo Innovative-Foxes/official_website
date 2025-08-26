@@ -26,6 +26,10 @@ export const PrimaryButton = ({
   return (
     <Button
       asChild
+      _active={{
+        boxShadow: "-0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.4)",
+        transform: "translateY(1px)",
+      }}
       bgColor={variation === "primary" ? "blue" : "offWhite"}
       borderColor={"transparent"}
       borderRadius={"44px"}
@@ -35,6 +39,7 @@ export const PrimaryButton = ({
       fontWeight={"medium"}
       maxW={{ base: "300px", md: "100%" }}
       textDecoration={"none"}
+      transition="all 0.1s ease"
       w={{ base: "100%", md: "fit-content" }}
     >
       <Link
@@ -50,7 +55,9 @@ export const PrimaryButton = ({
         py={`${py}px`}
         textDecoration={"none"}
         textWrap={"wrap"}
+        touchAction="manipulation"
         transition={"all"}
+        userSelect="none"
         {...(externalLink && { target: "_blank" })}
       >
         {label}
