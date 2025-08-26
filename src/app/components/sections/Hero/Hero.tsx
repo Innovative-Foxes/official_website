@@ -31,7 +31,7 @@ const Hero = () => {
           outline={"none"}
           transition={"all"}
         >
-          <Image alt="Logo" src="/images/svgs/hero-logo.svg" w="80px" />
+          <Image alt="Logo" src="/images/png/hero-logo.png" w="80px" />
         </Link>
         <Box textAlign="center">
           <Heading
