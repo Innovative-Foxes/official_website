@@ -100,7 +100,7 @@ const OurProcess = () => {
     <Box
       bgColor="darkBlue"
       color="offWhite"
-      mt={{ base: "120px", md: "180px" }}
+      mt={{ base: "80px", md: "180px" }}
       py={{ base: 12, md: 20 }}
     >
       <CustomContainer>
@@ -172,8 +172,96 @@ const OurProcess = () => {
             </VStack>
           </Box>
 
-          {/* Right Section - Scrollable Steps */}
+          {/* Right Section - Steps Container */}
           <Box flex="1" maxW={{ base: "100%", lg: "55%" }}>
+            {/* Mobile: Normal content flow without box styling */}
+            <Box display={{ base: "block", md: "none" }}>
+              <VStack align="stretch" gap={8}>
+                {processSteps.map((step, index) => (
+                  <Box
+                    key={index}
+                    borderBottom={
+                      index !== processSteps.length - 1 ? "1px solid" : "none"
+                    }
+                    borderColor="rgba(255, 255, 255, 0.1)"
+                    pb={index !== processSteps.length - 1 ? 8 : 0}
+                  >
+                    <VStack align="start" gap={4}>
+                      <Heading
+                        as="h3"
+                        color="orange"
+                        fontFamily="poppins"
+                        fontSize={{ base: "xl", md: "2xl" }}
+                        fontWeight="semibold"
+                      >
+                        {step.step}
+                      </Heading>
+
+                      <Heading
+                        as="h4"
+                        color="offWhite"
+                        fontFamily="poppins"
+                        fontSize={{ base: "lg", md: "xl" }}
+                        fontWeight="medium"
+                      >
+                        {step.title}
+                      </Heading>
+
+                      <Text
+                        color="offWhite"
+                        fontSize={{ base: "sm", md: "md" }}
+                        lineHeight="1.6"
+                      >
+                        {step.description}
+                      </Text>
+
+                      {step.highlights && (
+                        <VStack align="start" gap={2} mt={2} w="full">
+                          {step.highlights.map((highlight, highlightIndex) => (
+                            <HStack key={highlightIndex} align="center" gap={3}>
+                              <Box
+                                bg="orange"
+                                borderRadius="full"
+                                flexShrink={0}
+                                h={2}
+                                w={2}
+                              />
+                              <Text
+                                color="offWhite"
+                                fontSize={{ base: "xs", md: "sm" }}
+                                fontWeight="medium"
+                              >
+                                {highlight}
+                              </Text>
+                            </HStack>
+                          ))}
+                        </VStack>
+                      )}
+
+                      {step.showButton && (
+                        <Box mt={4}>
+                          <PrimaryButton
+                            fontSize="sm"
+                            icon={
+                              <Icon h={3}>
+                                <FaChevronRight />
+                              </Icon>
+                            }
+                            label="Book A Call Now"
+                            minHeight={40}
+                            px={16}
+                            url="https://cal.com/innovativefoxes/intro-call"
+                            variation="secondary"
+                          />
+                        </Box>
+                      )}
+                    </VStack>
+                  </Box>
+                ))}
+              </VStack>
+            </Box>
+
+            {/* Desktop/Tablet: Scrollable box with styling */}
             <Box
               bg="rgba(255, 255, 255, 0.05)"
               borderRadius="24px"
@@ -193,6 +281,7 @@ const OurProcess = () => {
                   background: "#e55a2b",
                 },
               }}
+              display={{ base: "none", md: "block" }}
               h={{ base: "auto", lg: "625px" }}
               maxH={{ base: "70vh", lg: "625px" }}
               overflowY="auto"

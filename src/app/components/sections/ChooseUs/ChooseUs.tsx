@@ -7,7 +7,7 @@ const ChooseUs = () => {
       <Box textAlign="center">
         <Heading
           as="h2"
-          fontSize={{ base: "3xl", md: "5xl" }}
+          fontSize={{ base: "2xl", md: "5xl" }}
           fontWeight={"medium"}
           lineHeight={"shorter"}
           my={4}
@@ -69,10 +69,10 @@ const Content = ({ imgSrc, heading, description }: ContentProps) => {
       alignItems={{ base: "center", md: "start" }}
       textAlign={{ base: "center", md: "left" }}
     >
-      <Image alt="" maxW={{ base: "200px", md: "370px" }} src={imgSrc} />
+      <Image alt="" maxW={{ base: "full", md: "370px" }} src={imgSrc} />
       <Heading
         as={"h3"}
-        fontSize={{ base: "xl", md: "3xl" }}
+        fontSize={{ base: "2xl", md: "3xl" }}
         fontWeight={"medium"}
         lineHeight={"shorter"}
         mb={2}
@@ -80,7 +80,7 @@ const Content = ({ imgSrc, heading, description }: ContentProps) => {
       >
         {heading}
       </Heading>
-      <Text fontSize={{ base: "sm", md: "md" }}>{description}</Text>
+      <Text fontSize={"md"}>{description}</Text>
     </VStack>
   );
 };

@@ -8,6 +8,7 @@ import {
   GridItem,
   Heading,
   Icon,
+  Image,
   Link,
   Span,
   Text,
@@ -15,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { FaMinus, FaPlus, FaUser } from "react-icons/fa";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 import CustomContainer from "../../ui/Container/Container";
 import { FaChevronRight } from "react-icons/fa6";
@@ -94,9 +95,10 @@ const FAQ = () => {
                     justifyContent="center"
                     w={16}
                   >
-                    <Icon color="offWhite" h={8} w={8}>
-                      <FaUser />
-                    </Icon>
+                    <Image
+                      alt="Profile"
+                      src={"/images/png/tyrell-profile.png"}
+                    />
                   </Box>
 
                   <VStack align="start" gap={3}>
@@ -145,7 +147,7 @@ const FAQ = () => {
           </GridItem>
 
           {/* Right Column - FAQ */}
-          <GridItem>
+          <GridItem mt={{ base: 8, md: 0 }}>
             <VStack align="start" gap={8}>
               <Heading
                 as="h2"

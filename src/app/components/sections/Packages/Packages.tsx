@@ -155,7 +155,7 @@ const PackageCard = ({
             >
               {title}
             </Card.Title>
-            <Card.Description fontSize={{ base: "sm", md: "md" }}>
+            <Card.Description fontSize={"md"} mb={3}>
               {description}
             </Card.Description>
           </Box>

@@ -42,8 +42,12 @@ const Footer = () => {
               </Text>
             </Box>
             <Box textAlign="center">
-              <Text fontSize={{ base: "sm", md: "md" }}>Lorem</Text>
-              <Text fontSize={{ base: "sm", md: "md" }}>Lorem</Text>
+              <Text fontSize={"sm"}>
+                Vancouver → <Clock timezone="US/Pacific" />
+              </Text>
+              <Text fontSize={"sm"}>
+                Montreal → <Clock timezone="America/Montreal" />
+              </Text>
             </Box>
             <Box textAlign="center">
               <Link
