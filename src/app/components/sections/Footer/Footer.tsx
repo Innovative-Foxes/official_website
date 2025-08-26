@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   HStack,
@@ -7,11 +8,17 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import Clock from "../../ui/Clock/Clock";
 import CustomContainer from "../../ui/Container/Container";
 
 const Footer = () => {
   return (
-    <Box bg="darkBlue" mt={{ base: 20, md: 40 }} pt={{ base: 12, md: 24 }} py={{ base: 12, md: 20 }}>
+    <Box
+      bg="darkBlue"
+      mt={{ base: 20, md: 40 }}
+      pt={{ base: 12, md: 24 }}
+      py={{ base: 12, md: 20 }}
+    >
       <CustomContainer>
         <VStack alignItems={{ base: "center", md: "flex-start" }} gap={0}>
           <Image
@@ -30,7 +37,9 @@ const Footer = () => {
             w="full"
           >
             <Box textAlign="center">
-              <Text fontSize={{ base: "sm", md: "md" }}>© Innovative Foxes</Text>
+              <Text fontSize={{ base: "sm", md: "md" }}>
+                © Innovative Foxes
+              </Text>
             </Box>
             <Box textAlign="center">
               <Text fontSize={{ base: "sm", md: "md" }}>Lorem</Text>
@@ -67,8 +76,12 @@ const Footer = () => {
               textAlign="center"
               transform="translateX(-50%)"
             >
-              <Text>Lorem</Text>
-              <Text>Lorem</Text>
+              <Text>
+                Vancouver → <Clock timezone="US/Pacific" />
+              </Text>
+              <Text>
+                Montreal → <Clock timezone="America/Montreal" />
+              </Text>
             </Box>
             <Box>
               <Link

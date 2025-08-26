@@ -121,7 +121,7 @@ const FAQ = () => {
                       </Icon>
                     }
                     label="Let's chat"
-                    url="#"
+                    url="https://cal.com/innovativefoxes/intro-call"
                     variation="primary"
                   />
 

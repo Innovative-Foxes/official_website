@@ -27,7 +27,7 @@ const Hero = () => {
           _hover={{ scale: "105%" }}
           animation={"ease-in-out"}
           animationDuration={"fastest"}
-          href="#"
+          href="/"
           outline={"none"}
           transition={"all"}
         >
@@ -59,8 +59,9 @@ const Hero = () => {
             w={{ base: "full", md: "auto" }}
           >
             <PrimaryButton
+              externalLink={false}
               label="View Our Packages"
-              url="#"
+              url="#packages"
               variation="secondary"
             />
             <PrimaryButton
@@ -70,7 +71,7 @@ const Hero = () => {
                 </Icon>
               }
               label={"Book A Free Intro Call"}
-              url="#"
+              url="https://cal.com/innovativefoxes/intro-call"
             />
           </HStack>
         </VStack>

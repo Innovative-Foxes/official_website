@@ -97,7 +97,12 @@ const OurProcess = () => {
   ];
 
   return (
-    <Box bgColor="darkBlue" color="offWhite" mt={{ base: "120px", md: "180px" }} py={{ base: 12, md: 20 }}>
+    <Box
+      bgColor="darkBlue"
+      color="offWhite"
+      mt={{ base: "120px", md: "180px" }}
+      py={{ base: 12, md: 20 }}
+    >
       <CustomContainer>
         <Flex
           direction={{ base: "column", lg: "row" }}
@@ -117,7 +122,13 @@ const OurProcess = () => {
                   lineHeight="100%"
                   mb={6}
                 >
-                  <Text alignItems="center" as="span" display="flex" flexWrap="wrap" gap={{ base: 2, md: 4 }}>
+                  <Text
+                    alignItems="center"
+                    as="span"
+                    display="flex"
+                    flexWrap="wrap"
+                    gap={{ base: 2, md: 4 }}
+                  >
                     Our
                     <Image
                       alt="Logo"
@@ -261,7 +272,7 @@ const OurProcess = () => {
                             label="Book A Call Now"
                             minHeight={40}
                             px={16}
-                            url="#"
+                            url="https://cal.com/innovativefoxes/intro-call"
                             variation="secondary"
                           />
                         </Box>

@@ -17,7 +17,7 @@ import StatusPing from "../../ui/StatusPing/StatusPing";
 const Packages = () => {
   return (
     <CustomContainer>
-      <Box mt={{ base: 16, md: 32 }} textAlign="center">
+      <Box id="packages" mt={{ base: 16, md: 32 }} textAlign="center">
         <Heading
           as="h2"
           fontSize={{ base: "2xl", md: "5xl" }}
@@ -96,7 +96,7 @@ const Packages = () => {
               label={"Book A Call Now"}
               minHeight={45}
               px={24}
-              url="#"
+              url="https://cal.com/innovativefoxes/intro-call"
             />
           </Box>
         </Box>
@@ -195,7 +195,7 @@ const PackageCard = ({
             label={"Get Started"}
             minHeight={40}
             px={24}
-            url="#"
+            url="https://cal.com/innovativefoxes/intro-call"
           />
           <HStack mt={{ base: 4, md: 0 }}>
             <StatusPing />

@@ -2,6 +2,7 @@ import { Button, Link } from "@chakra-ui/react";
 
 interface PrimaryButtonProps {
   icon?: React.ReactNode;
+  externalLink?: boolean;
   minHeight?: number;
   label: React.ReactNode | string;
   fontSize?: string;
@@ -19,6 +20,7 @@ export const PrimaryButton = ({
   px = 30,
   py = 20,
   url,
+  externalLink = true,
   variation = "primary",
 }: PrimaryButtonProps) => {
   return (
@@ -49,6 +51,7 @@ export const PrimaryButton = ({
         textDecoration={"none"}
         textWrap={"wrap"}
         transition={"all"}
+        {...(externalLink && { target: "_blank" })}
       >
         {label}
         {icon}
