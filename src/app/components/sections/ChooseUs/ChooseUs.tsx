@@ -26,7 +26,7 @@ const ChooseUs = () => {
         templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
       >
         <Content
-          description="Elevate your Marketo templates with up to 20 custom modules,
+          description="Elevate your Marketo templates with up to 40 custom modules,
       intuitive show/hide content functionality, fully branded forms, and
       flexible layouts you can rearrange on the fly—all designed to boost
       engagement and drive conversions."
