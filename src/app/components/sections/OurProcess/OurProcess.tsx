@@ -250,7 +250,7 @@ const OurProcess = () => {
                             label="Book A Call Now"
                             minHeight={40}
                             px={16}
-                            url="https://cal.com/innovativefoxes/intro-call"
+                            url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
                             variation="secondary"
                           />
                         </Box>
@@ -361,7 +361,7 @@ const OurProcess = () => {
                             label="Book A Call Now"
                             minHeight={40}
                             px={16}
-                            url="https://cal.com/innovativefoxes/intro-call"
+                            url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
                             variation="secondary"
                           />
                         </Box>

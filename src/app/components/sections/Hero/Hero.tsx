@@ -71,7 +71,7 @@ const Hero = () => {
                 </Icon>
               }
               label={"Book A Free Intro Call"}
-              url="https://cal.com/innovativefoxes/intro-call"
+              url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
             />
           </HStack>
         </VStack>

@@ -123,7 +123,7 @@ const FAQ = () => {
                       </Icon>
                     }
                     label="Let's chat"
-                    url="https://cal.com/innovativefoxes/intro-call"
+                    url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
                     variation="primary"
                   />
 
