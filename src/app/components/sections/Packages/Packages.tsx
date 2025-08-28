@@ -52,7 +52,7 @@ const Packages = () => {
           description="You bring the designs, we bring the development. A fully custom template ready to be used by your marketers right away."
           slot={2}
           title="Development Only"
-          turnAround="2-6 week"
+          turnAround="2-4 week"
         />
         <PackageCard
           popular
@@ -67,23 +67,25 @@ const Packages = () => {
             "Training provided on using template",
           ]}
           bgColor="#D7ECFF"
-          description="No design? No problem. Our expert designers will create a custom template based on your branding guidelines. Once approved, we’ll turn it into a fully functional, marketer-ready template."
+          description="No design? No problem. Our expert designer will create a custom template based on your branding guidelines. Once approved, we’ll turn it into a fully functional, marketer-ready template."
           slot={1}
           title="Design &amp; Development"
-          turnAround="6-10 week"
+          turnAround="4-8 week"
         />
         <Box px={{ base: 4, lg: 0 }} textAlign={{ base: "center", lg: "left" }}>
           <Heading
             as={"h3"}
-            fontSize={{ base: "xl", md: "3xl" }}
+            fontSize={{ base: "xl", md: "2xl" }}
             lineHeight={"normal"}
           >
-            Not sure if these options are the right fit for you?
+            Does your team use SFMC, Pardot, HubSpot, or Iterable instead of
+            Marketo?
           </Heading>
           <Text fontSize={{ base: "sm", md: "md" }} mb={5} mt={2}>
-            If your project or vision does not fit into one of these options
-            then feel free to schedule a call with us and we will try to find a
-            plan that fits better for you.
+            While Marketo is our specialty, we’re also experienced across a
+            variety of marketing automation platforms. Schedule a call with us,
+            we’ll explore your needs and put together a plan that works best for
+            your team.
           </Text>
           <Box m={{ base: "auto", md: "0" }} w="fit-content">
             <PrimaryButton
