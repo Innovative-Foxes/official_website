@@ -3,7 +3,15 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Box, Flex, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  HStack,
+  Image,
+  Text,
+  VStack,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -31,6 +39,94 @@ interface CarouselProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
+  const isMobile = useBreakpointValue({ base: true, lg: false });
+
+  // Mobile view - render all content as a simple list
+  if (isMobile) {
+    return (
+      <VStack align="stretch" gap={12} w="100%">
+        {slideContent.map((member) => (
+          <Box key={member.id} p={4}>
+            <Flex direction="column" gap={6} w="100%">
+              {/* Content Section */}
+              <VStack align="start" gap={4}>
+                <Text fontSize="3xl" fontWeight="bold">
+                  {member.greeting}
+                </Text>
+
+                <Text fontSize="lg" fontWeight="medium">
+                  {member.introduction}
+                </Text>
+
+                {member.description.map((paragraph, index) => (
+                  <Text
+                    key={index}
+                    color="gray.700"
+                    fontSize="md"
+                    lineHeight="tall"
+                  >
+                    {paragraph}
+                  </Text>
+                ))}
+              </VStack>
+
+              {/* Image Section */}
+              <Box w="100%">
+                <Image
+                  alt={`${member.name} profile`}
+                  borderRadius="16px"
+                  maxW="400px"
+                  src={member.image}
+                  w="100%"
+                />
+              </Box>
+
+              {/* Specialties Section */}
+              <VStack align="start" gap={3} w="100%">
+                <Text fontSize="lg" fontWeight="bold">
+                  Specialties
+                </Text>
+                <VStack align="start" gap={3} w="100%">
+                  {member.specialties.map((specialty, index) => (
+                    <HStack key={index} align="center" gap={3}>
+                      <Image
+                        alt="Check mark"
+                        height="18px"
+                        src="/images/svgs/check-orange.svg"
+                        width="18px"
+                      />
+                      <Text fontSize="md">{specialty}</Text>
+                    </HStack>
+                  ))}
+                </VStack>
+              </VStack>
+
+              {/* Languages Section */}
+              <VStack align="start" gap={3} w="100%">
+                <Text fontSize="lg" fontWeight="bold">
+                  Languages
+                </Text>
+                <VStack align="start" gap={3} w="100%">
+                  <Text fontSize="md">
+                    {member.languages.map((language, index) => (
+                      <Text key={index} as="span">
+                        {language}
+                        {member.languages.length > 1 &&
+                          index !== member.languages.length - 1 &&
+                          ", "}
+                      </Text>
+                    ))}
+                  </Text>
+                </VStack>
+              </VStack>
+            </Flex>
+          </Box>
+        ))}
+      </VStack>
+    );
+  }
+
+  // Desktop view - use Swiper slider
   return (
     <>
       <Swiper
