@@ -22,6 +22,7 @@ interface TeamMember {
   introduction: string;
   description: string[];
   image: string;
+  languages: string[];
   specialties: string[];
 }
 
@@ -81,7 +82,7 @@ const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
                 order={{ base: -1, lg: 0 }}
               >
                 {/* Right Column - Image and Specialties */}
-                <VStack alignItems={{ base: "start", lg: "start" }} gap={8}>
+                <VStack alignItems={{ base: "start", lg: "start" }} gap={6}>
                   <Image
                     alt={`${member.name} profile`}
                     borderRadius="16px"
@@ -89,11 +90,12 @@ const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
                     src={member.image}
                     w="100%"
                   />
+
                   {/* Specialties */}
                   <VStack
                     alignItems="start"
                     display={{ base: "none", md: "flex" }}
-                    gap={4}
+                    gap={2}
                     width="100%"
                   >
                     <Text fontSize={{ base: "md", lg: "lg" }} fontWeight="bold">
@@ -113,6 +115,34 @@ const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
                           </Text>
                         </HStack>
                       ))}
+                    </VStack>
+                  </VStack>
+
+                  {/* Languages */}
+                  <VStack
+                    alignItems="start"
+                    display={{ base: "none", md: "flex" }}
+                    gap={2}
+                    width="100%"
+                  >
+                    <Text fontSize={{ base: "md", lg: "lg" }} fontWeight="bold">
+                      Languages
+                    </Text>
+                    <VStack alignItems="start" gap={3} width="100%">
+                      <Text as={"span"}>
+                        {member.languages.map((language, index) => (
+                          <Text
+                            key={index}
+                            as={"span"}
+                            fontSize={{ base: "sm", md: "md" }}
+                          >
+                            {language}
+                            {member.languages.length > 1 &&
+                              index !== member.languages.length - 1 &&
+                              ", "}
+                          </Text>
+                        ))}
+                      </Text>
                     </VStack>
                   </VStack>
                 </VStack>

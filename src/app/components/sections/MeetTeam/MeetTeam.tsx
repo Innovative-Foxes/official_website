@@ -16,6 +16,7 @@ const MeetTeam = () => {
         "Moreover, I deeply value building long-term relationships with my clients, fostering a partnership that grows and evolves over time. I look forward to collaborating with you and I truly believe we can do some great things together!",
       ],
       image: "/images/png/meet-team-ty-sq.png",
+      languages: ["English"],
       specialties: [
         "Landing Page Development",
         "Marketo Form Styling",
@@ -36,6 +37,7 @@ const MeetTeam = () => {
         "Along the way, I’ve partnered with hundres of clients and teams such as Air Canada Vacations, Amazon, Bank OZK, HashiCorp, James Hardie, Meta, NYU, S&P Global, Sub-Zero, and many more.",
       ],
       image: "/images/jpg/meet-team-eric.jpeg",
+      languages: ["English", "French"],
       specialties: [
         "Email Development",
         "Graphic Design",
