@@ -54,11 +54,11 @@ const faqItems: FAQItem[] = [
     title: "Can you match our existing brand and design requirements?",
     text: "Yes! We work closely with your brand guidelines, existing design assets, and style preferences to create templates that perfectly align with your brand identity. Whether you have a complete brand guide or just a logo and color palette, we'll ensure your Marketo templates maintain consistent branding across all touchpoints.",
   },
-  // {
-  //   value: "pricing-packages",
-  //   title: "How does pricing work? Do you offer package deals?",
-  //   text: "We offer both individual template pricing and discounted package deals for multiple templates. Single landing pages start at $1,200, email templates at $800, and we provide significant savings on multi-template packages. All pricing is transparent with no hidden fees, and we're happy to create custom packages based on your specific needs.",
-  // },
+  {
+    value: "not-marketo",
+    title: "We don’t use Marketo. Can you still work with us?",
+    text: "Absolutely. While Marketo is our primary focus, our team is also skilled in other marketing automation platforms like Salesforce Marketing Cloud (SFMC), Pardot, HubSpot, and Iterable. If your team is on a different platform, we’re happy to discuss your setup and explore how we can best support your goals.",
+  },
 ];
 
 const FAQ = () => {
