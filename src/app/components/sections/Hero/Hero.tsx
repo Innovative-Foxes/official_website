@@ -16,7 +16,21 @@ import StatusPing from "../../ui/StatusPing/StatusPing";
 
 const Hero = () => {
   const currentDate = new Date();
-  const monthNameLocale = currentDate.toLocaleString("default", {
+  const currentDay = currentDate.getDate();
+
+  // If current day is 20 or greater, show next month, otherwise current month
+  let displayDate;
+  if (currentDay >= 20) {
+    displayDate = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth() + 1,
+      1,
+    );
+  } else {
+    displayDate = currentDate;
+  }
+
+  const monthNameLocale = displayDate.toLocaleString("default", {
     month: "long",
   });
 
