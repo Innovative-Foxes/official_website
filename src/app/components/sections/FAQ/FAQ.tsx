@@ -57,7 +57,7 @@ const faqItems: FAQItem[] = [
   {
     value: "not-marketo",
     title: "We don’t use Marketo. Can you still work with us?",
-    text: "Absolutely. While Marketo is our primary focus, our team is also skilled in other marketing automation platforms like Salesforce Marketing Cloud (SFMC), Pardot, HubSpot, and Iterable. If your team is on a different platform, we’re happy to discuss your setup and explore how we can best support your goals.",
+    text: "Absolutely. While Marketo is our primary focus, our team is also skilled in other marketing automation platforms like Salesforce Marketing Cloud (SFMC) and Pardot. If your team is on a different platform, we’re happy to discuss your setup and explore how we can best support your goals.",
   },
 ];
 

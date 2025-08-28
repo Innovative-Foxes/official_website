@@ -78,8 +78,7 @@ const Packages = () => {
             fontSize={{ base: "xl", md: "2xl" }}
             lineHeight={"normal"}
           >
-            Does your team use SFMC, Pardot, HubSpot, or Iterable instead of
-            Marketo?
+            Does your team use SFMC or Pardot instead of Marketo?
           </Heading>
           <Text fontSize={{ base: "sm", md: "md" }} mb={5} mt={2}>
             While Marketo is our specialty, we’re also experienced across a

@@ -33,7 +33,7 @@ const MeetTeam = () => {
       introduction:
         "I'm Éric Valiancourt, Senior Email Developer & Graphic Designer.",
       description: [
-        "For over a decade, I’ve honed my skills in graphic design and email development. I've mastered the art of creating experiences that not only look great but also perform flawlessly across every device and client. I specialize in platforms such as Marketo, SFMC, Pardot, and Iterable, helping campaigns reach their full potential.",
+        "For over a decade, I’ve honed my skills in graphic design and email development. I've mastered the art of creating experiences that not only look great but also perform flawlessly across every device and client. I specialize in platforms such as Marketo, SFMC, and Pardot, helping campaigns reach their full potential.",
         "Along the way, I’ve partnered with hundres of clients and teams such as Air Canada Vacations, Amazon, Bank OZK, HashiCorp, James Hardie, Meta, NYU, S&P Global, Sub-Zero, and many more.",
       ],
       image: "/images/jpg/meet-team-eric.jpeg",
