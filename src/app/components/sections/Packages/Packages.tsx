@@ -58,7 +58,7 @@ const Packages = () => {
           popular
           benefits={[
             "Landing Page or Email Template",
-            "Branded modern template design with up to 3 revisions",
+            "Branded modern template design",
             "Up to 45 custom modules to fit marketing needs",
             "Easily edit all content on the template",
             "Customize by moving & hiding sections",

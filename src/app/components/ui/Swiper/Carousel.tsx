@@ -58,6 +58,17 @@ const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
                   {member.introduction}
                 </Text>
 
+                {/* Image Section */}
+                <Box w="100%">
+                  <Image
+                    alt={`${member.name} profile`}
+                    borderRadius="16px"
+                    maxW="400px"
+                    src={member.image}
+                    w="100%"
+                  />
+                </Box>
+
                 {member.description.map((paragraph, index) => (
                   <Text
                     key={index}
@@ -69,17 +80,6 @@ const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
                   </Text>
                 ))}
               </VStack>
-
-              {/* Image Section */}
-              <Box w="100%">
-                <Image
-                  alt={`${member.name} profile`}
-                  borderRadius="16px"
-                  maxW="400px"
-                  src={member.image}
-                  w="100%"
-                />
-              </Box>
 
               {/* Specialties Section */}
               <VStack align="start" gap={3} w="100%">

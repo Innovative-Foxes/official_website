@@ -78,7 +78,7 @@ const OurProcess = () => {
       description:
         "This is the creative build phase. Our team designs and codes templates that reflect your brand, function seamlessly, and perform at scale.",
       highlights: [
-        "Up to 3 design rounds",
+        "Feedback and revision rounds",
         "Pixel-perfect, performance-ready code",
         "Rigorous QA & testing across devices, browsers, and inboxes",
       ],
