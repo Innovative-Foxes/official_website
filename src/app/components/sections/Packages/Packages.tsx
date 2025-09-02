@@ -97,6 +97,7 @@ const Packages = () => {
               label={"Book A Call Now"}
               minHeight={45}
               px={24}
+              trackConversion={true}
               url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
             />
           </Box>
@@ -196,6 +197,7 @@ const PackageCard = ({
             label={"Get Started"}
             minHeight={40}
             px={24}
+            trackConversion={true}
             url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
           />
           <HStack mt={{ base: 4, md: 0 }}>

@@ -123,6 +123,7 @@ const FAQ = () => {
                       </Icon>
                     }
                     label="Let's chat"
+                    trackConversion={true}
                     url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
                     variation="primary"
                   />

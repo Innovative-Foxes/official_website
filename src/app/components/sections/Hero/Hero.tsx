@@ -85,6 +85,7 @@ const Hero = () => {
                 </Icon>
               }
               label={"Book A Free Intro Call"}
+              trackConversion={true}
               url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
             />
           </HStack>

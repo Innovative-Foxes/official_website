@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, Link } from "@chakra-ui/react";
 
 interface PrimaryButtonProps {
@@ -10,6 +12,7 @@ interface PrimaryButtonProps {
   variation?: "primary" | "secondary";
   px?: number;
   py?: number;
+  trackConversion?: boolean;
 }
 
 export const PrimaryButton = ({
@@ -22,7 +25,15 @@ export const PrimaryButton = ({
   url,
   externalLink = true,
   variation = "primary",
+  trackConversion = false,
 }: PrimaryButtonProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (trackConversion && typeof window !== 'undefined' && window.gtag_report_conversion) {
+      e.preventDefault();
+      window.gtag_report_conversion(url);
+    }
+  };
+
   return (
     <Button
       asChild
@@ -59,6 +70,7 @@ export const PrimaryButton = ({
         transition={"all"}
         userSelect="none"
         {...(externalLink && { target: "_blank" })}
+        onClick={handleClick}
       >
         {label}
         {icon}
