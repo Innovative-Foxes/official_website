@@ -64,3 +64,14 @@ a {
 .flip-card-back {
   transform: rotateY(180deg);
 }
+
+/* 3D Transform CSS for Framer Motion components */
+[style*="perspective"] {
+  perspective: 2000px;
+}
+[style*="preserve-3d"] {
+  transform-style: preserve-3d;
+}
+[style*="backface-visibility"] {
+  backface-visibility: hidden;
+}

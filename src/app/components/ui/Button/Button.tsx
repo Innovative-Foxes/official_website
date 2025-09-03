@@ -12,6 +12,7 @@ interface PrimaryButtonProps {
   variation?: "primary" | "secondary";
   px?: number;
   py?: number;
+  mobFW?: boolean;
   trackConversion?: boolean;
 }
 
@@ -26,9 +27,14 @@ export const PrimaryButton = ({
   externalLink = true,
   variation = "primary",
   trackConversion = false,
+  mobFW = false,
 }: PrimaryButtonProps) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (trackConversion && typeof window !== 'undefined' && window.gtag_report_conversion) {
+    if (
+      trackConversion &&
+      typeof window !== "undefined" &&
+      window.gtag_report_conversion
+    ) {
       e.preventDefault();
       window.gtag_report_conversion(url);
     }
@@ -51,7 +57,7 @@ export const PrimaryButton = ({
       maxW={{ base: "300px", md: "100%" }}
       textDecoration={"none"}
       transition="all 0.1s ease"
-      w={{ base: "100%", md: "fit-content" }}
+      w={{ base: mobFW ? "100%" : "fit-content", md: "fit-content" }}
     >
       <Link
         _hover={{ gap: "8px", scale: "105%" }}

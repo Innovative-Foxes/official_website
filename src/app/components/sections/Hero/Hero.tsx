@@ -78,12 +78,14 @@ const Hero = () => {
             w={{ base: "full", md: "auto" }}
           >
             <PrimaryButton
+              mobFW
               externalLink={false}
               label="View Our Packages"
               url="#packages"
               variation="secondary"
             />
             <PrimaryButton
+              mobFW
               icon={
                 <Icon h={4}>
                   <FaChevronRight />

@@ -7,7 +7,6 @@ import {
   HStack,
   Heading,
   Icon,
-  Image,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -15,10 +14,9 @@ import CustomContainer from "../../ui/Container/Container";
 
 import { FaChevronRight, FaDesktop } from "react-icons/fa";
 import { PrimaryButton } from "../../ui/Button/Button";
-import StatusPing from "../../ui/StatusPing/StatusPing";
 import { useState } from "react";
 
-import ReactFlipCard from "reactjs-flip-card";
+import ChakraLargeVerticalCardFlip from "../../ui/VerticalCardFlip/VerticalCardFlip";
 
 import { FaBoltLightning } from "react-icons/fa6";
 
@@ -188,11 +186,10 @@ const Packages = () => {
             </HStack>
 
             {/* Package Card */}
-            <FlippingPackageCard
-              isActive={activePackage === "design-dev"}
-              package={
-                activePackage === "design" ? designPackage : designDevPackage
-              }
+            <ChakraLargeVerticalCardFlip
+              designDevPackage={designDevPackage}
+              designPackage={designPackage}
+              isFlipped={activePackage === "design-dev"}
             />
           </VStack>
         </Grid>
@@ -273,11 +270,10 @@ const Packages = () => {
 
           {/* Package Card */}
           <Box px={4} w="100%">
-            <FlippingPackageCard
-              isActive={activePackage === "design-dev"}
-              package={
-                activePackage === "design" ? designPackage : designDevPackage
-              }
+            <ChakraLargeVerticalCardFlip
+              designDevPackage={designDevPackage}
+              designPackage={designPackage}
+              isFlipped={activePackage === "design-dev"}
             />
           </Box>
 
@@ -326,20 +322,6 @@ const Packages = () => {
   );
 };
 
-interface PackageData {
-  title: string;
-  description: string;
-  benefits: string[];
-  turnAround: string;
-  price?: string;
-  slot: number;
-}
-
-interface FlippingPackageCardProps {
-  package: PackageData;
-  isActive: boolean;
-}
-
 interface InfoCardProps {
   icon: React.ReactNode;
   title: string;
@@ -370,193 +352,6 @@ const InfoCard = ({ icon, title, description }: InfoCardProps) => {
         </VStack>
       </HStack>
     </Card.Root>
-  );
-};
-
-const FlippingPackageCard = ({
-  package: pkg,
-  isActive,
-}: FlippingPackageCardProps) => {
-  // Front face (Design) - always light colors
-  const frontBgColor = "#f8f9fa";
-  const frontTextColor = "gray.800";
-  const frontSecondaryTextColor = "gray.600";
-
-  // Back face (Design & Development) - always dark colors
-  const backBgColor = "#1a1a1a";
-  const backTextColor = "white";
-  const backSecondaryTextColor = "gray.300";
-
-  const containerStyles = {
-    width: "100%",
-    height: "auto",
-    minHeight: "500px",
-  };
-
-  const flipCardStyles = {
-    width: "100%",
-    height: "100%",
-    transition: "transform 0.2s",
-  };
-
-  const frontStyles = {
-    background: frontBgColor,
-    color: frontTextColor,
-    borderRadius: "16px",
-    border: "1px solid #e2e8f0",
-    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-    padding: "24px",
-    width: "100%",
-    height: "100%",
-    minHeight: "500px",
-    boxSizing: "border-box" as const,
-  };
-
-  const backStyles = {
-    background: backBgColor,
-    color: backTextColor,
-    borderRadius: "16px",
-    border: "1px solid #4a5568",
-    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-    padding: "24px",
-    width: "100%",
-    height: "100%",
-    minHeight: "500px",
-    boxSizing: "border-box" as const,
-  };
-
-  const CardContent = ({ isBack = false }) => {
-    const textColor = isBack ? backTextColor : frontTextColor;
-    const secondaryTextColor = isBack
-      ? backSecondaryTextColor
-      : frontSecondaryTextColor;
-    const accentColor = isBack ? "white" : "blue";
-    const buttonVariation = isBack ? "secondary" : "primary";
-    const iconFilter = isBack ? "brightness(0) invert(1)" : "none";
-
-    return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          height: "100%",
-          gap: "20px",
-          minHeight: "450px",
-        }}
-      >
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <Text color={secondaryTextColor} fontSize="sm" fontStyle="italic">
-            {pkg.turnAround} turn around 🚀
-          </Text>
-
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "12px" }}
-          >
-            <Heading
-              color={textColor}
-              fontSize={{ base: "2xl", md: "3xl" }}
-              fontWeight="bold"
-            >
-              {pkg.title}
-            </Heading>
-
-            <Text color={secondaryTextColor} fontSize="lg" lineHeight="tall">
-              {pkg.description}
-            </Text>
-          </div>
-
-          <Box bg={accentColor} borderRadius="full" h="2px" w="60px" />
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "10px",
-              width: "100%",
-            }}
-          >
-            {pkg.benefits.map((benefit: string, idx: number) => (
-              <HStack key={idx} alignItems="center" gap={2}>
-                <Image
-                  alt="Check"
-                  filter={iconFilter}
-                  h={3}
-                  src="/images/svgs/check-orange.svg"
-                  w={3}
-                />
-                <Text color={textColor} fontSize="sm" lineHeight="tall">
-                  {benefit}
-                </Text>
-              </HStack>
-            ))}
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: "16px",
-            width: "100%",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "8px",
-              flex: "1",
-            }}
-          >
-            <Text color={textColor} fontSize="2xl" fontWeight="bold">
-              {pkg.price}
-            </Text>
-            <HStack>
-              <StatusPing />
-              <Text color={secondaryTextColor} fontSize="sm">
-                {pkg.slot} {pkg.slot > 1 ? "slots" : "slot"} left
-              </Text>
-            </HStack>
-          </div>
-
-          <div style={{ flex: "0 0 auto" }}>
-            <PrimaryButton
-              fontSize="base"
-              icon={
-                <Icon h={3}>
-                  <FaChevronRight />
-                </Icon>
-              }
-              label="Get Started"
-              minHeight={50}
-              px={24}
-              trackConversion={true}
-              url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
-              variation={buttonVariation}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  return (
-    <Box w={{ base: "100%", md: "700px" }}>
-      <ReactFlipCard
-        backComponent={<CardContent isBack={true} />}
-        backStyle={backStyles}
-        containerStyle={containerStyles}
-        direction="vertical"
-        flipByProp={isActive}
-        flipCardStyle={flipCardStyles}
-        flipTrigger="disabled"
-        frontComponent={<CardContent isBack={false} />}
-        frontStyle={frontStyles}
-      />
-    </Box>
   );
 };
 
