@@ -36,7 +36,14 @@ export const PrimaryButton = ({
       window.gtag_report_conversion
     ) {
       e.preventDefault();
-      window.gtag_report_conversion(url);
+      // Track conversion without the URL parameter to avoid automatic navigation
+      window.gtag_report_conversion();
+      // Handle navigation manually to respect externalLink setting
+      if (externalLink) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      } else {
+        window.location.href = url;
+      }
     }
   };
 
@@ -75,7 +82,7 @@ export const PrimaryButton = ({
         touchAction="manipulation"
         transition={"all"}
         userSelect="none"
-        {...(externalLink && { target: "_blank" })}
+        {...(externalLink && { target: "_blank", rel: "noopener noreferrer" })}
         onClick={handleClick}
       >
         {label}
