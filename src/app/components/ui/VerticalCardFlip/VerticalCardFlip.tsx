@@ -50,7 +50,7 @@ export default function ChakraLargeVerticalCardFlip({
       <Box perspective="1000px" w={{ base: "100%", md: "700px" }}>
         <MotionBox
           animate={{ rotateX: isFlipped ? 180 : 0 }}
-          h={{ base: "800px", sm: "650px", md: "550px" }}
+          h={{ base: "700px", md: "550px" }}
           mx="auto"
           position="relative"
           style={{ transformStyle: "preserve-3d" }}
