@@ -56,17 +56,22 @@ const Hero = () => {
             my={4}
             textTransform="uppercase"
           >
-            We build really good{" "}
+            We build fully custom{" "}
             <Text as="span" color="orange" fontWeight={"semibold"}>
               marketo
             </Text>{" "}
             landing page &amp; email templates
           </Heading>
-          <Text fontSize={{ base: "lg", md: "2xl" }}>
-            Launch faster, build better, and crush those marketing goals.
+          <Text
+            fontSize={{ base: "lg", md: "2xl" }}
+            m="auto"
+            maxW={{ base: "auto", md: 900 }}
+          >
+            Launch faster, build better, and crush those marketing goals with a
+            template that is customized to match your brand.
           </Text>
         </Box>
-        <VStack gap={4} mt={4} w="full">
+        <VStack gap={4} mt={6} w="full">
           <HStack
             flexDirection={{ base: "column", md: "row" }}
             gap={4}

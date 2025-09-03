@@ -26,10 +26,8 @@ const ChooseUs = () => {
         templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
       >
         <Content
-          description="Elevate your Marketo templates with up to 40 custom modules,
-      intuitive show/hide content functionality, fully branded forms, and
-      flexible layouts you can rearrange on the fly—all designed to boost
-      engagement and drive conversions."
+          description="Elevate your Marketo campaigns with custom tailed and fully branded templates. Up to 40 custom modules, intuitive show/hide content functionality, custom forms, and
+      flexible layouts you can rearrange on the fly."
           heading={
             <>
               Built for Marketers. <br /> Engineered to Convert.
@@ -38,7 +36,7 @@ const ChooseUs = () => {
           imgSrc="/images/png/toggle-marketers.png"
         />
         <Content
-          description="Stay informed every step of the way with direct 1:1 Slack access (optional), weekly progress updates, and rapid feedback cycles to keep your project on track and moving fast."
+          description="Stay informed every step of the way with direct 1:1 Slack messaging (optional), weekly progress updates, and rapid feedback cycles to keep your project on track and moving fast."
           heading={
             <>
               No guesswork, no delays. <br />

@@ -1,5 +1,6 @@
 "use client";
 import {
+  Accordion,
   Box,
   Flex,
   HStack,
@@ -117,7 +118,7 @@ const OurProcess = () => {
                 <Heading
                   as="h2"
                   fontFamily="poppins"
-                  fontSize={{ base: "3xl", md: "6xl" }}
+                  fontSize={{ base: "5xl", md: "6xl" }}
                   fontWeight="semibold"
                   lineHeight="100%"
                   mb={6}
@@ -132,7 +133,7 @@ const OurProcess = () => {
                     Our
                     <Image
                       alt="Logo"
-                      maxW={{ base: "40px", md: "70px" }}
+                      maxW={{ base: "50px", md: "70px" }}
                       src="/images/svgs/process-logo.svg"
                       w="100%"
                     />
@@ -157,7 +158,7 @@ const OurProcess = () => {
               {/* Fox Image */}
               <Box
                 alignItems="center"
-                display="flex"
+                display={{ base: "none", md: "flex" }}
                 flex="1"
                 justifyContent="center"
                 w="full"
@@ -174,92 +175,118 @@ const OurProcess = () => {
 
           {/* Right Section - Steps Container */}
           <Box flex="1" maxW={{ base: "100%", lg: "55%" }}>
-            {/* Mobile: Normal content flow without box styling */}
+            {/* Mobile: Styled accordion container */}
             <Box display={{ base: "block", md: "none" }}>
-              <VStack align="stretch" gap={8}>
-                {processSteps.map((step, index) => (
-                  <Box
-                    key={index}
-                    borderBottom={
-                      index !== processSteps.length - 1 ? "1px solid" : "none"
-                    }
-                    borderColor="rgba(255, 255, 255, 0.1)"
-                    pb={index !== processSteps.length - 1 ? 8 : 0}
-                  >
-                    <VStack align="start" gap={4}>
-                      <Heading
-                        as="h3"
-                        color="orange"
-                        fontFamily="poppins"
-                        fontSize={{ base: "xl", md: "2xl" }}
-                        fontWeight="semibold"
+              <Box bg="rgba(255, 255, 255, 0.05)" borderRadius="24px" p={6}>
+                <Accordion.Root collapsible>
+                  {processSteps.map((step, index) => (
+                    <Accordion.Item
+                      key={index}
+                      bg="transparent"
+                      borderBottom={
+                        index !== processSteps.length - 1 ? "1px solid" : "none"
+                      }
+                      borderColor="rgba(255, 255, 255, 0.1)"
+                      pb={index !== processSteps.length - 1 ? 6 : 0}
+                      pt={index > 0 ? 6 : 0}
+                      value={step.step}
+                    >
+                      <Accordion.ItemTrigger
+                        alignItems="center"
+                        bg="transparent"
+                        cursor={"pointer"}
+                        display="flex"
+                        justifyContent="space-between"
+                        px={0}
+                        py={3}
+                        w="full"
                       >
-                        {step.step}
-                      </Heading>
+                        <Heading
+                          as="h3"
+                          color="orange"
+                          fontFamily="poppins"
+                          fontSize={{ base: "xl", md: "2xl" }}
+                          fontWeight="semibold"
+                        >
+                          {step.step}
+                        </Heading>
+                        <Accordion.ItemIndicator />
+                      </Accordion.ItemTrigger>
+                      <Accordion.ItemContent bg="transparent">
+                        <Accordion.ItemBody bg="transparent">
+                          <VStack align="start" gap={4}>
+                            <Heading
+                              as="h4"
+                              color="offWhite"
+                              fontFamily="poppins"
+                              fontSize={{ base: "lg", md: "xl" }}
+                              fontWeight="medium"
+                            >
+                              {step.title}
+                            </Heading>
 
-                      <Heading
-                        as="h4"
-                        color="offWhite"
-                        fontFamily="poppins"
-                        fontSize={{ base: "lg", md: "xl" }}
-                        fontWeight="medium"
-                      >
-                        {step.title}
-                      </Heading>
+                            <Text
+                              color="offWhite"
+                              fontSize={{ base: "sm", md: "md" }}
+                              lineHeight="1.6"
+                            >
+                              {step.description}
+                            </Text>
 
-                      <Text
-                        color="offWhite"
-                        fontSize={{ base: "sm", md: "md" }}
-                        lineHeight="1.6"
-                      >
-                        {step.description}
-                      </Text>
+                            {step.highlights && (
+                              <VStack align="start" gap={2} mt={2} w="full">
+                                {step.highlights.map(
+                                  (highlight, highlightIndex) => (
+                                    <HStack
+                                      key={highlightIndex}
+                                      align="center"
+                                      gap={3}
+                                    >
+                                      <Box
+                                        bg="orange"
+                                        borderRadius="full"
+                                        flexShrink={0}
+                                        h={2}
+                                        w={2}
+                                      />
+                                      <Text
+                                        color="offWhite"
+                                        fontSize={{ base: "xs", md: "sm" }}
+                                        fontWeight="medium"
+                                      >
+                                        {highlight}
+                                      </Text>
+                                    </HStack>
+                                  ),
+                                )}
+                              </VStack>
+                            )}
 
-                      {step.highlights && (
-                        <VStack align="start" gap={2} mt={2} w="full">
-                          {step.highlights.map((highlight, highlightIndex) => (
-                            <HStack key={highlightIndex} align="center" gap={3}>
-                              <Box
-                                bg="orange"
-                                borderRadius="full"
-                                flexShrink={0}
-                                h={2}
-                                w={2}
-                              />
-                              <Text
-                                color="offWhite"
-                                fontSize={{ base: "xs", md: "sm" }}
-                                fontWeight="medium"
-                              >
-                                {highlight}
-                              </Text>
-                            </HStack>
-                          ))}
-                        </VStack>
-                      )}
-
-                      {step.showButton && (
-                        <Box mt={4}>
-                          <PrimaryButton
-                            fontSize="sm"
-                            icon={
-                              <Icon h={3}>
-                                <FaChevronRight />
-                              </Icon>
-                            }
-                            label="Book A Call Now"
-                            minHeight={40}
-                            px={16}
-                            trackConversion={true}
-                            url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
-                            variation="secondary"
-                          />
-                        </Box>
-                      )}
-                    </VStack>
-                  </Box>
-                ))}
-              </VStack>
+                            {step.showButton && (
+                              <Box mt={4}>
+                                <PrimaryButton
+                                  fontSize="sm"
+                                  icon={
+                                    <Icon h={3}>
+                                      <FaChevronRight />
+                                    </Icon>
+                                  }
+                                  label="Book A Call Now"
+                                  minHeight={40}
+                                  px={16}
+                                  trackConversion={true}
+                                  url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
+                                  variation="secondary"
+                                />
+                              </Box>
+                            )}
+                          </VStack>
+                        </Accordion.ItemBody>
+                      </Accordion.ItemContent>
+                    </Accordion.Item>
+                  ))}
+                </Accordion.Root>
+              </Box>
             </Box>
 
             {/* Desktop/Tablet: Scrollable box with styling */}
