@@ -199,9 +199,9 @@ const Packages = () => {
           {/* Title Section */}
           <Box textAlign="center" w="100%">
             <Text
-              color="orange"
+              color="darkBlue"
               fontSize="sm"
-              fontWeight="medium"
+              fontWeight="semibold"
               letterSpacing="wide"
               mb={2}
               textTransform="uppercase"
@@ -210,8 +210,8 @@ const Packages = () => {
             </Text>
             <Heading
               as="h2"
-              fontSize="2xl"
-              fontWeight="medium"
+              fontSize="3xl"
+              fontWeight="bold"
               lineHeight="shorter"
               textTransform="uppercase"
             >

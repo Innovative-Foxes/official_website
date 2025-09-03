@@ -50,7 +50,7 @@ export default function ChakraLargeVerticalCardFlip({
       <Box perspective="1000px" w={{ base: "100%", md: "700px" }}>
         <MotionBox
           animate={{ rotateX: isFlipped ? 180 : 0 }}
-          h={{ base: "625px", md: "550px" }}
+          h={{ base: "800px", sm: "650px", md: "550px" }}
           mx="auto"
           position="relative"
           style={{ transformStyle: "preserve-3d" }}
@@ -95,7 +95,11 @@ export default function ChakraLargeVerticalCardFlip({
                     {designPackage.title}
                   </Heading>
 
-                  <Text color="gray.600" fontSize="lg" lineHeight="tall">
+                  <Text
+                    color="gray.600"
+                    fontSize={{ base: "md", md: "lg" }}
+                    lineHeight={{ base: "normal", md: "tall" }}
+                  >
                     {designPackage.description}
                   </Text>
                 </VStack>
@@ -185,7 +189,11 @@ export default function ChakraLargeVerticalCardFlip({
                     {designDevPackage.title}
                   </Heading>
 
-                  <Text color="gray.300" fontSize="lg" lineHeight="tall">
+                  <Text
+                    color="gray.300"
+                    fontSize={{ base: "md", md: "lg" }}
+                    lineHeight={{ base: "normal", md: "tall" }}
+                  >
                     {designDevPackage.description}
                   </Text>
                 </VStack>
