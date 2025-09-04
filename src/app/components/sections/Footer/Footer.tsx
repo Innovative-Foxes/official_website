@@ -72,7 +72,7 @@ const Footer = () => {
             w="full"
           >
             <Box>
-              <Text>© Innovative Foxes</Text>
+              <Text>© {new Date().getFullYear()} Innovative Foxes</Text>
             </Box>
             <Box
               left="50%"
