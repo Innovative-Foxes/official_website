@@ -26,17 +26,17 @@ const Packages = () => {
   );
 
   const designPackage = {
-    title: "Design",
+    title: "Development",
     description:
-      "You bring the requirements, we bring the design. A fully custom template design ready to be implemented by your development team.",
+      "You bring the designs, we bring the development. A fully custom landing page or email template developed and ready to be implemented by your Marketing team.",
     benefits: [
-      "Custom template design based on your brand",
-      "Modern, conversion-optimized layouts",
-      "Mobile-first responsive design",
+      "Custom template matched perfectly to your designs",
       "Branded custom styled forms",
-      "Design system and component library",
-      "Figma files with developer handoff",
-      "Design review and iteration rounds",
+      "Up to 40 custom modules to fit marketing needs",
+      "Easily edit all content on the template",
+      "Fully mobile responsive",
+      "Branded custom styled Marketo forms",
+      "Training provided on using template",
     ],
     turnAround: "2-3 weeks",
     // price: "Starting from $3,500",
@@ -46,13 +46,13 @@ const Packages = () => {
   const designDevPackage = {
     title: "Design & Development",
     description:
-      "Complete end-to-end solution. Our expert team will design and develop a fully functional, marketer-ready template.",
+      "Complete end-to-end solution. Our expert team will design and develop a fully functional, marketer-ready landing page or email template.",
     benefits: [
-      "Custom template design based on your brand",
+      "Custom template based on your brand guidelines",
       "Modern, conversion-optimized layouts",
       "Up to 40 custom modules to fit marketing needs",
-      "Easily edit all content on the template",
       "Customize by moving & hiding sections",
+      "Easily edit all content on the template",
       "Fully mobile responsive",
       "Branded custom styled Marketo forms",
       "Training provided on using template",
@@ -83,7 +83,7 @@ const Packages = () => {
                 mb={2}
                 textTransform="uppercase"
               >
-                Packages
+                Our Packages
               </Text>
               <Heading
                 as="h2"
@@ -109,7 +109,7 @@ const Packages = () => {
               />
               <InfoCard
                 description="Quick turnaround times to keep your campaigns moving"
-                icon={<FaBoltLightning fill="darkBlue" />}
+                icon={<FaBoltLightning fill="orange" />}
                 title="Fast Delivery"
               />
             </VStack>
@@ -144,20 +144,17 @@ const Packages = () => {
           {/* Right Column - Package Toggle and Card */}
           <VStack align="center" gap={8}>
             {/* Package Toggle */}
-            <HStack
-              bg="gray.100"
-              borderRadius="full"
-              gap={1}
-              p={1}
-              w="fit-content"
-            >
+            <HStack borderRadius="full" gap={2} p={1} w="fit-content">
               <Button
                 _hover={{
-                  bg: activePackage === "design" ? "white" : "gray.50",
+                  bg: activePackage === "design" ? "offWhite" : "gray.100",
                 }}
-                bg={activePackage === "design" ? "white" : "transparent"}
+                bg={activePackage === "design" ? "offWhite" : "transparent"}
+                borderColor={
+                  activePackage === "design" ? "transparent" : "gray.200"
+                }
                 borderRadius="full"
-                color={activePackage === "design" ? "gray.800" : "gray.600"}
+                color={activePackage === "design" ? "darkBlue" : "gray.600"}
                 fontWeight="semibold"
                 px={8}
                 py={3}
@@ -165,15 +162,18 @@ const Packages = () => {
                 transition="all 0.2s ease"
                 onClick={() => setActivePackage("design")}
               >
-                Design
+                Development
               </Button>
               <Button
                 _hover={{
-                  bg: activePackage === "design-dev" ? "white" : "gray.50",
+                  bg: activePackage === "design-dev" ? "darkBlue" : "gray.100",
                 }}
-                bg={activePackage === "design-dev" ? "white" : "transparent"}
+                bg={activePackage === "design-dev" ? "darkBlue" : "transparent"}
+                borderColor={
+                  activePackage === "design-dev" ? "transparent" : "gray.200"
+                }
                 borderRadius="full"
-                color={activePackage === "design-dev" ? "gray.800" : "gray.600"}
+                color={activePackage === "design-dev" ? "offWhite" : "gray.600"}
                 fontWeight="semibold"
                 px={8}
                 py={3}
@@ -247,7 +247,7 @@ const Packages = () => {
                 transition="all 0.2s ease"
                 onClick={() => setActivePackage("design")}
               >
-                Design
+                Development
               </Button>
               <Button
                 _hover={{
@@ -278,7 +278,7 @@ const Packages = () => {
           </Box>
 
           {/* Info Cards */}
-          <VStack gap={4} px={4} w="100%">
+          <VStack gap={6} px={4} w="100%">
             <InfoCard
               description="Tailored to your brand guidelines and marketing objectives"
               icon={<FaDesktop fill="darkBlue" />}
@@ -333,9 +333,9 @@ const InfoCard = ({ icon, title, description }: InfoCardProps) => {
     <Card.Root
       bg="white"
       border="1px solid"
-      borderColor="gray.200"
+      borderColor="gray.50"
       borderRadius="lg"
-      boxShadow="sm"
+      boxShadow="md"
       p={6}
       transition="all 0.2s ease"
       w="100%"

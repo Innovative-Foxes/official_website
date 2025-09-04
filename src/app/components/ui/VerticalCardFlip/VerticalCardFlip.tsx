@@ -55,7 +55,7 @@ export default function ChakraLargeVerticalCardFlip({
           position="relative"
           style={{ transformStyle: "preserve-3d" }}
           transition={{
-            duration: 0.8,
+            duration: 0.15,
             type: "spring",
             stiffness: 100,
             damping: 15,
@@ -64,7 +64,7 @@ export default function ChakraLargeVerticalCardFlip({
         >
           {/* Front Face - Design Package */}
           <Box
-            bg="white"
+            bg="offWhite"
             border="1px"
             borderColor="gray.100"
             borderRadius="2xl"
@@ -149,7 +149,7 @@ export default function ChakraLargeVerticalCardFlip({
                     </Icon>
                   }
                   label="Get Started"
-                  minHeight={50}
+                  minHeight={48}
                   trackConversion={true}
                   url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
                   variation="primary"
@@ -160,7 +160,7 @@ export default function ChakraLargeVerticalCardFlip({
 
           {/* Back Face - Design & Development Package */}
           <Box
-            bg="black"
+            bg="darkBlue"
             borderRadius="2xl"
             h="full"
             inset={0}
@@ -182,7 +182,7 @@ export default function ChakraLargeVerticalCardFlip({
 
                 <VStack align="start" gap={3} w="full">
                   <Heading
-                    color="white"
+                    color="offWhite"
                     fontSize={{ base: "2xl", md: "3xl" }}
                     fontWeight="bold"
                   >
@@ -190,7 +190,7 @@ export default function ChakraLargeVerticalCardFlip({
                   </Heading>
 
                   <Text
-                    color="gray.300"
+                    color="offWhite"
                     fontSize={{ base: "md", md: "lg" }}
                     lineHeight={{ base: "normal", md: "tall" }}
                   >
@@ -198,7 +198,7 @@ export default function ChakraLargeVerticalCardFlip({
                   </Text>
                 </VStack>
 
-                <Box bg="white" borderRadius="full" h="2px" w="60px" />
+                <Box bg="offWhite" borderRadius="full" h="2px" w="60px" />
 
                 {/* Benefits */}
                 <VStack align="start" gap={3} w="full">
@@ -207,12 +207,11 @@ export default function ChakraLargeVerticalCardFlip({
                       <HStack key={idx} alignItems="center" gap={3}>
                         <Image
                           alt="Check"
-                          filter="brightness(0) invert(1)"
                           h={4}
-                          src="/images/svgs/check-orange.svg"
+                          src="/images/svgs/check-white.svg"
                           w={4}
                         />
-                        <Text color="white" fontSize="sm" lineHeight="tall">
+                        <Text color="offWhite" fontSize="sm" lineHeight="tall">
                           {benefit}
                         </Text>
                       </HStack>
@@ -244,6 +243,7 @@ export default function ChakraLargeVerticalCardFlip({
                     </Icon>
                   }
                   label="Get Started"
+                  minHeight={48}
                   trackConversion={true}
                   url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
                   variation="secondary"
