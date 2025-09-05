@@ -1,6 +1,7 @@
 import { Box, Card, Grid, Heading, Icon, Text } from "@chakra-ui/react";
 import CustomContainer from "../../ui/Container/Container";
 import { FaRocket } from "react-icons/fa";
+
 import {
   FaDesktop,
   FaEnvelope,

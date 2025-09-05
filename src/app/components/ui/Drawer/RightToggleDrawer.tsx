@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from "react";
 
 interface ToggleableSection {
   id: string;
@@ -15,8 +15,7 @@ interface RightToggleDrawerProps {
 }
 
 const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
-  triggerLabel = 'Toggle Sections',
-  drawerTitle = 'Section Controls',
+  drawerTitle = "Section Controls",
   onSectionToggle,
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
@@ -24,13 +23,13 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
 
   useEffect(() => {
     // Find all elements with data-toggle attributes
-    const toggleableElements = document.querySelectorAll('[data-toggle]');
+    const toggleableElements = document.querySelectorAll("[data-toggle]");
     const foundSections: ToggleableSection[] = [];
 
     toggleableElements.forEach((element) => {
-      const toggleId = element.getAttribute('data-toggle');
-      const title = element.getAttribute('data-title');
-      
+      const toggleId = element.getAttribute("data-toggle");
+      const title = element.getAttribute("data-title");
+
       if (toggleId && title) {
         foundSections.push({
           id: toggleId,
@@ -44,18 +43,18 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
   }, []);
 
   const handleSectionToggleChange = (sectionId: string, isVisible: boolean) => {
-    setSections(prev => 
-      prev.map(section => 
-        section.id === sectionId 
-          ? { ...section, visible: isVisible }
-          : section
-      )
+    setSections((prev) =>
+      prev.map((section) =>
+        section.id === sectionId ? { ...section, visible: isVisible } : section,
+      ),
     );
 
     // Apply visibility changes to DOM elements
-    const element = document.querySelector(`[data-toggle="${sectionId}"]`) as HTMLElement;
+    const element = document.querySelector(
+      `[data-toggle="${sectionId}"]`,
+    ) as HTMLElement;
     if (element) {
-      element.style.display = isVisible ? '' : 'none';
+      element.style.display = isVisible ? "" : "none";
     }
 
     onSectionToggle?.(sectionId, isVisible);
@@ -70,53 +69,53 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
       {/* Sliding Drawer Container */}
       <div
         style={{
-          position: 'fixed',
-          right: isDrawerOpen ? '0' : '-360px',
-          top: '0',
-          height: '100vh',
-          width: '360px',
-          backgroundColor: 'white',
-          boxShadow: '-4px 0 20px rgba(0, 0, 0, 0.15)',
-          transition: 'right 0.3s ease-in-out',
+          position: "fixed",
+          right: isDrawerOpen ? "0" : "-360px",
+          top: "0",
+          height: "100vh",
+          width: "360px",
+          backgroundColor: "white",
+          boxShadow: "-4px 0 20px rgba(0, 0, 0, 0.15)",
+          transition: "right 0.3s ease-in-out",
           zIndex: 1000,
-          display: 'flex',
+          display: "flex",
         }}
       >
         {/* Tab with Chevron */}
         <div
-          onClick={toggleDrawer}
           style={{
-            position: 'absolute',
-            left: '-40px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            width: '40px',
-            height: '80px',
-            backgroundColor: '#01203F',
-            color: 'white',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            borderTopLeftRadius: '8px',
-            borderBottomLeftRadius: '8px',
-            boxShadow: '-2px 0 8px rgba(0, 0, 0, 0.15)',
-            transition: 'all 0.3s ease',
+            position: "absolute",
+            left: "-40px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            width: "40px",
+            height: "80px",
+            backgroundColor: "#01203F",
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            borderTopLeftRadius: "8px",
+            borderBottomLeftRadius: "8px",
+            boxShadow: "-2px 0 8px rgba(0, 0, 0, 0.15)",
+            transition: "all 0.3s ease",
           }}
+          onClick={toggleDrawer}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#031629';
+            e.currentTarget.style.backgroundColor = "#031629";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#01203F';
+            e.currentTarget.style.backgroundColor = "#01203F";
           }}
         >
           {/* Chevron Arrow */}
           <div
             style={{
-              fontSize: '18px',
-              fontWeight: 'bold',
-              transition: 'transform 0.3s ease',
-              transform: isDrawerOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+              fontSize: "18px",
+              fontWeight: "bold",
+              transition: "transform 0.3s ease",
+              transform: isDrawerOpen ? "rotate(180deg)" : "rotate(0deg)",
             }}
           >
             ‹
@@ -126,25 +125,25 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
         {/* Drawer Content */}
         <div
           style={{
-            width: '100%',
-            padding: '20px',
-            overflowY: 'auto',
+            width: "100%",
+            padding: "20px",
+            overflowY: "auto",
           }}
         >
           {/* Header */}
           <div
             style={{
-              borderBottom: '1px solid #e2e8f0',
-              paddingBottom: '16px',
-              marginBottom: '20px',
+              borderBottom: "1px solid #e2e8f0",
+              paddingBottom: "16px",
+              marginBottom: "20px",
             }}
           >
             <h2
               style={{
-                fontSize: '18px',
-                fontWeight: '600',
-                color: '#1a202c',
-                margin: '0',
+                fontSize: "18px",
+                fontWeight: "600",
+                color: "#1a202c",
+                margin: "0",
               }}
             >
               {drawerTitle}
@@ -152,18 +151,21 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
           </div>
 
           {/* Sections */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+          >
             {sections.length === 0 ? (
               <p
                 style={{
-                  fontSize: '14px',
-                  color: '#718096',
-                  margin: '0',
-                  textAlign: 'center',
-                  padding: '20px',
+                  fontSize: "14px",
+                  color: "#718096",
+                  margin: "0",
+                  textAlign: "center",
+                  padding: "20px",
                 }}
               >
-                No toggleable sections found. Add data-toggle and data-title attributes to elements.
+                No toggleable sections found. Add data-toggle and data-title
+                attributes to elements.
               </p>
             ) : (
               sections.map((section) => (
@@ -171,17 +173,17 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
                   {/* Toggle Row */}
                   <div
                     style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      marginBottom: '8px',
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginBottom: "8px",
                     }}
                   >
                     <span
                       style={{
-                        fontSize: '16px',
-                        fontWeight: '500',
-                        color: '#2d3748',
+                        fontSize: "16px",
+                        fontWeight: "500",
+                        color: "#2d3748",
                       }}
                     >
                       {section.title}
@@ -190,47 +192,54 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
                     {/* Custom Toggle Switch */}
                     <label
                       style={{
-                        position: 'relative',
-                        display: 'inline-block',
-                        width: '50px',
-                        height: '24px',
-                        cursor: 'pointer',
+                        position: "relative",
+                        display: "inline-block",
+                        width: "50px",
+                        height: "24px",
+                        cursor: "pointer",
                       }}
                     >
                       <input
-                        type="checkbox"
                         checked={section.visible}
-                        onChange={(e) => handleSectionToggleChange(section.id, e.target.checked)}
                         style={{
                           opacity: 0,
                           width: 0,
                           height: 0,
                         }}
+                        type="checkbox"
+                        onChange={(e) =>
+                          handleSectionToggleChange(
+                            section.id,
+                            e.target.checked,
+                          )
+                        }
                       />
                       <span
                         style={{
-                          position: 'absolute',
+                          position: "absolute",
                           top: 0,
                           left: 0,
                           right: 0,
                           bottom: 0,
-                          backgroundColor: section.visible ? '#48bb78' : '#cbd5e0',
-                          borderRadius: '24px',
-                          transition: 'background-color 0.3s ease',
+                          backgroundColor: section.visible
+                            ? "#48bb78"
+                            : "#cbd5e0",
+                          borderRadius: "24px",
+                          transition: "background-color 0.3s ease",
                         }}
                       />
                       <span
                         style={{
-                          position: 'absolute',
+                          position: "absolute",
                           content: '""',
-                          height: '18px',
-                          width: '18px',
-                          left: section.visible ? '26px' : '3px',
-                          bottom: '3px',
-                          backgroundColor: 'white',
-                          borderRadius: '50%',
-                          transition: 'left 0.3s ease',
-                          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+                          height: "18px",
+                          width: "18px",
+                          left: section.visible ? "26px" : "3px",
+                          bottom: "3px",
+                          backgroundColor: "white",
+                          borderRadius: "50%",
+                          transition: "left 0.3s ease",
+                          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
                         }}
                       />
                     </label>
@@ -239,12 +248,12 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
                   {/* Status Text */}
                   <p
                     style={{
-                      fontSize: '12px',
-                      color: '#718096',
-                      margin: '0',
+                      fontSize: "12px",
+                      color: "#718096",
+                      margin: "0",
                     }}
                   >
-                    {section.visible ? 'Currently visible' : 'Currently hidden'}
+                    {section.visible ? "Currently visible" : "Currently hidden"}
                   </p>
                 </div>
               ))
@@ -256,17 +265,17 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
       {/* Backdrop */}
       {isDrawerOpen && (
         <div
-          onClick={toggleDrawer}
           style={{
-            position: 'fixed',
+            position: "fixed",
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
             zIndex: 999,
-            transition: 'opacity 0.3s ease',
+            transition: "opacity 0.3s ease",
           }}
+          onClick={toggleDrawer}
         />
       )}
     </>
