@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow specific pages from being indexed
+Disallow: /demo/
+Disallow: /privacy
+Disallow: /terms
+
+# Sitemap location (update with your actual sitemap URL)
+Sitemap: https://innovativefoxes.com/sitemap.xml

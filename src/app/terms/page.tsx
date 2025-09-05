@@ -13,6 +13,16 @@ export const metadata: Metadata = {
   title: "Terms & Conditions | Innovative Foxes Web Studio",
   description:
     "Terms of Service for Innovative Foxes Web Studio - Read our terms and conditions for using our services.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function TermsPage() {

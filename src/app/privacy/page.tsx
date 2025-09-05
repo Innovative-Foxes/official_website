@@ -13,6 +13,16 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Innovative Foxes Web Studio",
   description:
     "Privacy policy for Innovative Foxes Web Studio - Learn how we collect, use, and protect your information.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function PrivacyPage() {
