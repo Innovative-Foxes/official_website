@@ -4,6 +4,7 @@ import FAQ from "./components/sections/FAQ/FAQ";
 import Footer from "./components/sections/Footer/Footer";
 import Hero from "./components/sections/Hero/Hero";
 import MeetTeam from "./components/sections/MeetTeam/MeetTeam";
+import OurAdvantage from "./components/sections/OurAdvantage/OurAdvantage";
 import OurFocus from "./components/sections/OurFocus/OurFocus";
 import OurProcess from "./components/sections/OurProcess/OurProcess";
 import Packages from "./components/sections/Packages/Packages";
@@ -14,9 +15,15 @@ export default function Home() {
       <Box as={"main"}>
         <Flex align="center" direction="column" gap={4}>
           <Hero />
-          <Box bg="orange" height={{ base: "15vh", md: "25vh" }} my={{ base: 6, md: 8 }} width="1px" />
+          <Box
+            bg="orangeCustom"
+            height={{ base: "15vh", md: "25vh" }}
+            my={{ base: 6, md: 8 }}
+            width="1px"
+          />
         </Flex>
         <ChooseUs />
+        <OurAdvantage />
         <Packages />
         <OurProcess />
         <MeetTeam />

@@ -6,11 +6,11 @@ const system = createSystem(defaultConfig, {
   theme: {
     tokens: {
       colors: {
-        darkBlue: { value: "#031629" },
-        blue: { value: "#01203F" },
+        darkBlueCustom: { value: "#031629" },
+        blueCustom: { value: "#01203F" },
         offWhite: { value: "#F2EEE6" },
-        yellow: { value: "#FFDC60" },
-        orange: { value: "#F78523" },
+        yellowCustom: { value: "#FFDC60" },
+        orangeCustom: { value: "#F78523" },
       },
       fonts: {
         heading: { value: "var(--font-inter)" },

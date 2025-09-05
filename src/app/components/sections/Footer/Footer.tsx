@@ -14,7 +14,7 @@ import CustomContainer from "../../ui/Container/Container";
 const Footer = () => {
   return (
     <Box
-      bg="darkBlue"
+      bg="darkBlueCustom"
       mt={{ base: 20, md: 40 }}
       pt={{ base: 12, md: 24 }}
       py={{ base: 12, md: 20 }}
@@ -52,7 +52,7 @@ const Footer = () => {
             <Box textAlign="center">
               <Link
                 _hover={{ textDecoration: "underline" }}
-                color="orange"
+                color="orangeCustom"
                 fontSize={{ base: "sm", md: "md" }}
                 fontWeight="medium"
                 href="mailto:hello@innovativefoxes.com"
@@ -90,7 +90,7 @@ const Footer = () => {
             <Box>
               <Link
                 _hover={{ textDecoration: "underline" }}
-                color="orange"
+                color="orangeCustom"
                 fontWeight="medium"
                 href="mailto:hello@innovativefoxes.com"
               >

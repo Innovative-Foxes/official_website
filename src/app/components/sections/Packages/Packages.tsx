@@ -64,7 +64,7 @@ const Packages = () => {
 
   return (
     <CustomContainer>
-      <Box id="packages" mt={{ base: 16, md: 32 }}>
+      <Box id="packages" mt={{ base: 24, md: 40 }}>
         {/* Desktop Layout */}
         <Grid
           display={{ base: "none", lg: "grid" }}
@@ -76,7 +76,7 @@ const Packages = () => {
             {/* Title Section */}
             <Box>
               <Text
-                color="darkBlue"
+                color="darkBlueCustom"
                 fontSize="sm"
                 fontWeight="semibold"
                 letterSpacing="wide"
@@ -87,13 +87,13 @@ const Packages = () => {
               </Text>
               <Heading
                 as="h2"
-                fontSize="4xl"
+                fontSize={{ base: "3xl", md: "4xl" }}
                 fontWeight="bold"
                 lineHeight="shorter"
                 textTransform="uppercase"
               >
                 Our{" "}
-                <Text as="span" color="orange" fontWeight="semibold">
+                <Text as="span" color="orangeCustom" fontWeight="semibold">
                   Marketo
                 </Text>{" "}
                 Landing Page &amp; Email Packages
@@ -104,12 +104,12 @@ const Packages = () => {
             <VStack gap={4} w="100%">
               <InfoCard
                 description="Tailored to your brand guidelines and marketing objectives"
-                icon={<FaDesktop fill="darkBlue" />}
+                icon={<FaDesktop fill="darkBlueCustom" />}
                 title="Custom Design"
               />
               <InfoCard
                 description="Quick turnaround times to keep your campaigns moving"
-                icon={<FaBoltLightning fill="orange" />}
+                icon={<FaBoltLightning fill="orangeCustom" />}
                 title="Fast Delivery"
               />
             </VStack>
@@ -154,7 +154,9 @@ const Packages = () => {
                   activePackage === "design" ? "transparent" : "gray.200"
                 }
                 borderRadius="full"
-                color={activePackage === "design" ? "darkBlue" : "gray.600"}
+                color={
+                  activePackage === "design" ? "darkBlueCustom" : "gray.600"
+                }
                 fontWeight="semibold"
                 px={8}
                 py={3}
@@ -166,9 +168,16 @@ const Packages = () => {
               </Button>
               <Button
                 _hover={{
-                  bg: activePackage === "design-dev" ? "darkBlue" : "gray.100",
+                  bg:
+                    activePackage === "design-dev"
+                      ? "darkBlueCustom"
+                      : "gray.100",
                 }}
-                bg={activePackage === "design-dev" ? "darkBlue" : "transparent"}
+                bg={
+                  activePackage === "design-dev"
+                    ? "darkBlueCustom"
+                    : "transparent"
+                }
                 borderColor={
                   activePackage === "design-dev" ? "transparent" : "gray.200"
                 }
@@ -199,7 +208,7 @@ const Packages = () => {
           {/* Title Section */}
           <Box textAlign="center" w="100%">
             <Text
-              color="darkBlue"
+              color="darkBlueCustom"
               fontSize="sm"
               fontWeight="semibold"
               letterSpacing="wide"
@@ -216,7 +225,7 @@ const Packages = () => {
               textTransform="uppercase"
             >
               Our{" "}
-              <Text as="span" color="orange" fontWeight="semibold">
+              <Text as="span" color="orangeCustom" fontWeight="semibold">
                 Marketo
               </Text>{" "}
               Landing Page &amp; Email Packages
@@ -281,12 +290,12 @@ const Packages = () => {
           <VStack gap={6} px={4} w="100%">
             <InfoCard
               description="Tailored to your brand guidelines and marketing objectives"
-              icon={<FaDesktop fill="darkBlue" />}
+              icon={<FaDesktop fill="darkBlueCustom" />}
               title="Custom Design"
             />
             <InfoCard
               description="Quick turnaround times to keep your campaigns moving"
-              icon={<FaBoltLightning fill="darkBlue" />}
+              icon={<FaBoltLightning fill="darkBlueCustom" />}
               title="Fast Delivery"
             />
           </VStack>

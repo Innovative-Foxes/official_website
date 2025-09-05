@@ -104,7 +104,7 @@ export default function ChakraLargeVerticalCardFlip({
                   </Text>
                 </VStack>
 
-                <Box bg="darkBlue" borderRadius="full" h="2px" w="60px" />
+                <Box bg="darkBlueCustom" borderRadius="full" h="2px" w="60px" />
 
                 {/* Benefits */}
                 <VStack align="start" gap={3} w="full">
@@ -160,7 +160,7 @@ export default function ChakraLargeVerticalCardFlip({
 
           {/* Back Face - Design & Development Package */}
           <Box
-            bg="darkBlue"
+            bg="darkBlueCustom"
             borderRadius="2xl"
             h="full"
             inset={0}

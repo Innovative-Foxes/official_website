@@ -7,14 +7,14 @@ const ChooseUs = () => {
       <Box textAlign="center">
         <Heading
           as="h2"
-          fontSize={{ base: "2xl", md: "5xl" }}
+          fontSize={{ base: "3xl", md: "5xl" }}
           fontWeight={"medium"}
           lineHeight={"shorter"}
           my={4}
           textTransform="uppercase"
         >
           Why fast-moving marketing teams choose{" "}
-          <Text as="span" color="orange" fontWeight={"semibold"}>
+          <Text as="span" color="orangeCustom" fontWeight={"semibold"}>
             Innovative Foxes
           </Text>{" "}
           to get the job done

@@ -57,7 +57,7 @@ const Hero = () => {
             textTransform="uppercase"
           >
             We build fully custom{" "}
-            <Text as="span" color="orange" fontWeight={"semibold"}>
+            <Text as="span" color="orangeCustom" fontWeight={"semibold"}>
               marketo
             </Text>{" "}
             landing page &amp; email templates

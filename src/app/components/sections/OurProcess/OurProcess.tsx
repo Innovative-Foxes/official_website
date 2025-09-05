@@ -99,10 +99,10 @@ const OurProcess = () => {
 
   return (
     <Box
-      bgColor="darkBlue"
+      bgColor="darkBlueCustom"
       color="offWhite"
-      mt={{ base: "80px", md: "180px" }}
-      py={{ base: 12, md: 20 }}
+      mt={{ base: 24, md: 40 }}
+      py={{ base: 16, md: 24 }}
     >
       <CustomContainer>
         <Flex
@@ -118,10 +118,11 @@ const OurProcess = () => {
                 <Heading
                   as="h2"
                   fontFamily="poppins"
-                  fontSize={{ base: "5xl", md: "6xl" }}
+                  fontSize={{ base: "4xl", md: "6xl" }}
                   fontWeight="semibold"
-                  lineHeight="100%"
+                  lineHeight="110%"
                   mb={6}
+                  textTransform={"uppercase"}
                 >
                   <Text
                     alignItems="center"
@@ -133,12 +134,12 @@ const OurProcess = () => {
                     Our
                     <Image
                       alt="Logo"
-                      maxW={{ base: "50px", md: "70px" }}
+                      maxW={{ base: "40px", md: "70px" }}
                       src="/images/svgs/process-logo.svg"
                       w="100%"
                     />
                   </Text>
-                  <Text as="span" color="orange" fontWeight="semibold">
+                  <Text as="span" color="orangeCustom" fontWeight="semibold">
                     Process
                   </Text>
                 </Heading>
@@ -203,7 +204,7 @@ const OurProcess = () => {
                       >
                         <Heading
                           as="h3"
-                          color="orange"
+                          color="orangeCustom"
                           fontFamily="poppins"
                           fontSize={{ base: "xl", md: "2xl" }}
                           fontWeight="semibold"
@@ -243,7 +244,7 @@ const OurProcess = () => {
                                       gap={3}
                                     >
                                       <Box
-                                        bg="orange"
+                                        bg="orangeCustom"
                                         borderRadius="full"
                                         flexShrink={0}
                                         h={2}
@@ -328,7 +329,7 @@ const OurProcess = () => {
                     <VStack align="start" gap={4}>
                       <Heading
                         as="h3"
-                        color="orange"
+                        color="orangeCustom"
                         fontFamily="poppins"
                         fontSize={{ base: "xl", md: "2xl" }}
                         fontWeight="semibold"
@@ -359,7 +360,7 @@ const OurProcess = () => {
                           {step.highlights.map((highlight, highlightIndex) => (
                             <HStack key={highlightIndex} align="center" gap={3}>
                               <Box
-                                bg="orange"
+                                bg="orangeCustom"
                                 borderRadius="full"
                                 flexShrink={0}
                                 h={2}

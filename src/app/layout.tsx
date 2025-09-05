@@ -45,7 +45,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17525626678');
-            
+
             // Event snippet for Outbound click conversion page
             function gtag_report_conversion(url) {
               var callback = function () {
@@ -66,7 +66,7 @@ export default function RootLayout({
       </head>
       <body>
         <Provider>
-          <Box color={"blue"} fontSize={"xl"}>
+          <Box color={"blueCustom"} fontSize={"xl"}>
             {children}
           </Box>
         </Provider>

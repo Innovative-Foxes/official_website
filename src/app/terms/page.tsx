@@ -69,7 +69,7 @@ export default function TermsPage() {
                   Please read these Terms of Service completely using{" "}
                   <Link
                     _hover={{ textDecoration: "underline" }}
-                    color="blue.600"
+                    color="blueCustom.600"
                     fontWeight="500"
                     href="https://innovativefoxes.com"
                   >
@@ -80,7 +80,7 @@ export default function TermsPage() {
                   conditions attached to the use of the Site at{" "}
                   <Link
                     _hover={{ textDecoration: "underline" }}
-                    color="blue.600"
+                    color="blueCustom.600"
                     fontWeight="500"
                     href="https://innovativefoxes.com"
                   >
@@ -226,7 +226,7 @@ export default function TermsPage() {
                   free to contact us at{" "}
                   <Link
                     _hover={{ textDecoration: "underline" }}
-                    color="blue.600"
+                    color="blueCustom.600"
                     fontWeight="500"
                     href="mailto:hello@innovativefoxes.com"
                   >

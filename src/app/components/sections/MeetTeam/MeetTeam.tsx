@@ -49,12 +49,12 @@ const MeetTeam = () => {
   ];
 
   return (
-    <Box bg="white" my={{ base: 20, md: 40 }}>
+    <Box bg="white" my={{ base: 24, md: 40 }}>
       <CustomContainer>
         <VStack gap={0} mb={{ base: 6, md: 10 }}>
           <Heading
             as="h2"
-            fontSize={{ base: "4xl", md: "5xl" }}
+            fontSize={{ base: "3xl", md: "5xl" }}
             fontWeight={"bold"}
             lineHeight={"shorter"}
             textAlign="center"

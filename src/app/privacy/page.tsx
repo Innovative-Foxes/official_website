@@ -240,7 +240,7 @@ export default function PrivacyPage() {
                   you should contact us immediately via e-mail{" "}
                   <Link
                     _hover={{ textDecoration: "underline" }}
-                    color="blue.600"
+                    color="blueCustom.600"
                     fontWeight="500"
                     href="mailto:hello@innovativefoxes.com"
                   >

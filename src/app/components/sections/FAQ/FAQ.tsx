@@ -69,7 +69,7 @@ const FAQ = () => {
   };
 
   return (
-    <Box bg="white" my={{ base: 16, md: 40 }}>
+    <Box bg="white" my={{ base: 24, md: 40 }}>
       <CustomContainer>
         <Grid
           gap={{ base: 8, md: 16 }}
@@ -88,7 +88,7 @@ const FAQ = () => {
                   {/* Profile Image Placeholder */}
                   <Box
                     alignItems="center"
-                    bg="blue"
+                    bg="blueCustom"
                     borderRadius="full"
                     display="flex"
                     h={16}
@@ -104,13 +104,13 @@ const FAQ = () => {
                   <VStack align="start" gap={3}>
                     <Heading
                       as="h3"
-                      color="blue"
+                      color="blueCustom"
                       fontSize={{ base: "xl", md: "2xl" }}
                       fontWeight="semibold"
                     >
                       Book an intro call
                     </Heading>
-                    <Text color="blue" fontSize="md" lineHeight="tall">
+                    <Text color="blueCustom" fontSize="md" lineHeight="tall">
                       Explore what working together could look like, and whether
                       it&apos;s the right move.
                     </Text>
@@ -129,12 +129,12 @@ const FAQ = () => {
                   />
 
                   <VStack align="start" gap={1}>
-                    <Text color="blue" fontSize="sm">
+                    <Text color="blueCustom" fontSize="sm">
                       Hate calls? 👇
                     </Text>
                     <Link
                       _hover={{ textDecoration: "underline" }}
-                      color="blue"
+                      color="blueCustom"
                       fontSize="sm"
                       fontWeight="medium"
                       href="mailto:hello@innovativefoxes.com"
@@ -152,10 +152,11 @@ const FAQ = () => {
             <VStack align="start" gap={8}>
               <Heading
                 as="h2"
-                color="blue"
-                fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
-                fontWeight="medium"
+                color="blueCustom"
+                fontSize={{ base: "2xl", md: "3xl" }}
+                fontWeight="bold"
                 textAlign={{ base: "center", lg: "left" }}
+                textTransform={"uppercase"}
               >
                 Frequently Asked Questions
               </Heading>
@@ -172,20 +173,15 @@ const FAQ = () => {
                   <Accordion.Item
                     key={item.value}
                     borderBottom="1px solid"
-                    borderColor="blue"
+                    borderColor="blueCustom"
                     borderTop={index === 0 ? "1px solid" : "none"}
-                    borderTopColor="blue"
+                    borderTopColor="blueCustom"
                     py={4}
                     value={item.value}
                   >
-                    <Accordion.ItemTrigger
-                      _hover={{ bg: "gray.50" }}
-                      cursor="pointer"
-                      p={4}
-                      transition="background-color 0.2s"
-                    >
+                    <Accordion.ItemTrigger cursor="pointer" p={4}>
                       <Span
-                        color="blue"
+                        color="blueCustom"
                         flex="1"
                         fontSize={{ base: "sm", md: "lg" }}
                         fontWeight="medium"
@@ -193,7 +189,7 @@ const FAQ = () => {
                       >
                         {item.title}
                       </Span>
-                      <Box color="blue" fontSize="lg">
+                      <Box color="blueCustom" fontSize="lg">
                         {accordionValue.includes(item.value) ? (
                           <Icon h={4} w={4}>
                             <FaMinus />
@@ -208,7 +204,7 @@ const FAQ = () => {
                     <Accordion.ItemContent>
                       <Accordion.ItemBody p={4} pt={0}>
                         <Text
-                          color="blue"
+                          color="blueCustom"
                           fontSize={{ base: "sm", md: "md" }}
                           lineHeight="tall"
                         >

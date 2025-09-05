@@ -40,7 +40,7 @@ export const PrimaryButton = ({
       window.gtag_report_conversion();
       // Handle navigation manually to respect externalLink setting
       if (externalLink) {
-        window.open(url, '_blank', 'noopener,noreferrer');
+        window.open(url, "_blank", "noopener,noreferrer");
       } else {
         window.location.href = url;
       }
@@ -54,11 +54,11 @@ export const PrimaryButton = ({
         boxShadow: "-0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.4)",
         transform: "translateY(1px)",
       }}
-      bgColor={variation === "primary" ? "blue" : "offWhite"}
+      bgColor={variation === "primary" ? "blueCustom" : "offWhite"}
       borderColor={"transparent"}
       borderRadius={"44px"}
       boxShadow="-1.5px 1.5px 4.5px 0px rgba(0, 0, 0, 0.25)"
-      color={variation === "primary" ? "offWhite" : "blue"}
+      color={variation === "primary" ? "offWhite" : "blueCustom"}
       fontSize={fontSize}
       fontWeight={"medium"}
       maxW={{ base: "300px", md: "100%" }}

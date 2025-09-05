@@ -42,12 +42,16 @@ const OurFocus = () => {
           display={"flex"}
           flexWrap="wrap"
           fontSize={{ base: "2xl", md: "4xl" }}
-          fontWeight="semibold"
+          fontWeight="bold"
           gap={{ base: 2, md: 4 }}
           justifyContent={{ base: "center", md: "flex-start" }}
           lineHeight="shorter"
+          textTransform={"uppercase"}
         >
-          All our focus is on you <FaHeart fill="orange" />
+          All our focus is on you{" "}
+          <Icon fill={"orangeCustom"}>
+            <FaHeart />
+          </Icon>
         </Heading>
         <Text color="gray.600" fontSize={{ base: "lg", md: "xl" }} maxW="600px">
           See why we are our client&apos;s first choice
@@ -108,7 +112,7 @@ const OurFocus = () => {
                   <Icon
                     as={FaCheck}
                     boxSize={3}
-                    fill={"orange"}
+                    fill={"orangeCustom"}
                     flexShrink={0}
                   />
                   <Text color="gray.700" fontSize="sm" lineHeight="tall">
@@ -166,7 +170,7 @@ const OurFocus = () => {
               w="full"
             >
               <HStack alignItems="center" gap={3}>
-                <Icon as={FaCheck} boxSize={3} fill={"orange"} />
+                <Icon as={FaCheck} boxSize={3} fill={"orangeCustom"} />
                 <Text color="gray.700" flex="1" fontSize="md" lineHeight="tall">
                   {comparison}
                 </Text>
