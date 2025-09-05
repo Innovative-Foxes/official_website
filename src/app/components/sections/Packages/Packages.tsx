@@ -31,7 +31,7 @@ const Packages = () => {
       "You bring the designs, we bring the development. A fully custom landing page or email template developed and ready to be implemented by your Marketing team.",
     benefits: [
       "Custom template matched perfectly to your designs",
-      "Branded custom styled forms",
+      "Blazing-fast & clean code",
       "Up to 40 custom modules to fit marketing needs",
       "Easily edit all content on the template",
       "Fully mobile responsive",
@@ -103,14 +103,22 @@ const Packages = () => {
             {/* Info Cards */}
             <VStack gap={4} w="100%">
               <InfoCard
-                description="Tailored to your brand guidelines and marketing objectives"
-                icon={<FaDesktop fill="darkBlueCustom" />}
-                title="Custom Design"
+                description="We match your brand, modernize your look, and drive results."
+                icon={
+                  <Icon fill={"darkBlueCustom"}>
+                    <FaDesktop />
+                  </Icon>
+                }
+                title="Custom Design That Converts"
               />
               <InfoCard
-                description="Quick turnaround times to keep your campaigns moving"
-                icon={<FaBoltLightning fill="orangeCustom" />}
-                title="Fast Delivery"
+                description="We hit deadlines so your campaigns go live without delays."
+                icon={
+                  <Icon fill={"orangeCustom"}>
+                    <FaBoltLightning />
+                  </Icon>
+                }
+                title="Launch without delays"
               />
             </VStack>
 
@@ -289,14 +297,22 @@ const Packages = () => {
           {/* Info Cards */}
           <VStack gap={6} px={4} w="100%">
             <InfoCard
-              description="Tailored to your brand guidelines and marketing objectives"
-              icon={<FaDesktop fill="darkBlueCustom" />}
-              title="Custom Design"
+              description="We match your brand, modernize your look, and drive results."
+              icon={
+                <Icon fill={"darkBlueCustom"}>
+                  <FaDesktop />
+                </Icon>
+              }
+              title="Custom Design That Converts"
             />
             <InfoCard
-              description="Quick turnaround times to keep your campaigns moving"
-              icon={<FaBoltLightning fill="darkBlueCustom" />}
-              title="Fast Delivery"
+              description="We hit deadlines so your campaigns go live without delays."
+              icon={
+                <Icon fill={"orangeCustom"}>
+                  <FaBoltLightning />
+                </Icon>
+              }
+              title="Launch without delays"
             />
           </VStack>
 
@@ -350,9 +366,9 @@ const InfoCard = ({ icon, title, description }: InfoCardProps) => {
       w="100%"
     >
       <HStack align="start" gap={4}>
-        <Box mt={1.5}>{icon}</Box>
+        <Box>{icon}</Box>
         <VStack align="start" gap={2}>
-          <Heading color="gray.800" fontSize="lg" fontWeight="semibold">
+          <Heading color="darkBlueCustom" fontSize="lg" fontWeight="semibold">
             {title}
           </Heading>
           <Text color="gray.600" fontSize="sm" lineHeight="tall">
