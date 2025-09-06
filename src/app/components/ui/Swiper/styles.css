@@ -33,3 +33,106 @@
     display: none !important;
   }
 }
+
+/* Advantage Slider Styles */
+.advantageSwiper {
+  width: 100%;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.advantageSwiper .swiper-slide {
+  height: auto;
+  display: flex;
+  padding: 20px 0px;
+  align-items: stretch;
+  background: transparent;
+}
+
+/* Gradient overlays for side fade effect */
+.advantageSwiper::before,
+.advantageSwiper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 50px; /* Account for pagination space */
+  width: 120px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.advantageSwiper::before {
+  left: 0;
+  background: linear-gradient(to right, #031629, transparent);
+}
+
+.advantageSwiper::after {
+  right: 0;
+  background: linear-gradient(to left, #031629, transparent);
+}
+
+.advantageSwiper .swiper-pagination-bullet {
+  background-color: #ff6b35;
+  opacity: 0.3;
+  width: 12px;
+  height: 12px;
+}
+
+.advantageSwiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #ff6b35;
+}
+
+.advantageSwiper .swiper-pagination {
+  bottom: 10px;
+}
+
+/* Navigation arrows styling for advantage slider */
+.advantageSwiper .swiper-button-next,
+.advantageSwiper .swiper-button-prev {
+  color: #ff6b35;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  position: absolute;
+  top: 50%;
+  z-index: 20; /* Above gradient overlay */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.advantageSwiper .swiper-button-next:hover,
+.advantageSwiper .swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.advantageSwiper .swiper-button-next {
+  right: 40px;
+  left: auto;
+}
+
+.advantageSwiper .swiper-button-prev {
+  left: 40px;
+  right: auto;
+}
+
+.advantageSwiper .swiper-button-next:after,
+.advantageSwiper .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Ensure cards have equal height in slider */
+.advantageSwiper .swiper-slide > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

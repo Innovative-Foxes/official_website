@@ -1,4 +1,13 @@
-import { Box, Card, Grid, Heading, Icon, Text } from "@chakra-ui/react";
+"use client";
+import {
+  Box,
+  Card,
+  Grid,
+  Heading,
+  Icon,
+  Text,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import CustomContainer from "../../ui/Container/Container";
 import { FaRocket } from "react-icons/fa";
 
@@ -10,7 +19,21 @@ import {
   FaSwatchbook,
 } from "react-icons/fa6";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// Import required modules
+import { Navigation, Pagination } from "swiper/modules";
+
 const OurAdvantage = () => {
+  // Check if we should show slider (tablet and up) or grid (mobile)
+  const showSlider = useBreakpointValue({ base: false, md: true });
+
   // Cards
   const cards = [
     {
@@ -81,6 +104,82 @@ const OurAdvantage = () => {
     },
   ];
 
+  // Reusable card component for mobile grid
+  const MobileCardComponent = ({ card }: { card: (typeof cards)[0] }) => (
+    <Card.Root
+      key={card.id}
+      _hover={{
+        transform: "translateY(-4px)",
+        shadow: "lg",
+      }}
+      bg={"offWhite"}
+      p={8}
+      size="md"
+      transition="all 0.2s"
+      variant="elevated"
+    >
+      <Card.Header pb={2}>
+        <Box
+          alignItems={"center"}
+          borderColor={"orangeCustom"}
+          borderRadius={"lg"}
+          borderWidth={"2px"}
+          display={"flex"}
+          h={"55px"}
+          justifyContent={"center"}
+          mb={2}
+          p={3}
+          w={"55px"}
+        >
+          {card.icon}
+        </Box>
+        <Heading color="darkBlueCustom" fontWeight={"semibold"} size="lg">
+          {card.title}
+        </Heading>
+      </Card.Header>
+      <Card.Body pt={0}>
+        <Text color="gray.600" fontSize="md">
+          {card.content}
+        </Text>
+      </Card.Body>
+    </Card.Root>
+  );
+
+  // Reusable card component for slider (no Card wrapper)
+  const SliderCardComponent = ({ card }: { card: (typeof cards)[0] }) => (
+    <Box
+      _hover={{
+        transform: "translateY(-4px)",
+      }}
+      bg={"#F2EEE6"}
+      borderRadius="lg"
+      h="100%"
+      p={8}
+      transition="all 0.2s"
+    >
+      <Box
+        alignItems={"center"}
+        borderColor={"orangeCustom"}
+        borderRadius={"lg"}
+        borderWidth={"2px"}
+        display={"flex"}
+        h={"55px"}
+        justifyContent={"center"}
+        mb={4}
+        p={3}
+        w={"55px"}
+      >
+        {card.icon}
+      </Box>
+      <Heading color="darkBlueCustom" fontWeight={"semibold"} mb={4} size="lg">
+        {card.title}
+      </Heading>
+      <Text color="gray.700" fontSize="md">
+        {card.content}
+      </Text>
+    </Box>
+  );
+
   return (
     <Box
       bg={"darkBlueCustom"}
@@ -114,59 +213,45 @@ const OurAdvantage = () => {
             custom and created to be brand specific.
           </Text>
           <Box mt={12}>
-            <Grid
-              gap={6}
-              templateColumns={{
-                base: "1fr",
-                md: "repeat(2, 1fr)",
-                lg: "repeat(3, 1fr)",
-              }}
-              w="full"
-            >
-              {cards.map((card) => (
-                <Card.Root
-                  key={card.id}
-                  _hover={{
-                    transform: "translateY(-4px)",
-                    shadow: "lg",
-                  }}
-                  bg={"offWhite"}
-                  p={8}
-                  size="md"
-                  transition="all 0.2s"
-                  variant="elevated"
-                >
-                  <Card.Header pb={2}>
-                    <Box
-                      alignItems={"center"}
-                      borderColor={"orangeCustom"}
-                      borderRadius={"lg"}
-                      borderWidth={"2px"}
-                      display={"flex"}
-                      h={"55px"}
-                      justifyContent={"center"}
-                      mb={2}
-                      p={3}
-                      w={"55px"}
-                    >
-                      {card.icon}
-                    </Box>
-                    <Heading
-                      color="darkBlueCustom"
-                      fontWeight={"semibold"}
-                      size="lg"
-                    >
-                      {card.title}
-                    </Heading>
-                  </Card.Header>
-                  <Card.Body pt={0}>
-                    <Text color="gray.600" fontSize="md">
-                      {card.content}
-                    </Text>
-                  </Card.Body>
-                </Card.Root>
-              ))}
-            </Grid>
+            {showSlider ? (
+              // Desktop/Tablet - Swiper Slider
+              <Swiper
+                breakpoints={{
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  },
+                }}
+                centeredSlides={true}
+                className="advantageSwiper"
+                loop={true}
+                modules={[Pagination, Navigation]}
+                navigation={true}
+                pagination={{
+                  clickable: true,
+                  dynamicBullets: true,
+                }}
+                slidesPerView={3}
+                spaceBetween={30}
+              >
+                {cards.map((card) => (
+                  <SwiperSlide key={card.id}>
+                    <SliderCardComponent card={card} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            ) : (
+              // Mobile - Grid Layout
+              <Grid gap={6} templateColumns="1fr" w="full">
+                {cards.map((card) => (
+                  <MobileCardComponent key={card.id} card={card} />
+                ))}
+              </Grid>
+            )}
           </Box>
         </Box>
       </CustomContainer>
