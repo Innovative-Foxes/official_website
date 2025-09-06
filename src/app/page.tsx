@@ -3,6 +3,7 @@ import ChooseUs from "./components/sections/ChooseUs/ChooseUs";
 import FAQ from "./components/sections/FAQ/FAQ";
 import Footer from "./components/sections/Footer/Footer";
 import Hero from "./components/sections/Hero/Hero";
+import Interactive from "./components/sections/Interactive/Interactive";
 import MeetTeam from "./components/sections/MeetTeam/MeetTeam";
 import OurAdvantage from "./components/sections/OurAdvantage/OurAdvantage";
 import OurFocus from "./components/sections/OurFocus/OurFocus";
@@ -23,6 +24,9 @@ export default function Home() {
           />
         </Flex>
         <ChooseUs />
+        <Box display={{ base: "none", lg: "block" }}>
+          <Interactive />
+        </Box>
         <OurAdvantage />
         <Packages />
         <OurProcess />
