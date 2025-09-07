@@ -25,16 +25,16 @@ const OurAdvantage = () => {
   const cards = [
     {
       id: 1,
-      title: "Fully Custom Branded Templates",
+      title: "Custom-Built, Brand-Perfect",
       content:
         "Stop wrestling with generic off the shelf templates. We build Marketo templates 100% tailored to your brand—designed to look, feel, and perform exactly how your marketers need with cutting edge flexibility to ensure you can achieve those campaign goals.",
       icon: <FaRocket />,
     },
     {
       id: 2,
-      title: "Subscription & Preference Centers",
+      title: "Subscription/Preference Centers",
       content:
-        "Give your audience more control over their communication settings with custom-built subscription and preference centers. Including fully branded forms and custom thank you messaging that completely matches your brand.",
+        "Give your audience more control over their communication settings with a custom-built subscription/preference center. Including fully branded forms and custom thank you messaging that matches your brand.",
       icon: <FaSquareCheck />,
     },
     {
@@ -48,7 +48,7 @@ const OurAdvantage = () => {
       id: 4,
       title: "Pixel-Perfect Development",
       content:
-        "Got a design file? We’ll bring it to life. Our team transforms AdobeXD, Figma, Sketch, or Photoshop designs into flawless, responsive, lightning-fast templates that look great everywhere.",
+        "Got a design file? We’ll bring it to life. Our team transforms AdobeXD, Figma, Sketch, or Photoshop designs into flawless, responsive, blazing-fast templates that look great everywhere.",
       icon: <FaDesktop />,
     },
     {
