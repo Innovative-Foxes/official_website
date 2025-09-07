@@ -2,6 +2,7 @@
 import React from "react";
 
 import {
+  Badge,
   Box,
   HStack,
   Heading,
@@ -50,7 +51,7 @@ export default function ChakraLargeVerticalCardFlip({
       <Box perspective="1000px" w={{ base: "100%", md: "700px" }}>
         <MotionBox
           animate={{ rotateX: isFlipped ? 180 : 0 }}
-          h={{ base: "700px", md: "550px" }}
+          h={{ base: "350px", md: "550px" }}
           mx="auto"
           position="relative"
           style={{ transformStyle: "preserve-3d" }}
@@ -104,10 +105,21 @@ export default function ChakraLargeVerticalCardFlip({
                   </Text>
                 </VStack>
 
-                <Box bg="darkBlueCustom" borderRadius="full" h="2px" w="60px" />
+                <Box
+                  bg="darkBlueCustom"
+                  borderRadius="full"
+                  display={{ base: "none", md: "block" }}
+                  h="2px"
+                  w="60px"
+                />
 
                 {/* Benefits */}
-                <VStack align="start" gap={3} w="full">
+                <VStack
+                  align="start"
+                  display={{ base: "none", md: "flex" }}
+                  gap={3}
+                  w="full"
+                >
                   {designPackage.benefits.map(
                     (benefit: string, idx: number) => (
                       <HStack key={idx} alignItems="center" gap={3}>
@@ -164,7 +176,7 @@ export default function ChakraLargeVerticalCardFlip({
             borderRadius="2xl"
             h="full"
             inset={0}
-            overflow="hidden"
+            overflow="visible"
             position="absolute"
             shadow="2xl"
             style={{
@@ -174,6 +186,19 @@ export default function ChakraLargeVerticalCardFlip({
             w="full"
           >
             <VStack gap={0} h="full" justify="space-between" p={6}>
+              <Badge
+                bg={"orangeCustom"}
+                borderRadius={"full"}
+                color={"offWhite"}
+                fontWeight={"medium"}
+                position={"absolute"}
+                px={4}
+                size={"md"}
+                top={"-12px"}
+                zIndex={999}
+              >
+                Most Popular
+              </Badge>
               {/* Header */}
               <VStack align="start" gap={4} w="full">
                 <Text color="gray.300" fontSize="sm" fontStyle="italic">
@@ -198,10 +223,21 @@ export default function ChakraLargeVerticalCardFlip({
                   </Text>
                 </VStack>
 
-                <Box bg="offWhite" borderRadius="full" h="2px" w="60px" />
+                <Box
+                  bg="offWhite"
+                  borderRadius="full"
+                  display={{ base: "none", md: "block" }}
+                  h="2px"
+                  w="60px"
+                />
 
                 {/* Benefits */}
-                <VStack align="start" gap={3} w="full">
+                <VStack
+                  align="start"
+                  display={{ base: "none", md: "flex" }}
+                  gap={3}
+                  w="full"
+                >
                   {designDevPackage.benefits.map(
                     (benefit: string, idx: number) => (
                       <HStack key={idx} alignItems="center" gap={3}>

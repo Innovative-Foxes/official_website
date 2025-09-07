@@ -31,7 +31,7 @@ const Packages = () => {
       "You bring the designs, we bring the development. A fully custom landing page or email template developed and ready to be implemented by your Marketing team.",
     benefits: [
       "Custom template matched perfectly to your designs",
-      "Blazing-fast & clean code",
+      "Blazing-fast clean code",
       "Up to 40 custom modules to fit marketing needs",
       "Easily edit all content on the template",
       "Fully mobile responsive",
@@ -46,12 +46,11 @@ const Packages = () => {
   const designDevPackage = {
     title: "Design & Development",
     description:
-      "Complete end-to-end solution. Our expert team will design and develop a fully functional, marketer-ready landing page or email template.",
+      "Complete end-to-end solution. Our expert team will design and develop a fully functional, marketer-ready landing page or email template that perfectly matches your brand.",
     benefits: [
       "Custom template based on your brand guidelines",
-      "Modern, conversion-optimized layouts",
+      "Blazing-fast clean code, modern conversion-optimized design",
       "Up to 40 custom modules to fit marketing needs",
-      "Customize by moving & hiding sections",
       "Easily edit all content on the template",
       "Fully mobile responsive",
       "Branded custom styled Marketo forms",
@@ -152,7 +151,7 @@ const Packages = () => {
           {/* Right Column - Package Toggle and Card */}
           <VStack align="center" gap={8}>
             {/* Package Toggle */}
-            <HStack borderRadius="full" gap={2} p={1} w="fit-content">
+            <HStack borderRadius="full" gap={2} mb={1} p={1} w="fit-content">
               <Button
                 _hover={{
                   bg: activePackage === "design" ? "offWhite" : "gray.100",
@@ -194,6 +193,7 @@ const Packages = () => {
                 color={activePackage === "design-dev" ? "offWhite" : "gray.600"}
                 fontSize={"md"}
                 fontWeight="semibold"
+                position={"relative"}
                 px={8}
                 py={3}
                 shadow={activePackage === "design-dev" ? "sm" : "none"}
@@ -201,6 +201,14 @@ const Packages = () => {
                 onClick={() => setActivePackage("design-dev")}
               >
                 Design &amp; Development
+                <Box
+                  fontSize={"xl"}
+                  position={"absolute"}
+                  right={"0px"}
+                  top={"-10px"}
+                >
+                  🦊
+                </Box>
               </Button>
             </HStack>
 
