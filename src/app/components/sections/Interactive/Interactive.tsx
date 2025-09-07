@@ -31,7 +31,7 @@ const Interactive = () => {
           fontWeight={"medium"}
           m={"auto"}
           maxW={1000}
-          mb={12}
+          mb={20}
           mt={4}
           textAlign={"center"}
         >

@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
-import { Box, Spinner } from "@chakra-ui/react";
+import { Box, Icon, Spinner, Text } from "@chakra-ui/react";
+import { FaUpDown } from "react-icons/fa6";
+import { FaInfoCircle } from "react-icons/fa";
 
 const InteractiveTemplate = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -674,364 +676,427 @@ const InteractiveTemplate = () => {
   return (
     <Box>
       <Box bg={"transparent"} h={1} w={"full"}></Box>
+
       <div style={styles.container}>
         {/* Landing Page */}
-        <Box
-          flex={1}
-          bg="white"
-          height="85vh"
-          border="4px solid #01203F"
-          overflowY="auto"
-          css={{
-            "&::-webkit-scrollbar": {
-              width: "8px",
-            },
-            "&::-webkit-scrollbar-track": {
-              background: "rgba(255, 255, 255, 0.1)",
-              borderRadius: "4px",
-            },
-            "&::-webkit-scrollbar-thumb": {
-              background: "#FF6B35",
-              borderRadius: "4px",
-            },
-            "&::-webkit-scrollbar-thumb:hover": {
-              background: "#e55a2b",
-            },
-          }}
-        >
-          {isLoading ? (
-            <Box
-              alignItems="center"
-              display="flex"
-              height="100%"
-              justifyContent="center"
-              width="100%"
+        <Box position="relative">
+          {/* Scroll Tip Notification Tab */}
+          <Box
+            alignItems="center"
+            bg="rgba(102, 126, 234, 0.1)"
+            border="2px solid #01203F"
+            borderBottom="none"
+            borderRadius="8px 8px 0 0"
+            display="flex"
+            fontSize="sm"
+            gap={2}
+            justifyContent="center"
+            left="50%"
+            minWidth="max-content"
+            position="absolute"
+            px={3}
+            py={1}
+            top="-30px"
+            transform="translateX(-50%)"
+            whiteSpace="nowrap"
+            zIndex={10}
+          >
+            <Icon boxSize={3} fill={"blue.600"}>
+              <FaInfoCircle />
+            </Icon>
+            <Text
+              color={"darkBlueCustom"}
+              fontSize={"sm"}
+              fontWeight={"semibold"}
             >
-              <Spinner size="xl" />
-            </Box>
-          ) : (
-            <>
-              {/* Navigation */}
-              <AnimatePresence>
-                {toggles.navigation && (
-                  <motion.nav
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    initial={{ opacity: 0, y: -20 }}
-                    style={getNavigationStyle()}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                  >
-                    <div style={styles.navContainer}>
-                      <div style={styles.logoSection}>
-                        <div style={styles.logoIcon}>E</div>
-                        <span style={getBrandNameStyle()}>EventPro</span>
+              Try scrolling on the landing page preview &amp; variables section
+            </Text>
+            <Icon boxSize={3} fill={"darkBlueCustom"}>
+              <FaUpDown />
+            </Icon>
+          </Box>
+
+          <Box
+            bg="white"
+            border="4px solid #01203F"
+            borderRadius="8px"
+            css={{
+              "&::-webkit-scrollbar": {
+                width: "8px",
+              },
+              "&::-webkit-scrollbar-track": {
+                background: "rgba(255, 255, 255, 0.1)",
+                borderRadius: "4px",
+                borderLeft: "1px solid rgba(0, 0, 0, 0.1)",
+                borderRight: "1px solid rgba(0, 0, 0, 0.1)",
+                margin: "0 1px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                background: "rgba(0, 0, 0, 0.4)",
+                borderRadius: "4px",
+              },
+              "&::-webkit-scrollbar-thumb:hover": {
+                background: "rgba(0, 0, 0, 0.6)",
+              },
+            }}
+            flex={1}
+            height="85vh"
+            overflowY="auto"
+            position={"relative"}
+          >
+            {isLoading ? (
+              <Box
+                alignItems="center"
+                display="flex"
+                height="100%"
+                justifyContent="center"
+                width="100%"
+              >
+                <Spinner size="xl" />
+              </Box>
+            ) : (
+              <>
+                {/* Navigation */}
+                <AnimatePresence>
+                  {toggles.navigation && (
+                    <motion.nav
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      initial={{ opacity: 0, y: -20 }}
+                      style={getNavigationStyle()}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                    >
+                      <div style={styles.navContainer}>
+                        <div style={styles.logoSection}>
+                          <div style={styles.logoIcon}>E</div>
+                          <span style={getBrandNameStyle()}>EventPro</span>
+                        </div>
+                        <AnimatePresence>
+                          {toggles.navButton && (
+                            <motion.button
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.8 }}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              style={styles.navButton}
+                              transition={{ duration: 0.25, ease: "easeInOut" }}
+                            >
+                              Sign Up
+                            </motion.button>
+                          )}
+                        </AnimatePresence>
                       </div>
-                      <AnimatePresence>
-                        {toggles.navButton && (
-                          <motion.button
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.8 }}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            style={styles.navButton}
-                            transition={{ duration: 0.25, ease: "easeInOut" }}
-                          >
-                            Sign Up
-                          </motion.button>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  </motion.nav>
-                )}
-              </AnimatePresence>
+                    </motion.nav>
+                  )}
+                </AnimatePresence>
 
-              {/* Hero Section */}
-              <AnimatePresence>
-                {toggles.hero && (
-                  <motion.section
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    style={getHeroSectionStyle()}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                  >
-                    <div style={getHeroContainerStyle()}>
-                      <AnimatePresence>
-                        {toggles.heroLeft && (
-                          <motion.div
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                            initial={{ opacity: 0, x: -20 }}
-                            style={getHeroContentStyle()}
-                            transition={{ duration: 0.25, ease: "easeInOut" }}
-                          >
-                            <div style={styles.heroEyebrow}>
-                              Exclusive Event
-                            </div>
-                            <h1 style={styles.heroTitle}>
-                              Transform Your{" "}
-                              <span style={styles.gradientText}>Future</span>
-                            </h1>
-                            <p style={styles.heroDescription}>
-                              Join industry leaders and innovators at our
-                              exclusive event. Discover cutting-edge insights,
-                              network with peers, and unlock new opportunities
-                              that will accelerate your career.
-                            </p>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-
-                      <AnimatePresence>
-                        {toggles.heroRight && (
-                          <motion.div
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: 20 }}
-                            initial={{ opacity: 0, x: 20 }}
-                            style={getHeroFormStyle()}
-                            transition={{ duration: 0.25, ease: "easeInOut" }}
-                          >
-                            <h3 style={styles.formTitle}>Reserve Your Spot</h3>
-                            <div style={styles.formFields}>
-                              <div style={styles.nameFields}>
-                                <input
-                                  placeholder="First Name"
-                                  style={styles.input}
-                                />
-                                <input
-                                  placeholder="Last Name"
-                                  style={styles.input}
-                                />
+                {/* Hero Section */}
+                <AnimatePresence>
+                  {toggles.hero && (
+                    <motion.section
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      style={getHeroSectionStyle()}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                    >
+                      <div style={getHeroContainerStyle()}>
+                        <AnimatePresence>
+                          {toggles.heroLeft && (
+                            <motion.div
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: -20 }}
+                              initial={{ opacity: 0, x: -20 }}
+                              style={getHeroContentStyle()}
+                              transition={{ duration: 0.25, ease: "easeInOut" }}
+                            >
+                              <div style={styles.heroEyebrow}>
+                                Exclusive Event
                               </div>
-                              <input
-                                placeholder="Email Address"
-                                style={styles.input}
-                              />
-                              <select style={styles.select}>
-                                <option>Select Event Date</option>
-                                <option>October 15, 2025</option>
-                                <option>October 22, 2025</option>
-                                <option>November 5, 2025</option>
-                              </select>
-                              <button style={styles.submitButton}>
-                                Secure My Seat
-                              </button>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  </motion.section>
-                )}
-              </AnimatePresence>
-
-              {/* Speakers Section */}
-              <AnimatePresence>
-                {toggles.speakers && (
-                  <motion.section
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    style={styles.section}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                  >
-                    <div style={styles.sectionContainer}>
-                      <div style={styles.sectionHeader}>
-                        <h2 style={styles.sectionTitle}>
-                          Meet Our Expert Speakers
-                        </h2>
-                        <p style={styles.sectionDescription}>
-                          Learn from industry pioneers and thought leaders who
-                          are shaping the future of business and technology.
-                        </p>
-                      </div>
-                      <div style={getSpeakersGridStyle()}>
-                        <AnimatePresence>
-                          {toggles.speaker1 && (
-                            <motion.div
-                              animate={{ opacity: 1, scale: 1 }}
-                              exit={{ opacity: 0, scale: 0.8 }}
-                              initial={{ opacity: 0, scale: 0.8 }}
-                              style={styles.speakerCard}
-                              transition={{ duration: 0.25, ease: "easeInOut" }}
-                            >
-                              <div
-                                style={{
-                                  ...styles.speakerAvatar,
-                                  backgroundImage:
-                                    "url('/images/jpg/speaker-1.jpg')",
-                                  backgroundSize: "cover",
-                                  backgroundPosition: "center",
-                                  backgroundRepeat: "no-repeat",
-                                }}
-                              ></div>
-                              <h3 style={styles.speakerName}>Sarah Chen</h3>
-                              <p style={styles.speakerTitle}>
-                                AI Strategy Expert & Former Tech VP
+                              <h1 style={styles.heroTitle}>
+                                Transform Your{" "}
+                                <span style={styles.gradientText}>Future</span>
+                              </h1>
+                              <p style={styles.heroDescription}>
+                                Join industry leaders and innovators at our
+                                exclusive event. Discover cutting-edge insights,
+                                network with peers, and unlock new opportunities
+                                that will accelerate your career.
                               </p>
                             </motion.div>
                           )}
                         </AnimatePresence>
 
                         <AnimatePresence>
-                          {toggles.speaker2 && (
+                          {toggles.heroRight && (
                             <motion.div
-                              animate={{ opacity: 1, scale: 1 }}
-                              exit={{ opacity: 0, scale: 0.8 }}
-                              initial={{ opacity: 0, scale: 0.8 }}
-                              style={styles.speakerCard}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: 20 }}
+                              initial={{ opacity: 0, x: 20 }}
+                              style={getHeroFormStyle()}
                               transition={{ duration: 0.25, ease: "easeInOut" }}
                             >
-                              <div
-                                style={{
-                                  ...styles.speakerAvatar,
-                                  backgroundImage:
-                                    "url('/images/jpg/speaker-2.jpg')",
-                                  backgroundSize: "cover",
-                                  backgroundPosition: "center",
-                                  backgroundRepeat: "no-repeat",
-                                }}
-                              ></div>
-                              <h3 style={styles.speakerName}>Marcus Johnson</h3>
-                              <p style={styles.speakerTitle}>
-                                Digital Transformation Leader & Author
-                              </p>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-
-                        <AnimatePresence>
-                          {toggles.speaker3 && (
-                            <motion.div
-                              animate={{ opacity: 1, scale: 1 }}
-                              exit={{ opacity: 0, scale: 0.8 }}
-                              initial={{ opacity: 0, scale: 0.8 }}
-                              style={styles.speakerCard}
-                              transition={{ duration: 0.25, ease: "easeInOut" }}
-                            >
-                              <div
-                                style={{
-                                  ...styles.speakerAvatar,
-                                  backgroundImage:
-                                    "url('/images/jpg/speaker-3.jpg')",
-                                  backgroundSize: "cover",
-                                  backgroundPosition: "center",
-                                  backgroundRepeat: "no-repeat",
-                                }}
-                              ></div>
-                              <h3 style={styles.speakerName}>Elena Williams</h3>
-                              <p style={styles.speakerTitle}>
-                                Startup Founder & Venture Capitalist
-                              </p>
+                              <h3 style={styles.formTitle}>
+                                Reserve Your Spot
+                              </h3>
+                              <div style={styles.formFields}>
+                                <div style={styles.nameFields}>
+                                  <input
+                                    placeholder="First Name"
+                                    style={styles.input}
+                                  />
+                                  <input
+                                    placeholder="Last Name"
+                                    style={styles.input}
+                                  />
+                                </div>
+                                <input
+                                  placeholder="Email Address"
+                                  style={styles.input}
+                                />
+                                <select style={styles.select}>
+                                  <option>Select Event Date</option>
+                                  <option>October 15, 2025</option>
+                                  <option>October 22, 2025</option>
+                                  <option>November 5, 2025</option>
+                                </select>
+                                <button style={styles.submitButton}>
+                                  Secure My Seat
+                                </button>
+                              </div>
                             </motion.div>
                           )}
                         </AnimatePresence>
                       </div>
-                    </div>
-                  </motion.section>
-                )}
-              </AnimatePresence>
+                    </motion.section>
+                  )}
+                </AnimatePresence>
 
-              {/* Testimonial Section */}
-              <AnimatePresence>
-                {toggles.testimonial && (
-                  <motion.section
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    style={{ ...styles.section, ...styles.testimonialSection }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                  >
-                    <div style={styles.sectionContainer}>
-                      <div style={styles.testimonialContent}>
-                        <div style={styles.starsContainer}>
-                          {[...Array(5)].map((_, i) => (
-                            <span key={i} style={styles.star}>
-                              ★
-                            </span>
-                          ))}
+                {/* Speakers Section */}
+                <AnimatePresence>
+                  {toggles.speakers && (
+                    <motion.section
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      style={styles.section}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                    >
+                      <div style={styles.sectionContainer}>
+                        <div style={styles.sectionHeader}>
+                          <h2 style={styles.sectionTitle}>
+                            Meet Our Expert Speakers
+                          </h2>
+                          <p style={styles.sectionDescription}>
+                            Learn from industry pioneers and thought leaders who
+                            are shaping the future of business and technology.
+                          </p>
                         </div>
-                        <blockquote style={styles.testimonialQuote}>
-                          &quot;This event completely transformed how I think
-                          about innovation. The networking opportunities and
-                          insights I gained were invaluable for my career
-                          growth.&quot;
-                        </blockquote>
-                        <cite style={styles.testimonialAuthor}>
-                          — Jennifer Walsh, Product Director at InnovateCo
-                        </cite>
-                      </div>
-                    </div>
-                  </motion.section>
-                )}
-              </AnimatePresence>
+                        <div style={getSpeakersGridStyle()}>
+                          <AnimatePresence>
+                            {toggles.speaker1 && (
+                              <motion.div
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                style={styles.speakerCard}
+                                transition={{
+                                  duration: 0.25,
+                                  ease: "easeInOut",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    ...styles.speakerAvatar,
+                                    backgroundImage:
+                                      "url('/images/jpg/speaker-1.jpg')",
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                    backgroundRepeat: "no-repeat",
+                                  }}
+                                ></div>
+                                <h3 style={styles.speakerName}>Sarah Chen</h3>
+                                <p style={styles.speakerTitle}>
+                                  AI Strategy Expert & Former Tech VP
+                                </p>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
 
-              {/* Banner Section */}
-              <AnimatePresence>
-                {toggles.banner && (
-                  <motion.section
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    style={{ ...styles.section, ...getBannerSectionStyle() }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                  >
-                    <div style={styles.sectionContainer}>
-                      <div style={styles.bannerContent}>
-                        <h2 style={styles.bannerTitle}>
-                          Don&apos;t Miss This Opportunity
-                        </h2>
-                        <p style={styles.bannerDescription}>
-                          Join us for three days of groundbreaking insights,
-                          meaningful connections, and transformative experiences
-                          that will shape your professional future.
-                        </p>
-                        <button style={styles.bannerButton}>
-                          Register Today
-                        </button>
-                      </div>
-                    </div>
-                  </motion.section>
-                )}
-              </AnimatePresence>
+                          <AnimatePresence>
+                            {toggles.speaker2 && (
+                              <motion.div
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                style={styles.speakerCard}
+                                transition={{
+                                  duration: 0.25,
+                                  ease: "easeInOut",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    ...styles.speakerAvatar,
+                                    backgroundImage:
+                                      "url('/images/jpg/speaker-2.jpg')",
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                    backgroundRepeat: "no-repeat",
+                                  }}
+                                ></div>
+                                <h3 style={styles.speakerName}>
+                                  Marcus Johnson
+                                </h3>
+                                <p style={styles.speakerTitle}>
+                                  Digital Transformation Leader & Author
+                                </p>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
 
-              {/* Footer Section */}
-              <AnimatePresence>
-                {toggles.footer && (
-                  <motion.footer
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    style={styles.footer}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                  >
-                    <div style={styles.footerContainer}>
-                      <div style={styles.footerContent}>
-                        <div style={styles.footerLogo}>
-                          <div style={styles.footerLogoIcon}>
-                            <span style={styles.footerLogoText}>E</span>
+                          <AnimatePresence>
+                            {toggles.speaker3 && (
+                              <motion.div
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                style={styles.speakerCard}
+                                transition={{
+                                  duration: 0.25,
+                                  ease: "easeInOut",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    ...styles.speakerAvatar,
+                                    backgroundImage:
+                                      "url('/images/jpg/speaker-3.jpg')",
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                    backgroundRepeat: "no-repeat",
+                                  }}
+                                ></div>
+                                <h3 style={styles.speakerName}>
+                                  Elena Williams
+                                </h3>
+                                <p style={styles.speakerTitle}>
+                                  Startup Founder & Venture Capitalist
+                                </p>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      </div>
+                    </motion.section>
+                  )}
+                </AnimatePresence>
+
+                {/* Testimonial Section */}
+                <AnimatePresence>
+                  {toggles.testimonial && (
+                    <motion.section
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      style={{
+                        ...styles.section,
+                        ...styles.testimonialSection,
+                      }}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                    >
+                      <div style={styles.sectionContainer}>
+                        <div style={styles.testimonialContent}>
+                          <div style={styles.starsContainer}>
+                            {[...Array(5)].map((_, i) => (
+                              <span key={i} style={styles.star}>
+                                ★
+                              </span>
+                            ))}
                           </div>
-                          <span style={styles.footerBrandName}>EventPro</span>
-                        </div>
-
-                        <div style={styles.copyright}>
-                          © 2025 EventPro. All rights reserved.
-                        </div>
-
-                        <div style={styles.footerLinks}>
-                          <a href="#" style={styles.footerLink}>
-                            Privacy Policy
-                          </a>
-                          <a href="#" style={styles.footerLink}>
-                            Terms of Service
-                          </a>
+                          <blockquote style={styles.testimonialQuote}>
+                            &quot;This event completely transformed how I think
+                            about innovation. The networking opportunities and
+                            insights I gained were invaluable for my career
+                            growth.&quot;
+                          </blockquote>
+                          <cite style={styles.testimonialAuthor}>
+                            — Jennifer Walsh, Product Director at InnovateCo
+                          </cite>
                         </div>
                       </div>
-                    </div>
-                  </motion.footer>
-                )}
-              </AnimatePresence>
-            </>
-          )}
+                    </motion.section>
+                  )}
+                </AnimatePresence>
+
+                {/* Banner Section */}
+                <AnimatePresence>
+                  {toggles.banner && (
+                    <motion.section
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      style={{ ...styles.section, ...getBannerSectionStyle() }}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                    >
+                      <div style={styles.sectionContainer}>
+                        <div style={styles.bannerContent}>
+                          <h2 style={styles.bannerTitle}>
+                            Don&apos;t Miss This Opportunity
+                          </h2>
+                          <p style={styles.bannerDescription}>
+                            Join us for three days of groundbreaking insights,
+                            meaningful connections, and transformative
+                            experiences that will shape your professional
+                            future.
+                          </p>
+                          <button style={styles.bannerButton}>
+                            Register Today
+                          </button>
+                        </div>
+                      </div>
+                    </motion.section>
+                  )}
+                </AnimatePresence>
+
+                {/* Footer Section */}
+                <AnimatePresence>
+                  {toggles.footer && (
+                    <motion.footer
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      style={styles.footer}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                    >
+                      <div style={styles.footerContainer}>
+                        <div style={styles.footerContent}>
+                          <div style={styles.footerLogo}>
+                            <div style={styles.footerLogoIcon}>
+                              <span style={styles.footerLogoText}>E</span>
+                            </div>
+                            <span style={styles.footerBrandName}>EventPro</span>
+                          </div>
+
+                          <div style={styles.copyright}>
+                            © 2025 EventPro. All rights reserved.
+                          </div>
+
+                          <div style={styles.footerLinks}>
+                            <a href="#" style={styles.footerLink}>
+                              Privacy Policy
+                            </a>
+                            <a href="#" style={styles.footerLink}>
+                              Terms of Service
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.footer>
+                  )}
+                </AnimatePresence>
+              </>
+            )}
+          </Box>
         </Box>
 
         {/* Toggle Controls */}
@@ -1040,10 +1105,7 @@ const InteractiveTemplate = () => {
             <h3 style={styles.sidebarTitle}>Variables</h3>
           </div>
           <Box
-            width="320px"
             bg="white"
-            height="calc(85vh - 54px)"
-            overflowY="auto"
             boxShadow="0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
             css={{
               "&::-webkit-scrollbar": {
@@ -1052,15 +1114,21 @@ const InteractiveTemplate = () => {
               "&::-webkit-scrollbar-track": {
                 background: "rgba(255, 255, 255, 0.1)",
                 borderRadius: "4px",
+                borderLeft: "1px solid rgba(0, 0, 0, 0.1)",
+                borderRight: "1px solid rgba(0, 0, 0, 0.1)",
+                margin: "0 1px",
               },
               "&::-webkit-scrollbar-thumb": {
-                background: "#FF6B35",
+                background: "rgba(0, 0, 0, 0.4)",
                 borderRadius: "4px",
               },
               "&::-webkit-scrollbar-thumb:hover": {
-                background: "#e55a2b",
+                background: "rgba(0, 0, 0, 0.6)",
               },
             }}
+            height="calc(85vh - 54px)"
+            overflowY="auto"
+            width="320px"
           >
             {isLoading ? (
               <Box
