@@ -8,7 +8,8 @@ const Interactive = () => {
       bgImage={"url(/images/png/dotgrid.png)"}
       bgRepeat={"repeat"}
       mt={20}
-      py={20}
+      pb={40}
+      pt={20}
     >
       <CustomContainer>
         <Heading

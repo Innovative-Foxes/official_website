@@ -147,16 +147,7 @@ const OurAdvantage = () => {
 
   // Reusable card component for slider (no Card wrapper)
   const SliderCardComponent = ({ card }: { card: (typeof cards)[0] }) => (
-    <Box
-      _hover={{
-        transform: "translateY(-4px)",
-      }}
-      bg={"#F2EEE6"}
-      borderRadius="lg"
-      h="100%"
-      p={8}
-      transition="all 0.2s"
-    >
+    <Box bg={"#F2EEE6"} borderRadius="lg" h="100%" p={8} transition="all 0.2s">
       <Box
         alignItems={"center"}
         borderColor={"orangeCustom"}
@@ -182,8 +173,11 @@ const OurAdvantage = () => {
 
   return (
     <Box
-      bg={"darkBlueCustom"}
-      mt={{ base: 24, md: 40 }}
+      bgImage={"url(/images/png/advantage-bg.png)"}
+      bgPos={"center"}
+      bgRepeat={"no-repeat"}
+      bgSize={{ base: "cover", lg: "auto" }}
+      mt={{ base: 24, md: 40, lg: 0 }}
       pb={{ base: 16, md: 32 }}
       pt={{ base: 16, md: 24 }}
     >
