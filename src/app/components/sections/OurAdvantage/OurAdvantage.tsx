@@ -173,12 +173,13 @@ const OurAdvantage = () => {
 
   return (
     <Box
-      bgImage={"url(/images/png/advantage-bg.png)"}
+      bgColor={"darkBlueCustom"}
+      bgImage={{ base: "none", md: "url(/images/png/advantage-bg.png)" }}
       bgPos={"center"}
       bgRepeat={"no-repeat"}
       bgSize={{ base: "cover", lg: "auto" }}
       mt={{ base: 24, md: 40, lg: 0 }}
-      pb={{ base: 16, md: 32 }}
+      pb={{ base: 24, md: 32 }}
       pt={{ base: 16, md: 24 }}
     >
       <CustomContainer>

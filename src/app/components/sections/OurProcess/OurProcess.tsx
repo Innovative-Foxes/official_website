@@ -293,7 +293,7 @@ const OurProcess = () => {
             {/* Desktop/Tablet: Scrollable box with styling */}
             <Box
               bg="rgba(255, 255, 255, 0.05)"
-              borderRadius="24px"
+              borderLeftRadius="24px"
               css={{
                 "&::-webkit-scrollbar": {
                   width: "8px",

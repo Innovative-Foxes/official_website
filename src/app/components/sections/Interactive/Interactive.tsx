@@ -15,7 +15,7 @@ const Interactive = () => {
         <Heading
           as="h2"
           fontSize={{ base: "3xl", md: "5xl" }}
-          fontWeight={"medium"}
+          fontWeight={"semibold"}
           lineHeight={"shorter"}
           textAlign={"center"}
           textTransform="uppercase"

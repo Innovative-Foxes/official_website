@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
 import { Box, Icon, Spinner, Text } from "@chakra-ui/react";
-import { FaUpDown } from "react-icons/fa6";
 import { FaInfoCircle } from "react-icons/fa";
+import { FaUpDown } from "react-icons/fa6";
 
 const InteractiveTemplate = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -679,11 +679,11 @@ const InteractiveTemplate = () => {
 
       <div style={styles.container}>
         {/* Landing Page */}
-        <Box position="relative">
+        <Box flex={1} position="relative">
           {/* Scroll Tip Notification Tab */}
           <Box
             alignItems="center"
-            bg="rgba(102, 126, 234, 0.1)"
+            bg="blue.50"
             border="2px solid #01203F"
             borderBottom="none"
             borderRadius="8px 8px 0 0"
@@ -696,7 +696,7 @@ const InteractiveTemplate = () => {
             position="absolute"
             px={3}
             py={1}
-            top="-30px"
+            top="-31px"
             transform="translateX(-50%)"
             whiteSpace="nowrap"
             zIndex={10}
@@ -739,10 +739,10 @@ const InteractiveTemplate = () => {
                 background: "rgba(0, 0, 0, 0.6)",
               },
             }}
-            flex={1}
             height="85vh"
             overflowY="auto"
             position={"relative"}
+            width="100%"
           >
             {isLoading ? (
               <Box
