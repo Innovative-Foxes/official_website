@@ -211,13 +211,6 @@ const InteractiveTemplate = () => {
       fontFamily:
         '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     },
-    landingPageContainer: {
-      flex: 1,
-      backgroundColor: "white",
-      overflow: "scroll",
-      height: "85vh",
-      border: "4px solid #01203F",
-    },
     // Navigation Styles
     navigation: {
       backgroundColor: "white",
@@ -494,14 +487,6 @@ const InteractiveTemplate = () => {
       border: "none",
       cursor: "pointer",
     },
-    sidebar: {
-      width: "320px",
-      backgroundColor: "white",
-      height: "calc(85vh - 54px)",
-      overflow: "scroll",
-      boxShadow:
-        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-    },
     titleContainer: {
       background: "#C2E5F9",
       padding: "12px 24px",
@@ -691,7 +676,29 @@ const InteractiveTemplate = () => {
       <Box bg={"transparent"} h={1} w={"full"}></Box>
       <div style={styles.container}>
         {/* Landing Page */}
-        <div style={styles.landingPageContainer}>
+        <Box
+          flex={1}
+          bg="white"
+          height="85vh"
+          border="4px solid #01203F"
+          overflowY="auto"
+          css={{
+            "&::-webkit-scrollbar": {
+              width: "8px",
+            },
+            "&::-webkit-scrollbar-track": {
+              background: "rgba(255, 255, 255, 0.1)",
+              borderRadius: "4px",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              background: "#FF6B35",
+              borderRadius: "4px",
+            },
+            "&::-webkit-scrollbar-thumb:hover": {
+              background: "#e55a2b",
+            },
+          }}
+        >
           {isLoading ? (
             <Box
               alignItems="center"
@@ -1025,14 +1032,36 @@ const InteractiveTemplate = () => {
               </AnimatePresence>
             </>
           )}
-        </div>
+        </Box>
 
         {/* Toggle Controls */}
         <div>
           <div style={styles.titleContainer}>
             <h3 style={styles.sidebarTitle}>Variables</h3>
           </div>
-          <div style={styles.sidebar}>
+          <Box
+            width="320px"
+            bg="white"
+            height="calc(85vh - 54px)"
+            overflowY="auto"
+            boxShadow="0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
+            css={{
+              "&::-webkit-scrollbar": {
+                width: "8px",
+              },
+              "&::-webkit-scrollbar-track": {
+                background: "rgba(255, 255, 255, 0.1)",
+                borderRadius: "4px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                background: "#FF6B35",
+                borderRadius: "4px",
+              },
+              "&::-webkit-scrollbar-thumb:hover": {
+                background: "#e55a2b",
+              },
+            }}
+          >
             {isLoading ? (
               <Box
                 alignItems="center"
@@ -1203,7 +1232,7 @@ const InteractiveTemplate = () => {
                 ))}
               </div>
             )}
-          </div>
+          </Box>
         </div>
       </div>
     </Box>
