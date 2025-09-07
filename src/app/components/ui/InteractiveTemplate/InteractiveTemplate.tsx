@@ -11,9 +11,11 @@ const InteractiveTemplate = () => {
   const [heroBackgroundUrl, setHeroBackgroundUrl] = useState(
     "/images/jpg/speaker-bg.jpg",
   );
-  const [bannerBgColor, setBannerBgColor] = useState("#667eea");
+  const [heroFormButtonBgColor, setHeroFormButtonBgColor] = useState("#667eea");
   const [navBgColor, setNavBgColor] = useState("#ffffff");
-  const [navFontColor, setNavFontColor] = useState("#111827");
+  const [heroFormBgColor, setHeroFormBgColor] = useState(
+    "rgba(255, 255, 255, 0.95)",
+  );
   const [toggles, setToggles] = useState({
     navigation: true,
     navButton: true,
@@ -170,23 +172,11 @@ const InteractiveTemplate = () => {
     return styles.heroContent;
   };
 
-  const getHeroFormStyle = () => {
-    if (!toggles.heroLeft) {
-      // Text content is hidden, make form larger and centered
-      return {
-        ...styles.heroForm,
-        maxWidth: "500px",
-        width: "100%",
-      };
-    }
-    return styles.heroForm;
-  };
-
   // Get dynamic banner section style with custom background color
   const getBannerSectionStyle = () => {
     return {
       ...styles.bannerSection,
-      background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(135deg, ${bannerBgColor} 0%, #764ba2 100%)`,
+      background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(135deg, #667eea 0%, #764ba2 100%)`,
     };
   };
 
@@ -202,7 +192,23 @@ const InteractiveTemplate = () => {
   const getBrandNameStyle = () => {
     return {
       ...styles.brandName,
-      color: navFontColor,
+      color: "#111827",
+    };
+  };
+
+  // Get dynamic hero form style with custom background color
+  const getHeroFormDynamicStyle = () => {
+    return {
+      ...styles.heroForm,
+      background: heroFormBgColor,
+    };
+  };
+
+  // Get dynamic hero form button style with custom background color
+  const getHeroFormButtonStyle = () => {
+    return {
+      ...styles.submitButton,
+      background: `linear-gradient(135deg, ${heroFormButtonBgColor} 0%, #764ba2 100%)`,
     };
   };
 
@@ -832,7 +838,7 @@ const InteractiveTemplate = () => {
                               animate={{ opacity: 1, x: 0 }}
                               exit={{ opacity: 0, x: 20 }}
                               initial={{ opacity: 0, x: 20 }}
-                              style={getHeroFormStyle()}
+                              style={getHeroFormDynamicStyle()}
                               transition={{ duration: 0.25, ease: "easeInOut" }}
                             >
                               <h3 style={styles.formTitle}>
@@ -859,7 +865,7 @@ const InteractiveTemplate = () => {
                                   <option>October 22, 2025</option>
                                   <option>November 5, 2025</option>
                                 </select>
-                                <button style={styles.submitButton}>
+                                <button style={getHeroFormButtonStyle()}>
                                   Secure My Seat
                                 </button>
                               </div>
@@ -1162,7 +1168,7 @@ const InteractiveTemplate = () => {
                   {/* Navigation Background Color Picker */}
                   <div style={styles.inputContainerNoBorder}>
                     <label htmlFor="navBgColor" style={styles.inputLabel}>
-                      Navigation Background Color
+                      Navigation Bar Background Color
                     </label>
                     <div style={styles.colorPickerContainer}>
                       <div
@@ -1189,62 +1195,69 @@ const InteractiveTemplate = () => {
                     </div>
                   </div>
 
-                  {/* Navigation Font Color Picker */}
+                  {/* Hero Form Background Color Picker */}
                   <div style={styles.inputContainerNoBorder}>
-                    <label htmlFor="navFontColor" style={styles.inputLabel}>
-                      Navigation Font Color
+                    <label htmlFor="heroFormBgColor" style={styles.inputLabel}>
+                      Hero Form Background Color
                     </label>
                     <div style={styles.colorPickerContainer}>
                       <div
                         style={{
                           ...styles.colorSquare,
-                          backgroundColor: navFontColor,
+                          backgroundColor: heroFormBgColor,
                         }}
                       >
                         <input
                           style={styles.hiddenColorInput}
                           type="color"
-                          value={navFontColor}
-                          onChange={(e) => setNavFontColor(e.target.value)}
+                          value={heroFormBgColor}
+                          onChange={(e) => setHeroFormBgColor(e.target.value)}
                         />
                       </div>
                       <input
-                        id="navFontColor"
-                        placeholder="#111827"
+                        id="heroFormBgColor"
+                        placeholder="rgba(255, 255, 255, 0.95)"
                         style={styles.colorInput}
                         type="text"
-                        value={navFontColor}
-                        onChange={(e) => setNavFontColor(e.target.value)}
+                        value={heroFormBgColor}
+                        onChange={(e) => setHeroFormBgColor(e.target.value)}
                       />
                     </div>
                   </div>
 
-                  {/* Banner Background Color Picker */}
+                  {/* Hero Form Button Background Color Picker */}
                   <div>
-                    <label htmlFor="bannerBgColor" style={styles.inputLabel}>
-                      Bottom CTA Banner Background Color
+                    <label
+                      htmlFor="heroFormButtonBgColor"
+                      style={styles.inputLabel}
+                    >
+                      Hero Form Button Background Color
                     </label>
                     <div style={styles.colorPickerContainer}>
                       <div
                         style={{
                           ...styles.colorSquare,
-                          backgroundColor: bannerBgColor,
+                          backgroundColor: heroFormButtonBgColor,
                         }}
                       >
                         <input
                           style={styles.hiddenColorInput}
                           type="color"
-                          value={bannerBgColor}
-                          onChange={(e) => setBannerBgColor(e.target.value)}
+                          value={heroFormButtonBgColor}
+                          onChange={(e) =>
+                            setHeroFormButtonBgColor(e.target.value)
+                          }
                         />
                       </div>
                       <input
-                        id="bannerBgColor"
+                        id="heroFormButtonBgColor"
                         placeholder="#667eea"
                         style={styles.colorInput}
                         type="text"
-                        value={bannerBgColor}
-                        onChange={(e) => setBannerBgColor(e.target.value)}
+                        value={heroFormButtonBgColor}
+                        onChange={(e) =>
+                          setHeroFormButtonBgColor(e.target.value)
+                        }
                       />
                     </div>
                   </div>
