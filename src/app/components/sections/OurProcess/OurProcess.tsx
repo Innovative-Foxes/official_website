@@ -1,6 +1,5 @@
 "use client";
 import {
-  Accordion,
   Box,
   Flex,
   HStack,
@@ -13,6 +12,18 @@ import {
 import CustomContainer from "../../ui/Container/Container";
 import { FaChevronRight } from "react-icons/fa";
 import { PrimaryButton } from "../../ui/Button/Button";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./styles.css";
+
+// import required modules
+import { Navigation, Pagination } from "swiper/modules";
 
 interface IntroSlide {
   step: string;
@@ -106,10 +117,10 @@ const OurProcess = () => {
     >
       <CustomContainer>
         <Flex
+          alignItems={"center"}
           direction={{ base: "column", lg: "row" }}
           gap={{ base: 8, md: 12 }}
           justifyContent={"space-between"}
-          minH={{ base: "auto", md: "600px" }}
         >
           {/* Left Section - Intro */}
           <Box flex="1" maxW={{ base: "100%", lg: "40%" }}>
@@ -155,251 +166,105 @@ const OurProcess = () => {
                   {introSlide.description}
                 </Text>
               </Box>
-
-              {/* Fox Image */}
-              <Box
-                alignItems="center"
-                display={{ base: "none", md: "flex" }}
-                flex="1"
-                justifyContent="center"
-                w="full"
-              >
-                <Image
-                  alt="Fox in car - Our Process"
-                  borderRadius="16px"
-                  src="/images/png/our-process-hz.png"
-                  w="100%"
-                />
-              </Box>
             </VStack>
           </Box>
 
           {/* Right Section - Steps Container */}
           <Box flex="1" maxW={{ base: "100%", lg: "55%" }}>
-            {/* Mobile: Styled accordion container */}
-            <Box display={{ base: "block", md: "none" }}>
-              <Box bg="rgba(255, 255, 255, 0.05)" borderRadius="24px" p={6}>
-                <Accordion.Root collapsible>
+            <Box>
+              <>
+                <Swiper
+                  className="mySwiper"
+                  modules={[Pagination, Navigation]}
+                  navigation={true}
+                  pagination={{
+                    type: "progressbar",
+                  }}
+                >
                   {processSteps.map((step, index) => (
-                    <Accordion.Item
-                      key={index}
-                      bg="transparent"
-                      borderBottom={
-                        index !== processSteps.length - 1 ? "1px solid" : "none"
-                      }
-                      borderColor="rgba(255, 255, 255, 0.1)"
-                      pb={index !== processSteps.length - 1 ? 6 : 0}
-                      pt={index > 0 ? 6 : 0}
-                      value={step.step}
-                    >
-                      <Accordion.ItemTrigger
-                        alignItems="center"
-                        bg="transparent"
-                        cursor={"pointer"}
-                        display="flex"
-                        justifyContent="space-between"
-                        px={0}
-                        py={3}
-                        w="full"
-                      >
-                        <Heading
-                          as="h3"
-                          color="orangeCustom"
-                          fontFamily="poppins"
-                          fontSize={{ base: "xl", md: "2xl" }}
-                          fontWeight="semibold"
-                        >
-                          {step.step}
-                        </Heading>
-                        <Accordion.ItemIndicator />
-                      </Accordion.ItemTrigger>
-                      <Accordion.ItemContent bg="transparent">
-                        <Accordion.ItemBody bg="transparent">
-                          <VStack align="start" gap={4}>
-                            <Heading
-                              as="h4"
-                              color="offWhite"
-                              fontFamily="poppins"
-                              fontSize={{ base: "lg", md: "xl" }}
-                              fontWeight="medium"
-                            >
-                              {step.title}
-                            </Heading>
+                    <SwiperSlide key={index}>
+                      <Box p={4}>
+                        <VStack align="start" gap={{ base: 2, md: 4 }}>
+                          <Heading
+                            as="h3"
+                            color="orangeCustom"
+                            fontFamily="poppins"
+                            fontSize={{ base: "2xl", md: "3xl" }}
+                            fontWeight="semibold"
+                          >
+                            {step.step}
+                          </Heading>
 
-                            <Text
-                              color="offWhite"
-                              fontSize={{ base: "sm", md: "md" }}
-                              lineHeight="1.6"
-                            >
-                              {step.description}
-                            </Text>
+                          <Heading
+                            as="h4"
+                            color="darkBlueCustom"
+                            fontFamily="poppins"
+                            fontSize={{ base: "lg", md: "xl" }}
+                            fontWeight="medium"
+                          >
+                            {step.title}
+                          </Heading>
 
-                            {step.highlights && (
-                              <VStack align="start" gap={2} mt={2} w="full">
-                                {step.highlights.map(
-                                  (highlight, highlightIndex) => (
-                                    <HStack
-                                      key={highlightIndex}
-                                      align="center"
-                                      gap={3}
+                          <Text
+                            color="darkBlueCustom"
+                            fontSize={{ base: "sm", md: "md" }}
+                            lineHeight="1.6"
+                          >
+                            {step.description}
+                          </Text>
+
+                          {step.highlights && (
+                            <VStack align="start" gap={2} mt={2} w="full">
+                              {step.highlights.map(
+                                (highlight, highlightIndex) => (
+                                  <HStack
+                                    key={highlightIndex}
+                                    align="center"
+                                    gap={3}
+                                  >
+                                    <Box
+                                      bg="orangeCustom"
+                                      borderRadius="full"
+                                      flexShrink={0}
+                                      h={2}
+                                      w={2}
+                                    />
+                                    <Text
+                                      color="darkBlueCustom"
+                                      fontSize={"sm"}
+                                      fontWeight="medium"
                                     >
-                                      <Box
-                                        bg="orangeCustom"
-                                        borderRadius="full"
-                                        flexShrink={0}
-                                        h={2}
-                                        w={2}
-                                      />
-                                      <Text
-                                        color="offWhite"
-                                        fontSize={{ base: "xs", md: "sm" }}
-                                        fontWeight="medium"
-                                      >
-                                        {highlight}
-                                      </Text>
-                                    </HStack>
-                                  ),
-                                )}
-                              </VStack>
-                            )}
+                                      {highlight}
+                                    </Text>
+                                  </HStack>
+                                ),
+                              )}
+                            </VStack>
+                          )}
 
-                            {step.showButton && (
-                              <Box mt={4}>
-                                <PrimaryButton
-                                  fontSize="sm"
-                                  icon={
-                                    <Icon h={3}>
-                                      <FaChevronRight />
-                                    </Icon>
-                                  }
-                                  label="Book A Call Now"
-                                  minHeight={40}
-                                  px={16}
-                                  trackConversion={true}
-                                  url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
-                                  variation="secondary"
-                                />
-                              </Box>
-                            )}
-                          </VStack>
-                        </Accordion.ItemBody>
-                      </Accordion.ItemContent>
-                    </Accordion.Item>
-                  ))}
-                </Accordion.Root>
-              </Box>
-            </Box>
-
-            {/* Desktop/Tablet: Scrollable box with styling */}
-            <Box
-              bg="rgba(255, 255, 255, 0.05)"
-              borderLeftRadius="24px"
-              css={{
-                "&::-webkit-scrollbar": {
-                  width: "8px",
-                },
-                "&::-webkit-scrollbar-track": {
-                  background: "rgba(255, 255, 255, 0.1)",
-                  borderRadius: "4px",
-                },
-                "&::-webkit-scrollbar-thumb": {
-                  background: "#FF6B35",
-                  borderRadius: "4px",
-                },
-                "&::-webkit-scrollbar-thumb:hover": {
-                  background: "#e55a2b",
-                },
-              }}
-              display={{ base: "none", md: "block" }}
-              h={{ base: "auto", lg: "625px" }}
-              maxH={{ base: "70vh", lg: "625px" }}
-              overflowY="auto"
-              p={{ base: 6, md: 8 }}
-            >
-              <VStack align="stretch" gap={8}>
-                {processSteps.map((step, index) => (
-                  <Box
-                    key={index}
-                    borderBottom={
-                      index !== processSteps.length - 1 ? "1px solid" : "none"
-                    }
-                    borderColor="rgba(255, 255, 255, 0.1)"
-                    pb={index !== processSteps.length - 1 ? 8 : 0}
-                  >
-                    <VStack align="start" gap={4}>
-                      <Heading
-                        as="h3"
-                        color="orangeCustom"
-                        fontFamily="poppins"
-                        fontSize={{ base: "xl", md: "2xl" }}
-                        fontWeight="semibold"
-                      >
-                        {step.step}
-                      </Heading>
-
-                      <Heading
-                        as="h4"
-                        color="offWhite"
-                        fontFamily="poppins"
-                        fontSize={{ base: "lg", md: "xl" }}
-                        fontWeight="medium"
-                      >
-                        {step.title}
-                      </Heading>
-
-                      <Text
-                        color="offWhite"
-                        fontSize={{ base: "sm", md: "md" }}
-                        lineHeight="1.6"
-                      >
-                        {step.description}
-                      </Text>
-
-                      {step.highlights && (
-                        <VStack align="start" gap={2} mt={2} w="full">
-                          {step.highlights.map((highlight, highlightIndex) => (
-                            <HStack key={highlightIndex} align="center" gap={3}>
-                              <Box
-                                bg="orangeCustom"
-                                borderRadius="full"
-                                flexShrink={0}
-                                h={2}
-                                w={2}
+                          {step.showButton && (
+                            <Box mt={4}>
+                              <PrimaryButton
+                                fontSize="sm"
+                                icon={
+                                  <Icon h={3}>
+                                    <FaChevronRight />
+                                  </Icon>
+                                }
+                                label="Book A Call Now"
+                                minHeight={40}
+                                px={16}
+                                trackConversion={true}
+                                url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
                               />
-                              <Text
-                                color="offWhite"
-                                fontSize={{ base: "xs", md: "sm" }}
-                                fontWeight="medium"
-                              >
-                                {highlight}
-                              </Text>
-                            </HStack>
-                          ))}
+                            </Box>
+                          )}
                         </VStack>
-                      )}
-
-                      {step.showButton && (
-                        <Box mt={4}>
-                          <PrimaryButton
-                            fontSize="sm"
-                            icon={
-                              <Icon h={3}>
-                                <FaChevronRight />
-                              </Icon>
-                            }
-                            label="Book A Call Now"
-                            minHeight={40}
-                            px={16}
-                            trackConversion={true}
-                            url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
-                            variation="secondary"
-                          />
-                        </Box>
-                      )}
-                    </VStack>
-                  </Box>
-                ))}
-              </VStack>
+                      </Box>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </>
             </Box>
           </Box>
         </Flex>

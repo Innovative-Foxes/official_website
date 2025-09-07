@@ -1,0 +1,13 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.swiper-slide {
+  background: #f2eee6 !important;
+  height: auto !important;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: var(--swiper-pagination-color, #f78523) !important;
+}
