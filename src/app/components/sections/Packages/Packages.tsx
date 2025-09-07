@@ -165,6 +165,7 @@ const Packages = () => {
                 color={
                   activePackage === "design" ? "darkBlueCustom" : "gray.600"
                 }
+                fontSize={"md"}
                 fontWeight="semibold"
                 px={8}
                 py={3}
@@ -191,6 +192,7 @@ const Packages = () => {
                 }
                 borderRadius="full"
                 color={activePackage === "design-dev" ? "offWhite" : "gray.600"}
+                fontSize={"md"}
                 fontWeight="semibold"
                 px={8}
                 py={3}

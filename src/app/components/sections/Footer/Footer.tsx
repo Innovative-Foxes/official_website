@@ -38,7 +38,7 @@ const Footer = () => {
           >
             <Box textAlign="center">
               <Text fontSize={{ base: "sm", md: "md" }}>
-                © Innovative Foxes
+                © {new Date().getFullYear()} Innovative Foxes
               </Text>
             </Box>
             <Box textAlign="center">
@@ -56,6 +56,7 @@ const Footer = () => {
                 fontSize={{ base: "sm", md: "md" }}
                 fontWeight="medium"
                 href="mailto:hello@innovativefoxes.com"
+                target="_blank"
               >
                 hello@innovativefoxes.com
               </Link>
@@ -93,6 +94,7 @@ const Footer = () => {
                 color="orangeCustom"
                 fontWeight="medium"
                 href="mailto:hello@innovativefoxes.com"
+                target="_blank"
               >
                 hello@innovativefoxes.com
               </Link>
@@ -107,9 +109,13 @@ const Footer = () => {
             mt={6}
             w="full"
           >
-            <Link href="/privacy">Privacy</Link>
+            <Link href="/privacy" target="_blank">
+              Privacy
+            </Link>
             <Separator height="4" orientation="vertical" />
-            <Link href="/terms">Terms</Link>
+            <Link href="/terms" target="_blank">
+              Terms
+            </Link>
           </HStack>
         </VStack>
       </CustomContainer>

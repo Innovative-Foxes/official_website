@@ -40,7 +40,7 @@ const InteractiveTemplate = () => {
   }, []);
 
   const sectionControls = [
-    { id: "navigation", title: "Navigation Section", hasSubControls: true },
+    { id: "navigation", title: "Navigation Bar", hasSubControls: true },
     { id: "navButton", title: "└ Navigation CTA Button", isSubControl: true },
     { id: "hero", title: "Hero Section", hasSubControls: true },
     { id: "heroLeft", title: "└ Hero Content (Left)", isSubControl: true },
@@ -739,7 +739,7 @@ const InteractiveTemplate = () => {
                 background: "rgba(0, 0, 0, 0.6)",
               },
             }}
-            height="85vh"
+            height="80vh"
             overflowY="auto"
             position={"relative"}
             width="100%"
@@ -1126,7 +1126,7 @@ const InteractiveTemplate = () => {
                 background: "rgba(0, 0, 0, 0.6)",
               },
             }}
-            height="calc(85vh - 54px)"
+            height="calc(80vh - 54px)"
             overflowY="auto"
             width="320px"
           >

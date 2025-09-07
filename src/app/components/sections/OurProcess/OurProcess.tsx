@@ -130,7 +130,7 @@ const OurProcess = () => {
                   as="h2"
                   fontFamily="poppins"
                   fontSize={{ base: "4xl", md: "6xl" }}
-                  fontWeight="semibold"
+                  fontWeight="bold"
                   lineHeight="110%"
                   mb={6}
                   textTransform={"uppercase"}
@@ -187,7 +187,7 @@ const OurProcess = () => {
                         <VStack align="start" gap={{ base: 2, md: 4 }}>
                           <Heading
                             as="h3"
-                            color="orangeCustom"
+                            color="darkBlueCustom"
                             fontFamily="poppins"
                             fontSize={{ base: "2xl", md: "3xl" }}
                             fontWeight="semibold"
@@ -231,7 +231,7 @@ const OurProcess = () => {
                                     />
                                     <Text
                                       color="darkBlueCustom"
-                                      fontSize={"sm"}
+                                      fontSize={"md"}
                                       fontWeight="medium"
                                     >
                                       {highlight}

@@ -69,7 +69,7 @@ const OurAdvantage = () => {
 
   return (
     <Box
-      bgColor={"#f1edeb"}
+      bgColor={"offWhite"}
       mt={{ base: 24, md: 40, lg: 0 }}
       pb={{ base: 24, md: 32 }}
       pt={{ base: 16, md: 32 }}
@@ -117,12 +117,12 @@ const OurAdvantage = () => {
                   <VStack>
                     <Flex
                       alignItems={"center"}
-                      borderColor={"#dedcdc"}
+                      borderColor={"#DED7CA"}
                       borderRadius={"8px"}
                       borderWidth={"2px"}
                       justifyContent={"center"}
                       mb={2}
-                      p={3}
+                      p={{ base: 3, md: 4 }}
                     >
                       <Icon color="orangeCustom" size="xl">
                         {card.icon}
