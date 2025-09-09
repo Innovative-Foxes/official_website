@@ -13,470 +13,566 @@ import React from "react";
 import { FaNetworkWired } from "react-icons/fa";
 
 import { FaChartSimple, FaObjectGroup } from "react-icons/fa6";
+import RightToggleDrawer from "../../../components/ui/Drawer/RightToggleDrawer";
 
 const NexusPayLanding = () => {
+  const handleSectionToggle = (sectionId: string, isVisible: boolean) => {
+    console.log(
+      `Section ${sectionId} toggled to ${isVisible ? "visible" : "hidden"}`,
+    );
+  };
+
   return (
-    <div className="landing-page">
-      {/* Header */}
-      <header className="header">
-        <div className="container">
-          <div className="nav-brand">
-            <div className="logo">
-              <span className="logo-icon">⚡</span>
-              <span className="logo-text">NexusPay</span>
-            </div>
-          </div>
-          <nav className="nav-links">
-            <a className="nav-link" href="#products">
-              Products
-            </a>
-            <a className="nav-link" href="#customers">
-              Customers
-            </a>
-            <a className="nav-link" href="#pricing">
-              Pricing
-            </a>
-            <a className="nav-link" href="#about">
-              About
-            </a>
-          </nav>
-          <div className="nav-actions">
-            <Box display={{ base: "none", lg: "block" }}>
-              <a className="login-link" href="#login">
-                Sign In
-              </a>
-            </Box>
-            <Box display={{ base: "none", lg: "block" }}>
-              <button className="cta-btn">Get Started Free</button>
-            </Box>
-          </div>
-          <button className="mobile-menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </header>
+    <>
+      {/* RightToggleDrawer with side tab - handles its own positioning */}
+      <RightToggleDrawer
+        drawerTitle="NexusPay Page Controls"
+        triggerLabel="TOGGLE SECTIONS"
+        onSectionToggle={handleSectionToggle}
+      />
 
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-left">
-              <h1 className="hero-title">
-                Global payments
-                <br />
-                made simple
-                <br />
-                and secure.
-              </h1>
-              <p className="hero-description">
-                Connect your business to the world with instant cross-border
-                <br />
-                payments, real-time settlements, and enterprise-grade security.
-              </p>
-              <div className="hero-cta-buttons">
-                <button className="hero-cta-primary">Get Started Free →</button>
-                <button className="hero-cta-secondary">Watch Demo</button>
-              </div>
-              <div className="partner-logos">
-                <span className="partner">Stripe</span>
-                <span className="partner">PayPal</span>
-                <span className="partner">Wise</span>
-              </div>
-            </div>
-            <div className="hero-right">
-              <div className="signup-form">
-                <div className="form-header">
-                  <h3>Start your free trial</h3>
-                  <p>No credit card required</p>
-                </div>
-                <form className="signup-form-content">
-                  <div className="form-group">
-                    <label htmlFor="email">Email address</label>
-                    <input
-                      required
-                      id="email"
-                      placeholder="Enter your email"
-                      type="email"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="company">Company name</label>
-                    <input
-                      required
-                      id="company"
-                      placeholder="Enter company name"
-                      type="text"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input
-                      required
-                      id="password"
-                      placeholder="Create a password"
-                      type="password"
-                    />
-                  </div>
-                  <button className="signup-btn" type="submit">
-                    Create your account
-                  </button>
-                  <p className="form-footer">
-                    Already have an account? <a href="#">Sign in</a>
-                  </p>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="features">
-        <div className="container">
-          <h2 className="features-title">
-            Built for the future
-            <br />
-            of global commerce.
-          </h2>
-          <p className="features-subtitle">
-            Enterprise-grade payment infrastructure that scales with your
-            business. From startups to Fortune 500s, we power seamless financial
-            experiences across every continent.
-          </p>
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">🌍</div>
-              <h3>Global reach</h3>
-              <p>
-                Send and receive payments in 150+ currencies across 200+
-                countries with real-time exchange rates and instant settlements.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🔗</div>
-              <h3>API-first platform</h3>
-              <p>
-                Seamlessly integrate our payment infrastructure into your
-                existing systems with our comprehensive REST APIs and SDKs.
-              </p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🛡️</div>
-              <h3>Bank-grade security</h3>
-              <p>
-                PCI DSS Level 1 compliance with end-to-end encryption, fraud
-                detection, and regulatory compliance across all jurisdictions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="stats">
-        <div className="container">
-          <div className="stats-content">
-            <div className="stats-cards">
-              <div className="stats-card">
-                <h2>Trusted by global leaders</h2>
-                <div className="stat-large">50k+</div>
-                <p>Businesses processing payments worldwide</p>
-              </div>
-              <div className="stats-card">
-                <VStack
-                  alignItems={"start"}
-                  h={"full"}
-                  justifyContent={"space-between"}
-                >
-                  <div>
-                    <h3>Real-time settlements</h3>
-                    <p>
-                      Process payments instantly with 99.9% uptime and global
-                      reach
-                    </p>
-                  </div>
-                  <Box>
-                    <button className="settlement cta-primary">
-                      Learn More →
-                    </button>
-                  </Box>
-                </VStack>
-              </div>
-            </div>
-            <Box
-              bg={"gray.150"}
-              borderRadius={"16px"}
-              boxShadow={"0 4px 20px rgba(0,0,0,.08)"}
-              overflow={"hidden"}
-              p={"2.5rem"}
-            >
-              <HStack flexDirection={{ base: "column", md: "row" }} gap={6}>
-                <div>
-                  <Heading
-                    color={"#1A1A1A"}
-                    fontFamily={"poppins"}
-                    fontSize={"32px"}
-                    mb={"24px"}
-                  >
-                    MRR Increase
-                  </Heading>
-                  <Text color={"#666"} fontSize={"20px"}>
-                    Focused on compounding revenue streams with scalable,
-                    predictable, and recurring growth models.
-                  </Text>
-                </div>
-                <Image
-                  alt="chart"
-                  boxShadow={"0 4px 20px rgba(0,0,0,.08)"}
-                  maxW={650}
-                  mb={"-50px"}
-                  src="/images/png/chart-1.png"
-                  w={"full"}
-                />
-              </HStack>
-            </Box>
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Section */}
-      <section className="reserve">
-        <div className="container">
-          <div className="reserve-content">
-            <h2>
-              Integrate in minutes,
-              <br />
-              scale to millions.
-            </h2>
-            <div className="reserve-features">
-              <div className="reserve-feature">
-                <div className="reserve-icon">
-                  <Icon>
-                    <FaNetworkWired />
-                  </Icon>
-                </div>
-                <div>
-                  <h3>Connect your systems</h3>
-                  <p>
-                    Integrate our APIs into your existing infrastructure with
-                    our comprehensive documentation and SDKs.
-                  </p>
-                </div>
-              </div>
-              <div className="reserve-feature">
-                <div className="reserve-icon">
-                  <Icon>
-                    <FaObjectGroup />
-                  </Icon>
-                </div>
-                <div>
-                  <h3>Customize workflows</h3>
-                  <p>
-                    Build custom payment flows that match your business needs
-                    with our flexible configuration options.
-                  </p>
-                </div>
-              </div>
-              <div className="reserve-feature">
-                <div className="reserve-icon">
-                  <Icon>
-                    <FaChartSimple />
-                  </Icon>
-                </div>
-                <div>
-                  <h3>Monitor & optimize</h3>
-                  <p>
-                    Track performance with real-time analytics and optimize your
-                    payment processing with actionable insights.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Innovation Section */}
-      <section className="innovation">
-        <div className="container">
-          <h2>
-            Powering the next
-            <br />
-            generation of commerce
-          </h2>
-          <p>
-            From fintech startups to global enterprises,
-            <br />
-            we&apos;re building the infrastructure for tomorrow&apos;s economy.
-          </p>
-          <div className="innovation-stats">
-            <div className="innovation-stat">
-              <div className="stat-number">99.9%</div>
-              <div className="stat-label">Uptime SLA</div>
-            </div>
-            <div className="innovation-stat">
-              <div className="stat-number">$2.4B+</div>
-              <div className="stat-label">Processed annually</div>
-            </div>
-            <div className="innovation-stat">
-              <div className="stat-number">150+</div>
-              <div className="stat-label">Supported currencies</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="pricing">
-        <div className="container">
-          <div className="pricing-header">
-            <h2>Choose your plan</h2>
-            <p>Start free, upgrade when you&apos;re ready</p>
-          </div>
-          <div className="pricing-cards">
-            <div className="pricing-card">
-              <div className="pricing-card-header">
-                <h3>Starter</h3>
-                <div className="price">
-                  <span className="currency">$</span>
-                  <span className="amount">0</span>
-                  <span className="period">/month</span>
-                </div>
-                <p className="price-description">Perfect for startups</p>
-              </div>
-              <div className="pricing-features">
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>Up to $10K monthly volume</span>
-                </div>
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>Basic API access</span>
-                </div>
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>Email support</span>
-                </div>
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>Standard settlement</span>
-                </div>
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>2.9% + $0.30 per transaction</span>
-                </div>
-              </div>
-              <button className="pricing-btn">Get Started</button>
-            </div>
-            <div className="pricing-card premium">
-              <div className="pricing-badge">Most Popular</div>
-              <div className="pricing-card-header">
-                <h3>Enterprise</h3>
-                <div className="price">
-                  <span className="currency">$</span>
-                  <span className="amount">299</span>
-                  <span className="period">/month</span>
-                </div>
-                <p className="price-description">For high-volume businesses</p>
-              </div>
-              <div className="pricing-features">
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>Unlimited volume</span>
-                </div>
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>Advanced APIs & webhooks</span>
-                </div>
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>Dedicated support</span>
-                </div>
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>Real-time settlements</span>
-                </div>
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>Custom pricing</span>
-                </div>
-                <div className="feature-item">
-                  <span className="check">✓</span>
-                  <span>White-label solutions</span>
-                </div>
-              </div>
-              <button className="pricing-btn premium-btn">Contact Sales</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="final-cta">
-        <div className="container">
-          <div className="cta-content">
-            <h2>
-              Ready to transform your
-              <br />
-              global payment infrastructure?
-            </h2>
-            <HStack
-              className="cta-buttons"
-              flexDirection={{ base: "column", md: "row" }}
-              gap={4}
-              justifyContent={"center"}
-            >
-              <button className="cta-primary">Get Started Free</button>
-              <Box w={"207px"}>
-                <button className="cta-secondary">Learn More →</button>
-              </Box>
-            </HStack>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-brand">
+      <div className="landing-page">
+        {/* Header */}
+        <header
+          className="header"
+          data-title="Navigation Section"
+          data-toggle="navigation-section"
+        >
+          <div className="container">
+            <div className="nav-brand">
               <div className="logo">
                 <span className="logo-icon">⚡</span>
                 <span className="logo-text">NexusPay</span>
               </div>
             </div>
-            <div className="footer-links">
-              <div className="footer-column">
-                <h4>Solutions</h4>
-                <a href="#">Banking</a>
-                <a href="#">Payments</a>
-                <a href="#">Cards</a>
+            <nav
+              className="nav-links"
+              data-title="Navigation Links"
+              data-toggle="nav-links"
+            >
+              <a className="nav-link" href="#products">
+                Products
+              </a>
+              <a className="nav-link" href="#customers">
+                Customers
+              </a>
+              <a className="nav-link" href="#pricing">
+                Pricing
+              </a>
+              <a className="nav-link" href="#about">
+                About
+              </a>
+            </nav>
+            <div className="nav-actions">
+              <Box display={{ base: "none", lg: "block" }}>
+                <button
+                  className="cta-btn"
+                  data-title="Navigation CTA Button"
+                  data-toggle="nav-button"
+                >
+                  Get Started Free
+                </button>
+              </Box>
+            </div>
+            <button className="mobile-menu-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+
+        {/* Hero Section */}
+        <section
+          className="hero"
+          data-title="Hero Section"
+          data-toggle="hero-section"
+        >
+          <div className="container">
+            <div className="hero-content">
+              <div
+                className="hero-left"
+                data-title="Hero Left Content"
+                data-toggle="hero-left-content"
+              >
+                <h1 className="hero-title">
+                  Global payments
+                  <br />
+                  made simple
+                  <br />
+                  and secure.
+                </h1>
+                <p className="hero-description">
+                  Connect your business to the world with instant cross-border
+                  <br />
+                  payments, real-time settlements, and enterprise-grade
+                  security.
+                </p>
+                <div className="hero-cta-buttons">
+                  <button className="hero-cta-primary">
+                    Get Started Free →
+                  </button>
+                  <button className="hero-cta-secondary">Watch Demo</button>
+                </div>
+                <div className="partner-logos">
+                  <span className="partner">Stripe</span>
+                  <span className="partner">PayPal</span>
+                  <span className="partner">Wise</span>
+                </div>
               </div>
-              <div className="footer-column">
-                <h4>Company</h4>
-                <a href="#">About</a>
-                <a href="#">Careers</a>
-                <a href="#">Press</a>
-              </div>
-              <div className="footer-column">
-                <h4>Legal</h4>
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="#">Security</a>
+              <div className="hero-right">
+                <div
+                  className="signup-form"
+                  data-title="Hero Form"
+                  data-toggle="hero-form"
+                >
+                  <div className="form-header">
+                    <h3>Start your free trial</h3>
+                    <p>No credit card required</p>
+                  </div>
+                  <form className="signup-form-content">
+                    <div className="form-group">
+                      <label htmlFor="email">Email address</label>
+                      <input
+                        required
+                        id="email"
+                        placeholder="Enter your email"
+                        type="email"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="company">Company name</label>
+                      <input
+                        required
+                        id="company"
+                        placeholder="Enter company name"
+                        type="text"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="password">Password</label>
+                      <input
+                        required
+                        id="password"
+                        placeholder="Create a password"
+                        type="password"
+                      />
+                    </div>
+                    <button className="signup-btn" type="submit">
+                      Create your account
+                    </button>
+                    <p className="form-footer">
+                      Already have an account? <a href="#">Sign in</a>
+                    </p>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-          <div className="footer-bottom">
-            <p>© 2025 NexusPay. All rights reserved.</p>
-            <div className="social-icons">
-              <span>f</span>
-              <span>in</span>
+        </section>
+
+        {/* Features Section */}
+        <section
+          className="features"
+          data-title="Features Section"
+          data-toggle="features-section"
+        >
+          <div className="container">
+            <h2 className="features-title">
+              Built for the future
+              <br />
+              of global commerce.
+            </h2>
+            <p className="features-subtitle">
+              Enterprise-grade payment infrastructure that scales with your
+              business. From startups to Fortune 500s, we power seamless
+              financial experiences across every continent.
+            </p>
+            <div className="features-grid">
+              <div
+                className="feature-card"
+                data-title="Global Reach Feature"
+                data-toggle="global-reach-feature"
+              >
+                <div className="feature-icon">🌍</div>
+                <h3>Global reach</h3>
+                <p>
+                  Send and receive payments in 150+ currencies across 200+
+                  countries with real-time exchange rates and instant
+                  settlements.
+                </p>
+              </div>
+              <div
+                className="feature-card"
+                data-title="API-First Platform Feature"
+                data-toggle="api-first-feature"
+              >
+                <div className="feature-icon">🔗</div>
+                <h3>API-first platform</h3>
+                <p>
+                  Seamlessly integrate our payment infrastructure into your
+                  existing systems with our comprehensive REST APIs and SDKs.
+                </p>
+              </div>
+              <div
+                className="feature-card"
+                data-title="Bank-Grade Security Feature"
+                data-toggle="bank-grade-security-feature"
+              >
+                <div className="feature-icon">🛡️</div>
+                <h3>Bank-grade security</h3>
+                <p>
+                  PCI DSS Level 1 compliance with end-to-end encryption, fraud
+                  detection, and regulatory compliance across all jurisdictions.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </section>
+
+        {/* Stats Section */}
+        <section
+          className="stats"
+          data-title="Stats Section"
+          data-toggle="stats-section"
+        >
+          <div className="container">
+            <div className="stats-content">
+              <div className="stats-cards">
+                <div
+                  className="stats-card"
+                  data-title="Trusted by Global Leaders Card"
+                  data-toggle="trusted-leaders-card"
+                >
+                  <h2>Trusted by global leaders</h2>
+                  <div className="stat-large">50k+</div>
+                  <p>Businesses processing payments worldwide</p>
+                </div>
+                <div
+                  className="stats-card"
+                  data-title="Real-time Settlements Card"
+                  data-toggle="real-time-settlements-card"
+                >
+                  <VStack
+                    alignItems={"start"}
+                    h={"full"}
+                    justifyContent={"space-between"}
+                  >
+                    <div>
+                      <h3>Real-time settlements</h3>
+                      <p>
+                        Process payments instantly with 99.9% uptime and global
+                        reach
+                      </p>
+                    </div>
+                    <Box>
+                      <button className="settlement cta-primary">
+                        Learn More →
+                      </button>
+                    </Box>
+                  </VStack>
+                </div>
+              </div>
+              <Box
+                bg={"gray.150"}
+                borderRadius={"16px"}
+                boxShadow={"0 4px 20px rgba(0,0,0,.08)"}
+                data-title="MRR Increase Card"
+                data-toggle="mrr-increase-card"
+                overflow={"hidden"}
+                p={"2.5rem"}
+              >
+                <HStack flexDirection={{ base: "column", md: "row" }} gap={6}>
+                  <div>
+                    <Heading
+                      color={"#1A1A1A"}
+                      fontFamily={"poppins"}
+                      fontSize={"32px"}
+                      mb={"24px"}
+                    >
+                      MRR Increase
+                    </Heading>
+                    <Text color={"#666"} fontSize={"20px"}>
+                      Focused on compounding revenue streams with scalable,
+                      predictable, and recurring growth models.
+                    </Text>
+                  </div>
+                  <Image
+                    alt="chart"
+                    boxShadow={"0 4px 20px rgba(0,0,0,.08)"}
+                    maxW={650}
+                    mb={"-50px"}
+                    src="/images/png/chart-1.png"
+                    w={"full"}
+                  />
+                </HStack>
+              </Box>
+            </div>
+          </div>
+        </section>
+
+        {/* Integration Section */}
+        <section
+          className="reserve"
+          data-title="Integration Section"
+          data-toggle="integration-section"
+        >
+          <div className="container">
+            <div className="reserve-content">
+              <h2>
+                Integrate in minutes,
+                <br />
+                scale to millions.
+              </h2>
+              <div className="reserve-features">
+                <div className="reserve-feature">
+                  <div className="reserve-icon">
+                    <Icon>
+                      <FaNetworkWired />
+                    </Icon>
+                  </div>
+                  <div>
+                    <h3>Connect your systems</h3>
+                    <p>
+                      Integrate our APIs into your existing infrastructure with
+                      our comprehensive documentation and SDKs.
+                    </p>
+                  </div>
+                </div>
+                <div className="reserve-feature">
+                  <div className="reserve-icon">
+                    <Icon>
+                      <FaObjectGroup />
+                    </Icon>
+                  </div>
+                  <div>
+                    <h3>Customize workflows</h3>
+                    <p>
+                      Build custom payment flows that match your business needs
+                      with our flexible configuration options.
+                    </p>
+                  </div>
+                </div>
+                <div className="reserve-feature">
+                  <div className="reserve-icon">
+                    <Icon>
+                      <FaChartSimple />
+                    </Icon>
+                  </div>
+                  <div>
+                    <h3>Monitor & optimize</h3>
+                    <p>
+                      Track performance with real-time analytics and optimize
+                      your payment processing with actionable insights.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Innovation Section */}
+        <section
+          className="innovation"
+          data-title="Innovation Section"
+          data-toggle="innovation-section"
+        >
+          <div className="container">
+            <h2>
+              Powering the next
+              <br />
+              generation of commerce
+            </h2>
+            <p>
+              From fintech startups to global enterprises,
+              <br />
+              we&apos;re building the infrastructure for tomorrow&apos;s
+              economy.
+            </p>
+            <div className="innovation-stats">
+              <div className="innovation-stat">
+                <div className="stat-number">99.9%</div>
+                <div className="stat-label">Uptime SLA</div>
+              </div>
+              <div className="innovation-stat">
+                <div className="stat-number">$2.4B+</div>
+                <div className="stat-label">Processed annually</div>
+              </div>
+              <div className="innovation-stat">
+                <div className="stat-number">150+</div>
+                <div className="stat-label">Supported currencies</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section
+          className="pricing"
+          data-title="Pricing Section"
+          data-toggle="pricing-section"
+        >
+          <div className="container">
+            <div className="pricing-header">
+              <h2>Choose your plan</h2>
+              <p>Start free, upgrade when you&apos;re ready</p>
+            </div>
+            <div className="pricing-cards">
+              <div className="pricing-card">
+                <div className="pricing-card-header">
+                  <h3>Starter</h3>
+                  <div className="price">
+                    <span className="currency">$</span>
+                    <span className="amount">0</span>
+                    <span className="period">/month</span>
+                  </div>
+                  <p className="price-description">Perfect for startups</p>
+                </div>
+                <div className="pricing-features">
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>Up to $10K monthly volume</span>
+                  </div>
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>Basic API access</span>
+                  </div>
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>Email support</span>
+                  </div>
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>Standard settlement</span>
+                  </div>
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>2.9% + $0.30 per transaction</span>
+                  </div>
+                </div>
+                <button className="pricing-btn">Get Started</button>
+              </div>
+              <div className="pricing-card premium">
+                <div className="pricing-badge">Most Popular</div>
+                <div className="pricing-card-header">
+                  <h3>Enterprise</h3>
+                  <div className="price">
+                    <span className="currency">$</span>
+                    <span className="amount">299</span>
+                    <span className="period">/month</span>
+                  </div>
+                  <p className="price-description">
+                    For high-volume businesses
+                  </p>
+                </div>
+                <div className="pricing-features">
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>Unlimited volume</span>
+                  </div>
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>Advanced APIs & webhooks</span>
+                  </div>
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>Dedicated support</span>
+                  </div>
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>Real-time settlements</span>
+                  </div>
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>Custom pricing</span>
+                  </div>
+                  <div className="feature-item">
+                    <span className="check">✓</span>
+                    <span>White-label solutions</span>
+                  </div>
+                </div>
+                <button className="pricing-btn premium-btn">
+                  Contact Sales
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section
+          className="final-cta"
+          data-title="CTA Section"
+          data-toggle="cta-section"
+        >
+          <div className="container">
+            <div className="cta-content">
+              <h2>
+                Ready to transform your
+                <br />
+                global payment infrastructure?
+              </h2>
+              <HStack
+                className="cta-buttons"
+                flexDirection={{ base: "column", md: "row" }}
+                gap={4}
+                justifyContent={"center"}
+              >
+                <button className="cta-primary">Get Started Free</button>
+                <Box w={"207px"}>
+                  <button className="cta-secondary">Learn More →</button>
+                </Box>
+              </HStack>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer
+          className="footer"
+          data-title="Footer Section"
+          data-toggle="footer-section"
+        >
+          <div className="container">
+            <div className="footer-content">
+              <div className="footer-brand">
+                <div className="logo">
+                  <span className="logo-icon">⚡</span>
+                  <span className="logo-text">NexusPay</span>
+                </div>
+              </div>
+              <div className="footer-links">
+                <div className="footer-column">
+                  <h4>Solutions</h4>
+                  <a href="#">Banking</a>
+                  <a href="#">Payments</a>
+                  <a href="#">Cards</a>
+                </div>
+                <div className="footer-column">
+                  <h4>Company</h4>
+                  <a href="#">About</a>
+                  <a href="#">Careers</a>
+                  <a href="#">Press</a>
+                </div>
+                <div className="footer-column">
+                  <h4>Legal</h4>
+                  <a href="#">Privacy</a>
+                  <a href="#">Terms</a>
+                  <a href="#">Security</a>
+                </div>
+              </div>
+            </div>
+            <div className="footer-bottom">
+              <p>© 2025 NexusPay. All rights reserved.</p>
+              <div className="social-icons">
+                <span>f</span>
+                <span>in</span>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
 
       <style jsx>{`
         * {
@@ -813,9 +909,84 @@ const NexusPayLanding = () => {
           gap: 3rem;
         }
 
+        /* Dynamic grid columns based on visible cards */
+        .features-grid:has(
+            [data-toggle="global-reach-feature"][style*="display: none"]
+          ):has([data-toggle="api-first-feature"][style*="display: none"]):has(
+            [data-toggle="bank-grade-security-feature"][style*="display: none"]
+          ) {
+          grid-template-columns: 1fr;
+        }
+
+        .features-grid:has(
+            [data-toggle="global-reach-feature"][style*="display: none"]
+          ):has([data-toggle="api-first-feature"][style*="display: none"]):not(
+            :has(
+              [data-toggle="bank-grade-security-feature"][style*="display: none"]
+            )
+          ) {
+          grid-template-columns: 1fr;
+        }
+
+        .features-grid:has(
+            [data-toggle="global-reach-feature"][style*="display: none"]
+          ):has(
+            [data-toggle="bank-grade-security-feature"][style*="display: none"]
+          ):not(
+            :has([data-toggle="api-first-feature"][style*="display: none"])
+          ) {
+          grid-template-columns: 1fr;
+        }
+
+        .features-grid:has(
+            [data-toggle="api-first-feature"][style*="display: none"]
+          ):has(
+            [data-toggle="bank-grade-security-feature"][style*="display: none"]
+          ):not(
+            :has([data-toggle="global-reach-feature"][style*="display: none"])
+          ) {
+          grid-template-columns: 1fr;
+        }
+
+        .features-grid:has(
+            [data-toggle="global-reach-feature"][style*="display: none"]
+          ):not(
+            :has([data-toggle="api-first-feature"][style*="display: none"])
+          ):not(
+            :has(
+              [data-toggle="bank-grade-security-feature"][style*="display: none"]
+            )
+          ) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .features-grid:has(
+            [data-toggle="api-first-feature"][style*="display: none"]
+          ):not(
+            :has([data-toggle="global-reach-feature"][style*="display: none"])
+          ):not(
+            :has(
+              [data-toggle="bank-grade-security-feature"][style*="display: none"]
+            )
+          ) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .features-grid:has(
+            [data-toggle="bank-grade-security-feature"][style*="display: none"]
+          ):not(
+            :has([data-toggle="global-reach-feature"][style*="display: none"])
+          ):not(
+            :has([data-toggle="api-first-feature"][style*="display: none"])
+          ) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
         .feature-card {
           text-align: center;
           padding: 2rem;
+          max-width: 600px;
+          margin: auto;
         }
 
         .feature-icon {
@@ -1330,6 +1501,41 @@ const NexusPayLanding = () => {
             gap: 2rem;
           }
 
+          /* Override dynamic grid on mobile - always single column */
+          .features-grid:has(
+              [data-toggle="global-reach-feature"][style*="display: none"]
+            ):not(
+              :has([data-toggle="api-first-feature"][style*="display: none"])
+            ):not(
+              :has(
+                [data-toggle="bank-grade-security-feature"][style*="display: none"]
+              )
+            ) {
+            grid-template-columns: 1fr;
+          }
+
+          .features-grid:has(
+              [data-toggle="api-first-feature"][style*="display: none"]
+            ):not(
+              :has([data-toggle="global-reach-feature"][style*="display: none"])
+            ):not(
+              :has(
+                [data-toggle="bank-grade-security-feature"][style*="display: none"]
+              )
+            ) {
+            grid-template-columns: 1fr;
+          }
+
+          .features-grid:has(
+              [data-toggle="bank-grade-security-feature"][style*="display: none"]
+            ):not(
+              :has([data-toggle="global-reach-feature"][style*="display: none"])
+            ):not(
+              :has([data-toggle="api-first-feature"][style*="display: none"])
+            ) {
+            grid-template-columns: 1fr;
+          }
+
           .hero-title {
             font-size: 2.5rem;
           }
@@ -1402,7 +1608,7 @@ const NexusPayLanding = () => {
           }
         }
       `}</style>
-    </div>
+    </>
   );
 };
 
