@@ -5,6 +5,7 @@ import {
   Heading,
   Icon,
   Image,
+  Link,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -41,8 +42,10 @@ const NexusPayLanding = () => {
           <div className="container">
             <div className="nav-brand">
               <div className="logo">
-                <span className="logo-icon">⚡</span>
-                <span className="logo-text">NexusPay</span>
+                <Link href="#" outline={"none"}>
+                  <span className="logo-icon">⚡</span>
+                  <span className="logo-text">NexusPay</span>
+                </Link>
               </div>
             </div>
             <nav
@@ -50,17 +53,17 @@ const NexusPayLanding = () => {
               data-title="Navigation Links"
               data-toggle="nav-links"
             >
-              <a className="nav-link" href="#products">
-                Products
+              <a className="nav-link" href="#features">
+                Features
               </a>
-              <a className="nav-link" href="#customers">
-                Customers
+              <a className="nav-link" href="#about">
+                About
               </a>
               <a className="nav-link" href="#pricing">
                 Pricing
               </a>
-              <a className="nav-link" href="#about">
-                About
+              <a className="nav-link" href="#contact">
+                Contact
               </a>
             </nav>
             <div className="nav-actions">
@@ -96,15 +99,10 @@ const NexusPayLanding = () => {
                 data-toggle="hero-left-content"
               >
                 <h1 className="hero-title">
-                  Global payments
-                  <br />
-                  made simple
-                  <br />
-                  and secure.
+                  Global payments made simple and secure.
                 </h1>
                 <p className="hero-description">
                   Connect your business to the world with instant cross-border
-                  <br />
                   payments, real-time settlements, and enterprise-grade
                   security.
                 </p>
@@ -120,14 +118,14 @@ const NexusPayLanding = () => {
                   <span className="partner">Wise</span>
                 </div>
               </div>
-              <div className="hero-right">
-                <div
-                  className="signup-form"
-                  data-title="Hero Form"
-                  data-toggle="hero-form"
-                >
+              <div
+                className="hero-right"
+                data-title="Hero Form"
+                data-toggle="hero-form"
+              >
+                <div className="signup-form">
                   <div className="form-header">
-                    <h3>Start your free trial</h3>
+                    <h3>Sign up for early access</h3>
                     <p>No credit card required</p>
                   </div>
                   <form className="signup-form-content">
@@ -150,16 +148,15 @@ const NexusPayLanding = () => {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="password">Password</label>
+                      <label htmlFor="phone">Phone Number</label>
                       <input
-                        required
-                        id="password"
-                        placeholder="Create a password"
-                        type="password"
+                        id="phone"
+                        placeholder="Enter your phone number (optional)"
+                        type="tel"
                       />
                     </div>
                     <button className="signup-btn" type="submit">
-                      Create your account
+                      Sign up now
                     </button>
                     <p className="form-footer">
                       Already have an account? <a href="#">Sign in</a>
@@ -176,6 +173,7 @@ const NexusPayLanding = () => {
           className="features"
           data-title="Features Section"
           data-toggle="features-section"
+          id="features"
         >
           <div className="container">
             <h2 className="features-title">
@@ -377,6 +375,7 @@ const NexusPayLanding = () => {
           className="innovation"
           data-title="Innovation Section"
           data-toggle="innovation-section"
+          id="about"
         >
           <div className="container">
             <h2>
@@ -412,6 +411,7 @@ const NexusPayLanding = () => {
           className="pricing"
           data-title="Pricing Section"
           data-toggle="pricing-section"
+          id="pricing"
         >
           <div className="container">
             <div className="pricing-header">
@@ -505,6 +505,7 @@ const NexusPayLanding = () => {
           className="final-cta"
           data-title="CTA Section"
           data-toggle="cta-section"
+          id="contact"
         >
           <div className="container">
             <div className="cta-content">
@@ -538,8 +539,10 @@ const NexusPayLanding = () => {
             <div className="footer-content">
               <div className="footer-brand">
                 <div className="logo">
-                  <span className="logo-icon">⚡</span>
-                  <span className="logo-text">NexusPay</span>
+                  <Link href="#" outline={"none"}>
+                    <span className="logo-icon">⚡</span>
+                    <span className="logo-text">NexusPay</span>
+                  </Link>
                 </div>
               </div>
               <div className="footer-links">
@@ -711,10 +714,19 @@ const NexusPayLanding = () => {
         }
 
         .hero-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
+          display: flex;
           gap: 4rem;
           align-items: center;
+        }
+
+        .hero-left {
+          max-width: 700px;
+        }
+
+        .hero-right {
+          width: 100%;
+          max-width: 800px;
+          margin: auto;
         }
 
         .hero-title {
