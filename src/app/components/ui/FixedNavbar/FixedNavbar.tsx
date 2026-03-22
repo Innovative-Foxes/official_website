@@ -1,22 +1,13 @@
 "use client";
 
-import {
-  Box,
-  CloseButton,
-  Flex,
-  IconButton,
-  Image,
-  Link,
-  Separator,
-  VStack,
-} from "@chakra-ui/react";
-import { LuArrowRightFromLine, LuMenu } from "react-icons/lu";
+import { Box, CloseButton, Flex, IconButton, Image, Link, Separator, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import StatusPing from "../StatusPing/StatusPing";
+import { LuMenu } from "react-icons/lu";
 
 const FixedNavbar = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isNavHovered, setIsNavHovered] = useState(false);
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -64,32 +55,30 @@ const FixedNavbar = () => {
     <>
       {/* Desktop Navbar */}
       <Box
-        display={{ base: "none", md: "block" }}
-        left={0}
+        display={{ base: "none", lg: "block" }}
+        left="50%"
+        maxW={"fit-content"}
         opacity={isVisible ? 1 : 0}
         pointerEvents={isVisible ? "auto" : "none"}
         position="fixed"
-        right={0}
         top={4}
+        transform="translateX(-50%)"
         transition="all 0.3s ease-in-out"
         visibility={isVisible ? "visible" : "hidden"}
+        w={"full"}
         zIndex={1000}
       >
         <Flex
           align="center"
           backdropFilter="blur(10px)"
-          backgroundColor="rgba(255, 255, 255, 0.9)"
+          backgroundColor="rgba(255, 255, 255, 0.95)"
           bg="white"
-          borderColor="gray.300/75"
+          borderColor={"gray.300/75"}
           borderRadius="full"
-          borderWidth="2px"
-          boxShadow="lg"
-          mx="auto"
-          overflow="hidden"
+          borderWidth={"4px"}
+          boxShadow={"lg"}
+          overflow={"hidden"}
           pl={3}
-          w="fit-content"
-          onMouseEnter={() => setIsNavHovered(true)}
-          onMouseLeave={() => setIsNavHovered(false)}
         >
           {/* Logo */}
           <Link
@@ -98,71 +87,47 @@ const FixedNavbar = () => {
             border="none"
             cursor="pointer"
             flexShrink={0}
-            outline="none"
+            outline={"none"}
             pr={4}
-            transition="padding 0.3s ease-in-out"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onMouseEnter={() => setIsLogoHovered(true)}
+            onMouseLeave={() => setIsLogoHovered(false)}
           >
             <Image
-              alt="Logo"
+              alt={"Logo"}
               height="40px"
-              src="/images/svgs/hero-logo.svg"
+              src={isLogoHovered ? "/images/svgs/hero-logo-hover.svg" : "/images/svgs/hero-logo.svg"}
               width="auto"
             />
           </Link>
-          {/* Expand hint icon — visible when collapsed */}
-          <Box
-            alignItems="center"
-            color="gray.400"
-            display="flex"
-            maxW={isNavHovered ? "0" : "40px"}
-            opacity={isNavHovered ? 0 : 1}
-            overflow="hidden"
-            pr={isNavHovered ? 0 : 3}
-            transition="max-width 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out"
-          >
-            <LuArrowRightFromLine size={16} />
-          </Box>
-          {/* Links — collapse when not hovered */}
-          <Box
-            display="flex"
-            maxW={isNavHovered ? "800px" : "0"}
-            opacity={isNavHovered ? 1 : 0}
-            overflow="hidden"
-            transition="max-width 0.4s ease-in-out, opacity 0.3s ease-in-out"
-          >
-            {links.map((link, i) => {
-              const showSeparator = i !== links.length;
-              return (
-                <Flex
-                  key={link.id}
-                  _hover={{ bg: "gray.100" }}
-                  transition="background 0.2s"
+          {links.map((link, i) => {
+            const showSeparator = i !== links.length;
+            return (
+              <Flex key={link.id} _hover={{ bg: "gray.100" }} transition="background 0.2s">
+                {showSeparator && (
+                  <Separator height="55px" orientation="vertical" />
+                )}
+                <Link
+                  fontSize={"sm"}
+                  href={link.href}
+                  outline={"none"}
+                  px={4}
+                  rel={link.isExternal ? "noopener noreferrer" : undefined}
+                  target={link.isExternal ? "_blank" : undefined}
+                  textWrap={"nowrap"}
                 >
-                  {showSeparator && (
-                    <Separator height="55px" orientation="vertical" />
-                  )}
-                  <Link
-                    fontSize="sm"
-                    href={link.href}
-                    outline="none"
-                    px={4}
-                    rel={link.isExternal ? "noopener noreferrer" : undefined}
-                    target={link.isExternal ? "_blank" : undefined}
-                    textWrap="nowrap"
-                  >
-                    {link.hasStatus && <StatusPing />}
-                    {link.label}
-                  </Link>
-                </Flex>
-              );
-            })}
-          </Box>
+                  {link.hasStatus && <StatusPing />}
+                  {link.label}
+                </Link>
+              </Flex>
+            );
+          })}
         </Flex>
       </Box>
+
       {/* Mobile Navbar */}
       <Box
-        display={{ base: "block", md: "none" }}
+        display={{ base: "block", lg: "none" }}
         position="fixed"
         right={4}
         top={4}
@@ -176,10 +141,10 @@ const FixedNavbar = () => {
           boxShadow="lg"
           color="darkBlueCustom"
           rounded="md"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <LuMenu />
-        </IconButton>
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <LuMenu />
+          </IconButton>
+
         {isMobileMenuOpen && (
           <VStack
             bgColor="darkBlueCustom"
@@ -193,8 +158,7 @@ const FixedNavbar = () => {
             zIndex={999}
           >
             <Box display="flex" justifyContent="flex-end" p={4} w="full">
-              <CloseButton
-                variant="subtle"
+            <CloseButton variant="subtle"
                 onClick={() => setIsMobileMenuOpen(false)}
               />
             </Box>

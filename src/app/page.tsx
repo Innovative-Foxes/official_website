@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Box>
       <FixedNavbar />
-      <Box as="main">
+      <Box as={"main"}>
         <Flex align="center" direction="column" gap={4}>
           <Hero />
           <Box
