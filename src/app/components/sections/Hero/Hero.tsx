@@ -56,9 +56,9 @@ const Hero = () => {
             my={4}
             textTransform="uppercase"
           >
-            We build fully custom{" "}
-            <Text as="span" color="orangeCustom" fontWeight={"semibold"}>
-              marketo
+            We build{" "}
+           <Text as="span" color="orangeCustom" fontWeight={"semibold"}>
+              fully custom
             </Text>{" "}
             landing page &amp; email templates
           </Heading>
@@ -71,7 +71,14 @@ const Hero = () => {
             template that is customized to match your brand.
           </Text>
         </Box>
-        <VStack gap={4} mt={6} w="full">
+        <VStack gap={4} mt={2} w="full">
+          <HStack flexWrap="wrap" gap={8} justify="center">
+            <Image alt="Marketo" h="45px" src="/images/png/marketo-logo.png" w="auto" />
+            <Image alt="Salesforce" h="45px" src="/images/png/sf-logo.png" w="auto" />
+            <Image alt="HubSpot" h="45px" src="/images/png/hubspot-logo.png" w="auto" />
+          </HStack>
+        </VStack>
+        <VStack gap={4} mt={10} w="full">
           <HStack
             flexDirection={{ base: "column", md: "row" }}
             gap={4}

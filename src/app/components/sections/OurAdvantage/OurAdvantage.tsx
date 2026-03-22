@@ -70,7 +70,8 @@ const OurAdvantage = () => {
   return (
     <Box
       bgColor={"offWhite"}
-      mt={{ base: 24, md: 40, lg: 0 }}
+      id="our-advantage"
+      mt={{ base: 24, md: 40 }}
       pb={{ base: 24, md: 32 }}
       pt={{ base: 16, md: 32 }}
     >

@@ -49,7 +49,7 @@ const MeetTeam = () => {
   ];
 
   return (
-    <Box bg="white" my={{ base: 24, md: 40 }}>
+    <Box bg="white" id="meet-the-team" my={{ base: 24, md: 40 }}>
       <CustomContainer>
         <VStack gap={0} mb={{ base: 6, md: 10 }}>
           <Heading
