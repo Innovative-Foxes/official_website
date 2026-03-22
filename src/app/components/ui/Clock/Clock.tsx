@@ -29,23 +29,33 @@ interface ClockProps {
  * Format a date according to the specified format string
  */
 const formatTime = (date: Date, format: string): string => {
-  const pad = (num: number): string => num.toString().padStart(2, '0');
-  
+  const pad = (num: number): string => num.toString().padStart(2, "0");
+
   const hours24 = date.getHours();
   const hours12 = hours24 % 12 || 12;
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
-  const ampm = hours24 >= 12 ? 'PM' : 'AM';
-  
+  const ampm = hours24 >= 12 ? "PM" : "AM";
+
   const day = date.getDate();
   const month = date.getMonth();
   const year = date.getFullYear();
-  
+
   const monthNames = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
-  
+
   return format
     .replace(/HH/g, pad(hours24))
     .replace(/H/g, hours24.toString())
@@ -82,11 +92,13 @@ const Clock = ({
 
   useEffect(() => {
     setIsClient(true);
-    
+
     const updateTime = () => {
       try {
         const now = new Date();
-        const timeInTimezone = new Date(now.toLocaleString("en-US", { timeZone: timezone }));
+        const timeInTimezone = new Date(
+          now.toLocaleString("en-US", { timeZone: timezone }),
+        );
         setTime(formatTime(timeInTimezone, format));
       } catch (error) {
         // Fallback if timezone is invalid

@@ -187,14 +187,14 @@ export default function ChakraLargeVerticalCardFlip({
           >
             <VStack gap={0} h="full" justify="space-between" p={6}>
               <Badge
-                bg={"orangeCustom"}
-                borderRadius={"full"}
-                color={"offWhite"}
-                fontWeight={"medium"}
-                position={"absolute"}
+                bg="orangeCustom"
+                borderRadius="full"
+                color="offWhite"
+                fontWeight="medium"
+                position="absolute"
                 px={4}
-                size={"md"}
-                top={"-12px"}
+                size="md"
+                top="-12px"
                 zIndex={999}
               >
                 Most Popular

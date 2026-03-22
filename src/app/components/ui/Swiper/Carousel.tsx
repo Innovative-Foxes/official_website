@@ -146,11 +146,11 @@ const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
                       Languages
                     </Text>
                     <VStack alignItems="start" gap={3} width="100%">
-                      <Text as={"span"}>
+                      <Text as="span">
                         {member.languages.map((language, index) => (
                           <Text
                             key={index}
-                            as={"span"}
+                            as="span"
                             fontSize={{ base: "sm", md: "md" }}
                           >
                             {language}

@@ -56,6 +56,12 @@ const eslintConfig = [
         },
       ],
 
+      // Remove unnecessary curly braces around string literals in JSX props
+      "react/jsx-curly-brace-presence": [
+        "error",
+        { props: "never", children: "never" },
+      ],
+
       // Additional sorting rules for better organization
       "react/jsx-max-props-per-line": [
         "error",

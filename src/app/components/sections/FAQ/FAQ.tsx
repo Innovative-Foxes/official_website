@@ -95,10 +95,7 @@ const FAQ = () => {
                     justifyContent="center"
                     w={16}
                   >
-                    <Image
-                      alt="Profile"
-                      src={"/images/png/tyrell-profile.png"}
-                    />
+                    <Image alt="Profile" src="/images/png/tyrell-profile.png" />
                   </Box>
 
                   <VStack align="start" gap={3}>
@@ -156,7 +153,7 @@ const FAQ = () => {
                 fontSize={{ base: "2xl", md: "3xl" }}
                 fontWeight="bold"
                 textAlign={{ base: "center", lg: "left" }}
-                textTransform={"uppercase"}
+                textTransform="uppercase"
               >
                 Frequently Asked Questions
               </Heading>

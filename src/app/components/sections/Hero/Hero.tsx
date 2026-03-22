@@ -39,11 +39,11 @@ const Hero = () => {
       <VStack justifyContent="center" mt={{ base: 10, md: 20 }}>
         <Link
           _hover={{ scale: "105%" }}
-          animation={"ease-in-out"}
-          animationDuration={"fastest"}
+          animation="ease-in-out"
+          animationDuration="fastest"
           href="/"
-          outline={"none"}
-          transition={"all"}
+          outline="none"
+          transition="all"
         >
           <Image alt="Logo" src="/images/png/hero-logo.png" w="80px" />
         </Link>
@@ -51,13 +51,13 @@ const Hero = () => {
           <Heading
             as="h1"
             fontSize={{ base: "3xl", md: "6xl" }}
-            fontWeight={"medium"}
-            lineHeight={"shorter"}
+            fontWeight="medium"
+            lineHeight="shorter"
             my={4}
             textTransform="uppercase"
           >
             We build{" "}
-           <Text as="span" color="orangeCustom" fontWeight={"semibold"}>
+            <Text as="span" color="orangeCustom" fontWeight="semibold">
               fully custom
             </Text>{" "}
             landing page &amp; email templates
@@ -73,9 +73,24 @@ const Hero = () => {
         </Box>
         <VStack gap={4} mt={2} w="full">
           <HStack flexWrap="wrap" gap={8} justify="center">
-            <Image alt="Marketo" h="45px" src="/images/png/marketo-logo.png" w="auto" />
-            <Image alt="Salesforce" h="45px" src="/images/png/sf-logo.png" w="auto" />
-            <Image alt="HubSpot" h="45px" src="/images/png/hubspot-logo.png" w="auto" />
+            <Image
+              alt="Marketo"
+              h="45px"
+              src="/images/png/marketo-logo.png"
+              w="auto"
+            />
+            <Image
+              alt="Salesforce"
+              h="45px"
+              src="/images/png/sf-logo.png"
+              w="auto"
+            />
+            <Image
+              alt="HubSpot"
+              h="45px"
+              src="/images/png/hubspot-logo.png"
+              w="auto"
+            />
           </HStack>
         </VStack>
         <VStack gap={4} mt={10} w="full">
@@ -98,7 +113,7 @@ const Hero = () => {
                   <FaChevronRight />
                 </Icon>
               }
-              label={"Book A Free Intro Call"}
+              label="Book A Free Intro Call"
               trackConversion={true}
               url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
             />
@@ -106,7 +121,7 @@ const Hero = () => {
         </VStack>
         <HStack mt={10} textAlign={{ base: "left", md: "center" }}>
           <StatusPing />
-          <Text fontSize={{ base: "sm", md: "md" }} textTransform={"uppercase"}>
+          <Text fontSize={{ base: "sm", md: "md" }} textTransform="uppercase">
             Now booking projects for {monthNameLocale}
           </Text>
         </HStack>

@@ -23,14 +23,14 @@ const Footer = () => {
         <VStack alignItems={{ base: "center", md: "flex-start" }} gap={0}>
           <Image
             alt="Logo"
-            borderRadius={"16px"}
+            borderRadius="16px"
             maxW={{ base: "200px", md: "none" }}
             src="/images/svgs/footer-logo.svg"
             w="100%"
           />
           <VStack
             alignItems="center"
-            color={"offWhite"}
+            color="offWhite"
             display={{ base: "flex", md: "none" }}
             gap={{ base: 6, lg: 16 }}
             my={{ base: 12, md: 20 }}
@@ -42,10 +42,10 @@ const Footer = () => {
               </Text>
             </Box>
             <Box textAlign="center">
-              <Text fontSize={"sm"}>
+              <Text fontSize="sm">
                 Vancouver → <Clock timezone="US/Pacific" />
               </Text>
-              <Text fontSize={"sm"}>
+              <Text fontSize="sm">
                 Montreal → <Clock timezone="America/Montreal" />
               </Text>
             </Box>
@@ -64,10 +64,10 @@ const Footer = () => {
           </VStack>
           <HStack
             alignItems="center"
-            color={"offWhite"}
+            color="offWhite"
             display={{ base: "none", md: "flex" }}
             gap={{ base: 8, lg: 16 }}
-            justifyContent={"space-between"}
+            justifyContent="space-between"
             my={20}
             position="relative"
             w="full"
@@ -101,11 +101,11 @@ const Footer = () => {
             </Box>
           </HStack>
           <HStack
-            alignItems={"center"}
-            color={"offWhite"}
-            fontSize={"sm"}
+            alignItems="center"
+            color="offWhite"
+            fontSize="sm"
             gap={4}
-            justifyContent={"center"}
+            justifyContent="center"
             mt={6}
             w="full"
           >

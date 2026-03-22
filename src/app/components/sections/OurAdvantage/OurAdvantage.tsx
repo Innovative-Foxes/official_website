@@ -69,25 +69,25 @@ const OurAdvantage = () => {
 
   return (
     <Box
-      bgColor={"offWhite"}
+      bgColor="offWhite"
       id="our-advantage"
       mt={{ base: 24, md: 40 }}
       pb={{ base: 24, md: 32 }}
       pt={{ base: 16, md: 32 }}
     >
       <CustomContainer>
-        <Box color={"darkBlueCustom"}>
+        <Box color="darkBlueCustom">
           <Heading
             as="h2"
             fontSize={{ base: "3xl", md: "5xl" }}
-            fontWeight={"semibold"}
-            lineHeight={"shorter"}
+            fontWeight="semibold"
+            lineHeight="shorter"
             mb={2}
-            textAlign={"center"}
-            textTransform={"uppercase"}
+            textAlign="center"
+            textTransform="uppercase"
           >
             Our Unique{" "}
-            <Text as="span" color="orangeCustom" fontWeight={"semibold"}>
+            <Text as="span" color="orangeCustom" fontWeight="semibold">
               Advantage
             </Text>
           </Heading>
@@ -95,7 +95,7 @@ const OurAdvantage = () => {
             fontSize={{ base: "lg", md: "xl" }}
             m="auto"
             maxW={{ base: "auto", md: 600 }}
-            textAlign={"center"}
+            textAlign="center"
           >
             We do not use pre-built templates. Everything we produce is 100%
             custom and created to be brand specific.
@@ -110,18 +110,18 @@ const OurAdvantage = () => {
             {cards.map((card) => (
               <Card.Root
                 key={card.id}
-                bg={"none"}
-                border={"none"}
-                textAlign={"center"}
+                bg="none"
+                border="none"
+                textAlign="center"
               >
                 <Card.Body>
                   <VStack>
                     <Flex
-                      alignItems={"center"}
-                      borderColor={"#DED7CA"}
-                      borderRadius={"8px"}
-                      borderWidth={"2px"}
-                      justifyContent={"center"}
+                      alignItems="center"
+                      borderColor="#DED7CA"
+                      borderRadius="8px"
+                      borderWidth="2px"
+                      justifyContent="center"
                       mb={2}
                       p={{ base: 3, md: 4 }}
                     >
@@ -129,8 +129,8 @@ const OurAdvantage = () => {
                         {card.icon}
                       </Icon>
                     </Flex>
-                    <Heading as={"h3"}>{card.title}</Heading>
-                    <Text fontSize={"md"}>{card.content}</Text>
+                    <Heading as="h3">{card.title}</Heading>
+                    <Text fontSize="md">{card.content}</Text>
                   </VStack>
                 </Card.Body>
               </Card.Root>

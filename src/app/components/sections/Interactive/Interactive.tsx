@@ -5,8 +5,8 @@ import InteractiveTemplate from "../../ui/InteractiveTemplate/InteractiveTemplat
 const Interactive = () => {
   return (
     <Box
-      bgImage={"url(/images/png/dotgrid.png)"}
-      bgRepeat={"repeat"}
+      bgImage="url(/images/png/dotgrid.png)"
+      bgRepeat="repeat"
       mt={20}
       pb={40}
       pt={20}
@@ -15,25 +15,25 @@ const Interactive = () => {
         <Heading
           as="h2"
           fontSize={{ base: "3xl", md: "5xl" }}
-          fontWeight={"semibold"}
-          lineHeight={"shorter"}
-          textAlign={"center"}
+          fontWeight="semibold"
+          lineHeight="shorter"
+          textAlign="center"
           textTransform="uppercase"
         >
           Explore a sample of our custom{" "}
-          <Text as="span" color="orangeCustom" fontWeight={"semibold"}>
+          <Text as="span" color="orangeCustom" fontWeight="semibold">
             Marketo template editing
           </Text>{" "}
           capabilities
         </Heading>
         <Text
-          fontSize={"lg"}
-          fontWeight={"medium"}
-          m={"auto"}
+          fontSize="lg"
+          fontWeight="medium"
+          m="auto"
           maxW={1000}
           mb={20}
           mt={4}
-          textAlign={"center"}
+          textAlign="center"
         >
           A small preview — complete templates include full control of all
           colors, editable text &amp; elements, image replacement, and flexible

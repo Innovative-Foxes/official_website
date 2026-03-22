@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <Box bg="gray.50" minH="100vh" py={{ base: 12, md: 16 }}>
-      <Container m={"auto"} maxW="4xl" px={{ base: 6, md: 8 }}>
+      <Container m="auto" maxW="4xl" px={{ base: 6, md: 8 }}>
         <VStack align="stretch" gap={8}>
           {/* Header */}
           <Box mb={8} textAlign="center">

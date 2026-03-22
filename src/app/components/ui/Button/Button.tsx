@@ -55,32 +55,32 @@ export const PrimaryButton = ({
         transform: "translateY(1px)",
       }}
       bgColor={variation === "primary" ? "blueCustom" : "offWhite"}
-      borderColor={"transparent"}
-      borderRadius={"44px"}
+      borderColor="transparent"
+      borderRadius="44px"
       boxShadow="-1.5px 1.5px 4.5px 0px rgba(0, 0, 0, 0.25)"
       color={variation === "primary" ? "offWhite" : "blueCustom"}
       fontSize={fontSize}
-      fontWeight={"medium"}
+      fontWeight="medium"
       maxW={{ base: "300px", md: "100%" }}
-      textDecoration={"none"}
+      textDecoration="none"
       transition="all 0.1s ease"
       w={{ base: mobFW ? "100%" : "fit-content", md: "fit-content" }}
     >
       <Link
         _hover={{ gap: "8px", scale: "105%" }}
-        animation={"ease-in-out"}
-        animationDuration={"fastest"}
-        display={"flex"}
+        animation="ease-in-out"
+        animationDuration="fastest"
+        display="flex"
         gap={1}
         href={url}
         justifyContent="center"
         minH={`${minHeight}px`}
         px={{ base: "20px", md: `${px}px` }}
         py={`${py}px`}
-        textDecoration={"none"}
-        textWrap={"wrap"}
+        textDecoration="none"
+        textWrap="wrap"
         touchAction="manipulation"
-        transition={"all"}
+        transition="all"
         userSelect="none"
         {...(externalLink && { target: "_blank", rel: "noopener noreferrer" })}
         onClick={handleClick}

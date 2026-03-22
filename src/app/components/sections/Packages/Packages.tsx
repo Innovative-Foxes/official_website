@@ -104,7 +104,7 @@ const Packages = () => {
               <InfoCard
                 description="We match your brand, modernize your look, and drive results."
                 icon={
-                  <Icon fill={"darkBlueCustom"}>
+                  <Icon fill="darkBlueCustom">
                     <FaDesktop />
                   </Icon>
                 }
@@ -113,7 +113,7 @@ const Packages = () => {
               <InfoCard
                 description="We hit deadlines so your campaigns go live without delays."
                 icon={
-                  <Icon fill={"orangeCustom"}>
+                  <Icon fill="orangeCustom">
                     <FaBoltLightning />
                   </Icon>
                 }
@@ -164,7 +164,7 @@ const Packages = () => {
                 color={
                   activePackage === "design" ? "darkBlueCustom" : "gray.600"
                 }
-                fontSize={"md"}
+                fontSize="md"
                 fontWeight="semibold"
                 px={8}
                 py={3}
@@ -191,9 +191,9 @@ const Packages = () => {
                 }
                 borderRadius="full"
                 color={activePackage === "design-dev" ? "offWhite" : "gray.600"}
-                fontSize={"md"}
+                fontSize="md"
                 fontWeight="semibold"
-                position={"relative"}
+                position="relative"
                 px={8}
                 py={3}
                 shadow={activePackage === "design-dev" ? "sm" : "none"}
@@ -201,12 +201,7 @@ const Packages = () => {
                 onClick={() => setActivePackage("design-dev")}
               >
                 Design &amp; Development
-                <Box
-                  fontSize={"xl"}
-                  position={"absolute"}
-                  right={"0px"}
-                  top={"-10px"}
-                >
+                <Box fontSize="xl" position="absolute" right="0px" top="-10px">
                   🦊
                 </Box>
               </Button>
@@ -309,7 +304,7 @@ const Packages = () => {
             <InfoCard
               description="We match your brand, modernize your look, and drive results."
               icon={
-                <Icon fill={"darkBlueCustom"}>
+                <Icon fill="darkBlueCustom">
                   <FaDesktop />
                 </Icon>
               }
@@ -318,7 +313,7 @@ const Packages = () => {
             <InfoCard
               description="We hit deadlines so your campaigns go live without delays."
               icon={
-                <Icon fill={"orangeCustom"}>
+                <Icon fill="orangeCustom">
                   <FaBoltLightning />
                 </Icon>
               }

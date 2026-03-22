@@ -8,13 +8,13 @@ const ChooseUs = () => {
         <Heading
           as="h2"
           fontSize={{ base: "3xl", md: "5xl" }}
-          fontWeight={"medium"}
-          lineHeight={"shorter"}
+          fontWeight="medium"
+          lineHeight="shorter"
           my={4}
           textTransform="uppercase"
         >
           Why fast-moving marketing teams choose{" "}
-          <Text as="span" color="orangeCustom" fontWeight={"semibold"}>
+          <Text as="span" color="orangeCustom" fontWeight="semibold">
             Innovative Foxes
           </Text>{" "}
           to get the job done
@@ -69,16 +69,16 @@ const Content = ({ imgSrc, heading, description }: ContentProps) => {
     >
       <Image alt="" maxW={{ base: "full", md: "370px" }} src={imgSrc} />
       <Heading
-        as={"h3"}
+        as="h3"
         fontSize={{ base: "2xl", md: "3xl" }}
-        fontWeight={"medium"}
-        lineHeight={"shorter"}
+        fontWeight="medium"
+        lineHeight="shorter"
         mb={2}
         mt={4}
       >
         {heading}
       </Heading>
-      <Text fontSize={"md"}>{description}</Text>
+      <Text fontSize="md">{description}</Text>
     </VStack>
   );
 };

@@ -681,7 +681,7 @@ const InteractiveTemplate = () => {
 
   return (
     <Box>
-      <Box bg={"transparent"} h={1} w={"full"}></Box>
+      <Box bg="transparent" h={1} w="full"></Box>
 
       <div style={styles.container}>
         {/* Landing Page */}
@@ -707,17 +707,13 @@ const InteractiveTemplate = () => {
             whiteSpace="nowrap"
             zIndex={10}
           >
-            <Icon boxSize={3} fill={"blue.600"}>
+            <Icon boxSize={3} fill="blue.600">
               <FaInfoCircle />
             </Icon>
-            <Text
-              color={"darkBlueCustom"}
-              fontSize={"sm"}
-              fontWeight={"semibold"}
-            >
+            <Text color="darkBlueCustom" fontSize="sm" fontWeight="semibold">
               Try scrolling on the landing page preview &amp; variables section
             </Text>
-            <Icon boxSize={3} fill={"darkBlueCustom"}>
+            <Icon boxSize={3} fill="darkBlueCustom">
               <FaUpDown />
             </Icon>
           </Box>
@@ -747,7 +743,7 @@ const InteractiveTemplate = () => {
             }}
             height="80vh"
             overflowY="auto"
-            position={"relative"}
+            position="relative"
             width="100%"
           >
             {isLoading ? (

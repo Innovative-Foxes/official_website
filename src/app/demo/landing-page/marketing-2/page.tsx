@@ -42,7 +42,7 @@ const NexusPayLanding = () => {
           <div className="container">
             <div className="nav-brand">
               <div className="logo">
-                <Link href="#" outline={"none"}>
+                <Link href="#" outline="none">
                   <span className="logo-icon">⚡</span>
                   <span className="logo-text">NexusPay</span>
                 </Link>
@@ -252,9 +252,9 @@ const NexusPayLanding = () => {
                   data-toggle="real-time-settlements-card"
                 >
                   <VStack
-                    alignItems={"start"}
-                    h={"full"}
-                    justifyContent={"space-between"}
+                    alignItems="start"
+                    h="full"
+                    justifyContent="space-between"
                   >
                     <div>
                       <h3>Real-time settlements</h3>
@@ -272,36 +272,36 @@ const NexusPayLanding = () => {
                 </div>
               </div>
               <Box
-                bg={"gray.150"}
-                borderRadius={"16px"}
-                boxShadow={"0 4px 20px rgba(0,0,0,.08)"}
+                bg="gray.150"
+                borderRadius="16px"
+                boxShadow="0 4px 20px rgba(0,0,0,.08)"
                 data-title="MRR Increase Card"
                 data-toggle="mrr-increase-card"
-                overflow={"hidden"}
-                p={"2.5rem"}
+                overflow="hidden"
+                p="2.5rem"
               >
                 <HStack flexDirection={{ base: "column", md: "row" }} gap={6}>
                   <div>
                     <Heading
-                      color={"#1A1A1A"}
-                      fontFamily={"poppins"}
-                      fontSize={"32px"}
-                      mb={"24px"}
+                      color="#1A1A1A"
+                      fontFamily="poppins"
+                      fontSize="32px"
+                      mb="24px"
                     >
                       MRR Increase
                     </Heading>
-                    <Text color={"#666"} fontSize={"20px"}>
+                    <Text color="#666" fontSize="20px">
                       Focused on compounding revenue streams with scalable,
                       predictable, and recurring growth models.
                     </Text>
                   </div>
                   <Image
                     alt="chart"
-                    boxShadow={"0 4px 20px rgba(0,0,0,.08)"}
+                    boxShadow="0 4px 20px rgba(0,0,0,.08)"
                     maxW={650}
-                    mb={"-50px"}
+                    mb="-50px"
                     src="/images/png/chart-1.png"
-                    w={"full"}
+                    w="full"
                   />
                 </HStack>
               </Box>
@@ -518,10 +518,10 @@ const NexusPayLanding = () => {
                 className="cta-buttons"
                 flexDirection={{ base: "column", md: "row" }}
                 gap={4}
-                justifyContent={"center"}
+                justifyContent="center"
               >
                 <button className="cta-primary">Get Started Free</button>
-                <Box w={"207px"}>
+                <Box w="207px">
                   <button className="cta-secondary">Learn More →</button>
                 </Box>
               </HStack>
@@ -539,7 +539,7 @@ const NexusPayLanding = () => {
             <div className="footer-content">
               <div className="footer-brand">
                 <div className="logo">
-                  <Link href="#" outline={"none"}>
+                  <Link href="#" outline="none">
                     <span className="logo-icon">⚡</span>
                     <span className="logo-text">NexusPay</span>
                   </Link>

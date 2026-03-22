@@ -30,26 +30,26 @@ const OurFocus = () => {
   return (
     <CustomContainer>
       <VStack
-        alignItems={"flex-start"}
+        alignItems="flex-start"
         mb={{ base: 6, md: 8 }}
         mt={{ base: 8, md: 12 }}
         textAlign={{ base: "center", md: "left" }}
       >
         <Heading
-          alignItems={"center"}
+          alignItems="center"
           as="h2"
           color="navy.800"
-          display={"flex"}
+          display="flex"
           flexWrap="wrap"
           fontSize={{ base: "2xl", md: "4xl" }}
           fontWeight="bold"
           gap={{ base: 2, md: 4 }}
           justifyContent={{ base: "center", md: "flex-start" }}
           lineHeight="shorter"
-          textTransform={"uppercase"}
+          textTransform="uppercase"
         >
           All our focus is on you{" "}
-          <Icon fill={"orangeCustom"}>
+          <Icon fill="orangeCustom">
             <FaHeart />
           </Icon>
         </Heading>
@@ -80,7 +80,7 @@ const OurFocus = () => {
               w="100%"
             />
           </HStack>
-          <HStack alignItems={"flex-end"} justifyContent="flex-start" pl={0}>
+          <HStack alignItems="flex-end" justifyContent="flex-start" pl={0}>
             <Text color="gray.700" fontSize="xl" fontWeight="semibold">
               Large Agencies
             </Text>
@@ -112,7 +112,7 @@ const OurFocus = () => {
                   <Icon
                     as={FaCheck}
                     boxSize={3}
-                    fill={"orangeCustom"}
+                    fill="orangeCustom"
                     flexShrink={0}
                   />
                   <Text color="gray.700" fontSize="sm" lineHeight="tall">
@@ -170,7 +170,7 @@ const OurFocus = () => {
               w="full"
             >
               <HStack alignItems="center" gap={3}>
-                <Icon as={FaCheck} boxSize={3} fill={"orangeCustom"} />
+                <Icon as={FaCheck} boxSize={3} fill="orangeCustom" />
                 <Text color="gray.700" flex="1" fontSize="md" lineHeight="tall">
                   {comparison}
                 </Text>

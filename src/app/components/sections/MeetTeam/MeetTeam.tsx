@@ -55,8 +55,8 @@ const MeetTeam = () => {
           <Heading
             as="h2"
             fontSize={{ base: "3xl", md: "5xl" }}
-            fontWeight={"bold"}
-            lineHeight={"shorter"}
+            fontWeight="bold"
+            lineHeight="shorter"
             textAlign="center"
             textTransform="uppercase"
           >

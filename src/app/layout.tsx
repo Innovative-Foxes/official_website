@@ -66,7 +66,7 @@ export default function RootLayout({
       </head>
       <body>
         <Provider>
-          <Box color={"blueCustom"} fontSize={"xl"}>
+          <Box color="blueCustom" fontSize="xl">
             {children}
           </Box>
         </Provider>

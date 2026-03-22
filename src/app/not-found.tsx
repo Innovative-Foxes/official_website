@@ -25,11 +25,11 @@ export default function NotFound() {
           <VStack gap={6} maxW="500px">
             <Link
               _hover={{ scale: "105%" }}
-              animation={"ease-in-out"}
-              animationDuration={"fastest"}
+              animation="ease-in-out"
+              animationDuration="fastest"
               href="/"
-              outline={"none"}
-              transition={"all"}
+              outline="none"
+              transition="all"
             >
               <Image alt="Logo" src="/images/png/hero-logo.png" w="80px" />
             </Link>

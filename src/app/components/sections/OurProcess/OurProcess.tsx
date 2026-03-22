@@ -117,10 +117,10 @@ const OurProcess = () => {
     >
       <CustomContainer>
         <Flex
-          alignItems={"center"}
+          alignItems="center"
           direction={{ base: "column", lg: "row" }}
           gap={{ base: 8, md: 12 }}
-          justifyContent={"space-between"}
+          justifyContent="space-between"
         >
           {/* Left Section - Intro */}
           <Box flex="1" maxW={{ base: "100%", lg: "40%" }}>
@@ -133,7 +133,7 @@ const OurProcess = () => {
                   fontWeight="bold"
                   lineHeight="110%"
                   mb={6}
-                  textTransform={"uppercase"}
+                  textTransform="uppercase"
                 >
                   <Text
                     alignItems="center"
@@ -231,7 +231,7 @@ const OurProcess = () => {
                                     />
                                     <Text
                                       color="darkBlueCustom"
-                                      fontSize={"md"}
+                                      fontSize="md"
                                       fontWeight="medium"
                                     >
                                       {highlight}
