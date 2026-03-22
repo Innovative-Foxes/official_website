@@ -69,7 +69,7 @@ const OurAdvantage = () => {
 
   return (
     <Box
-      bgColor={"offWhite"}
+      bgColor="offWhite"
       id="our-advantage"
       mt={{ base: 24, md: 40 }}
       pb={{ base: 24, md: 32 }}

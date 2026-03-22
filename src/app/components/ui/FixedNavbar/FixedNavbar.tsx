@@ -1,13 +1,22 @@
 "use client";
 
-import { Box, CloseButton, Flex, IconButton, Image, Link, Separator, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  CloseButton,
+  Flex,
+  IconButton,
+  Image,
+  Link,
+  Separator,
+  VStack,
+} from "@chakra-ui/react";
+import { LuArrowRightFromLine, LuMenu } from "react-icons/lu";
 import { useEffect, useState } from "react";
 import StatusPing from "../StatusPing/StatusPing";
-import { LuMenu } from "react-icons/lu";
 
 const FixedNavbar = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isLogoHovered, setIsLogoHovered] = useState(false);
+  const [isNavHovered, setIsNavHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -57,7 +66,7 @@ const FixedNavbar = () => {
       <Box
         display={{ base: "none", lg: "block" }}
         left="50%"
-        maxW={"fit-content"}
+        maxW="fit-content"
         opacity={isVisible ? 1 : 0}
         pointerEvents={isVisible ? "auto" : "none"}
         position="fixed"
@@ -65,7 +74,7 @@ const FixedNavbar = () => {
         transform="translateX(-50%)"
         transition="all 0.3s ease-in-out"
         visibility={isVisible ? "visible" : "hidden"}
-        w={"full"}
+        w="full"
         zIndex={1000}
       >
         <Flex
@@ -73,12 +82,14 @@ const FixedNavbar = () => {
           backdropFilter="blur(10px)"
           backgroundColor="rgba(255, 255, 255, 0.95)"
           bg="white"
-          borderColor={"gray.300/75"}
+          borderColor="gray.300/75"
           borderRadius="full"
-          borderWidth={"4px"}
-          boxShadow={"lg"}
-          overflow={"hidden"}
+          borderWidth="4px"
+          boxShadow="lg"
+          overflow="hidden"
           pl={3}
+          onMouseEnter={() => setIsNavHovered(true)}
+          onMouseLeave={() => setIsNavHovered(false)}
         >
           {/* Logo */}
           <Link
@@ -87,41 +98,68 @@ const FixedNavbar = () => {
             border="none"
             cursor="pointer"
             flexShrink={0}
-            outline={"none"}
+            outline="none"
             pr={4}
+            transition="padding 0.3s ease-in-out"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            onMouseEnter={() => setIsLogoHovered(true)}
-            onMouseLeave={() => setIsLogoHovered(false)}
           >
             <Image
-              alt={"Logo"}
+              alt="Logo"
               height="40px"
-              src={isLogoHovered ? "/images/svgs/hero-logo-hover.svg" : "/images/svgs/hero-logo.svg"}
+              src="/images/svgs/hero-logo.svg"
               width="auto"
             />
           </Link>
-          {links.map((link, i) => {
-            const showSeparator = i !== links.length;
-            return (
-              <Flex key={link.id} _hover={{ bg: "gray.100" }} transition="background 0.2s">
-                {showSeparator && (
-                  <Separator height="55px" orientation="vertical" />
-                )}
-                <Link
-                  fontSize={"sm"}
-                  href={link.href}
-                  outline={"none"}
-                  px={4}
-                  rel={link.isExternal ? "noopener noreferrer" : undefined}
-                  target={link.isExternal ? "_blank" : undefined}
-                  textWrap={"nowrap"}
+
+          {/* Expand hint icon — visible when collapsed */}
+          <Box
+            alignItems="center"
+            color="gray.400"
+            display="flex"
+            maxW={isNavHovered ? "0" : "40px"}
+            opacity={isNavHovered ? 0 : 1}
+            overflow="hidden"
+            pr={isNavHovered ? 0 : 3}
+            transition="max-width 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out"
+          >
+            <LuArrowRightFromLine size={16} />
+          </Box>
+
+          {/* Links — collapse when not hovered */}
+          <Box
+            display="flex"
+            maxW={isNavHovered ? "800px" : "0"}
+            opacity={isNavHovered ? 1 : 0}
+            overflow="hidden"
+            transition="max-width 0.4s ease-in-out, opacity 0.3s ease-in-out"
+          >
+            {links.map((link, i) => {
+              const showSeparator = i !== links.length;
+              return (
+                <Flex
+                  key={link.id}
+                  _hover={{ bg: "gray.100" }}
+                  transition="background 0.2s"
                 >
-                  {link.hasStatus && <StatusPing />}
-                  {link.label}
-                </Link>
-              </Flex>
-            );
-          })}
+                  {showSeparator && (
+                    <Separator height="55px" orientation="vertical" />
+                  )}
+                  <Link
+                    fontSize="sm"
+                    href={link.href}
+                    outline="none"
+                    px={4}
+                    rel={link.isExternal ? "noopener noreferrer" : undefined}
+                    target={link.isExternal ? "_blank" : undefined}
+                    textWrap="nowrap"
+                  >
+                    {link.hasStatus && <StatusPing />}
+                    {link.label}
+                  </Link>
+                </Flex>
+              );
+            })}
+          </Box>
         </Flex>
       </Box>
 
@@ -141,9 +179,10 @@ const FixedNavbar = () => {
           boxShadow="lg"
           color="darkBlueCustom"
           rounded="md"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            <LuMenu />
-          </IconButton>
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <LuMenu />
+        </IconButton>
 
         {isMobileMenuOpen && (
           <VStack
@@ -158,7 +197,8 @@ const FixedNavbar = () => {
             zIndex={999}
           >
             <Box display="flex" justifyContent="flex-end" p={4} w="full">
-            <CloseButton variant="subtle"
+              <CloseButton
+                variant="subtle"
                 onClick={() => setIsMobileMenuOpen(false)}
               />
             </Box>
