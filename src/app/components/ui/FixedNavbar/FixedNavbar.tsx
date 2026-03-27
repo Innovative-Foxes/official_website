@@ -16,7 +16,7 @@ import StatusPing from "../StatusPing/StatusPing";
 
 const FixedNavbar = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isNavHovered, setIsNavHovered] = useState(true);
+  const [isNavHovered, setIsNavHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
