@@ -53,7 +53,6 @@ export default function PrivacyPage() {
               Foxes Web Studio.
             </Text>
           </Box>
-
           {/* Content */}
           <Box bg="white" p={{ base: 8, md: 12 }} rounded="xl" shadow="sm">
             <VStack align="stretch" gap={8}>
@@ -87,9 +86,7 @@ export default function PrivacyPage() {
                   </Text>
                 </VStack>
               </Box>
-
               <Separator />
-
               {/* Links to Other Websites */}
               <Box>
                 <Heading
@@ -114,9 +111,7 @@ export default function PrivacyPage() {
                   question.
                 </Text>
               </Box>
-
               <Separator />
-
               {/* Information Collection */}
               <Box>
                 <Heading
@@ -149,9 +144,7 @@ export default function PrivacyPage() {
                   </Text>
                 </VStack>
               </Box>
-
               <Separator />
-
               {/* Access and Control */}
               <Box>
                 <Heading
@@ -184,9 +177,7 @@ export default function PrivacyPage() {
                   </Text>
                 </VStack>
               </Box>
-
               <Separator />
-
               {/* Security */}
               <Box>
                 <Heading
@@ -216,9 +207,7 @@ export default function PrivacyPage() {
                   </Text>
                 </VStack>
               </Box>
-
               <Separator />
-
               {/* Updates */}
               <Box>
                 <Heading

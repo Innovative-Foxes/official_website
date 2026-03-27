@@ -47,10 +47,8 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ member }) => {
             {member.introduction}
           </Text>
         </VStack>
-
         <Accordion.ItemIndicator />
       </Accordion.ItemTrigger>
-
       <Accordion.ItemContent bg="transparent">
         <Accordion.ItemBody bg="transparent">
           <Box p={6} pt={0}>
@@ -65,7 +63,6 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ member }) => {
                   w="100%"
                 />
               </Box>
-
               {/* Description */}
               <VStack align="start" gap={4}>
                 {member.description.map((paragraph, index) => (
@@ -79,7 +76,6 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ member }) => {
                   </Text>
                 ))}
               </VStack>
-
               {/* Specialties Section */}
               <VStack align="start" gap={3}>
                 <Text color="gray.800" fontSize="lg" fontWeight="bold">
@@ -101,7 +97,6 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ member }) => {
                   ))}
                 </VStack>
               </VStack>
-
               {/* Languages Section */}
               <VStack align="start" gap={3}>
                 <Text color="gray.800" fontSize="lg" fontWeight="bold">

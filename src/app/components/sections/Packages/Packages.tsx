@@ -12,8 +12,7 @@ import {
 } from "@chakra-ui/react";
 import CustomContainer from "../../ui/Container/Container";
 
-import { FaChevronRight, FaDesktop } from "react-icons/fa";
-import { PrimaryButton } from "../../ui/Button/Button";
+import { FaDesktop } from "react-icons/fa";
 import { useState } from "react";
 
 import ChakraLargeVerticalCardFlip from "../../ui/VerticalCardFlip/VerticalCardFlip";
@@ -35,7 +34,7 @@ const Packages = () => {
       "Up to 40 custom modules to fit marketing needs",
       "Easily edit all content on the template",
       "Fully mobile responsive",
-      "Branded custom styled Marketo forms",
+      "Branded custom styled forms",
       "Training provided on using template",
     ],
     turnAround: "2-3 weeks",
@@ -53,7 +52,7 @@ const Packages = () => {
       "Up to 40 custom modules to fit marketing needs",
       "Easily edit all content on the template",
       "Fully mobile responsive",
-      "Branded custom styled Marketo forms",
+      "Branded custom styled forms",
       "Training provided on using template",
     ],
     turnAround: "4-6 weeks",
@@ -93,12 +92,14 @@ const Packages = () => {
               >
                 Our{" "}
                 <Text as="span" color="orangeCustom" fontWeight="semibold">
-                  Marketo
+                  Landing Page </Text>{" "}
+                  &amp;{" "}   
+                <Text as="span" color="orangeCustom" fontWeight="semibold">
+                  Email 
                 </Text>{" "}
-                Landing Page &amp; Email Packages
+                Packages
               </Heading>
             </Box>
-
             {/* Info Cards */}
             <VStack gap={4} w="100%">
               <InfoCard
@@ -120,34 +121,7 @@ const Packages = () => {
                 title="Launch without delays"
               />
             </VStack>
-
-            {/* SFMC/Pardot Section */}
-            <Box>
-              <Heading as="h3" fontSize="xl" lineHeight="normal" mb={4}>
-                Does your team use SFMC or Pardot instead of Marketo?
-              </Heading>
-              <Text fontSize="md" mb={6}>
-                While Marketo is our specialty, we&apos;re also experienced
-                across a variety of marketing automation platforms. Schedule a
-                call with us, we&apos;ll explore your needs and put together a
-                plan that works best for your team.
-              </Text>
-              <PrimaryButton
-                fontSize="base"
-                icon={
-                  <Icon h={3}>
-                    <FaChevronRight />
-                  </Icon>
-                }
-                label="Book A Call Now"
-                minHeight={45}
-                px={24}
-                trackConversion={true}
-                url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
-              />
-            </Box>
           </VStack>
-
           {/* Right Column - Package Toggle and Card */}
           <VStack align="center" gap={8}>
             {/* Package Toggle */}
@@ -206,7 +180,6 @@ const Packages = () => {
                 </Box>
               </Button>
             </HStack>
-
             {/* Package Card */}
             <ChakraLargeVerticalCardFlip
               designDevPackage={designDevPackage}
@@ -215,7 +188,6 @@ const Packages = () => {
             />
           </VStack>
         </Grid>
-
         {/* Mobile Layout */}
         <VStack display={{ base: "flex", lg: "none" }} gap={12}>
           {/* Title Section */}
@@ -244,7 +216,6 @@ const Packages = () => {
               Landing Page &amp; Email Packages
             </Heading>
           </Box>
-
           {/* Package Toggle */}
           <Box textAlign="center">
             <HStack
@@ -289,7 +260,6 @@ const Packages = () => {
               </Button>
             </HStack>
           </Box>
-
           {/* Package Card */}
           <Box px={4} w="100%">
             <ChakraLargeVerticalCardFlip
@@ -298,7 +268,6 @@ const Packages = () => {
               isFlipped={activePackage === "design-dev"}
             />
           </Box>
-
           {/* Info Cards */}
           <VStack gap={6} px={4} w="100%">
             <InfoCard
@@ -318,32 +287,6 @@ const Packages = () => {
                 </Icon>
               }
               title="Launch without delays"
-            />
-          </VStack>
-
-          {/* SFMC/Pardot Section */}
-          <VStack px={4} textAlign="center" w="100%">
-            <Heading as="h3" fontSize="2xl" lineHeight="normal" mb={4}>
-              Does your team use SFMC or Pardot instead of Marketo?
-            </Heading>
-            <Text fontSize="sm" mb={6}>
-              While Marketo is our specialty, we&apos;re also experienced across
-              a variety of marketing automation platforms. Schedule a call with
-              us, we&apos;ll explore your needs and put together a plan that
-              works best for your team.
-            </Text>
-            <PrimaryButton
-              fontSize="base"
-              icon={
-                <Icon h={3}>
-                  <FaChevronRight />
-                </Icon>
-              }
-              label="Book A Call Now"
-              minHeight={45}
-              px={24}
-              trackConversion={true}
-              url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
             />
           </VStack>
         </VStack>

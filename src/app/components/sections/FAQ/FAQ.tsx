@@ -31,8 +31,8 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
   {
     value: "what-we-build",
-    title: "What exactly do you build for Marketo?",
-    text: "We specialize in creating custom Marketo landing page templates and email templates that are fully responsive, conversion-optimized, and brand-aligned. Our templates are built with clean HTML/CSS code, include guided landing page functionality, and are designed to integrate seamlessly with your existing Marketo instance and marketing automation workflows.",
+    text: "We specialize in creating custom landing page templates and email templates that are fully responsive, conversion-optimized, and brand-aligned that are ready to be integrated into your team's marketing platform. Our templates are built with clean HTML/CSS code, include guided landing page functionality, and are designed to integrate seamlessly with your existing instance and marketing automation workflows.",
+    title: "What exactly do you build?",
   },
   // {
   //   value: "timeline-delivery",
@@ -41,8 +41,8 @@ const faqItems: FAQItem[] = [
   // },
   {
     value: "marketo-compatibility",
-    title: "Are your templates compatible with all Marketo features?",
-    text: "Absolutely! All our templates are built specifically for Marketo and include full compatibility with guided landing pages, email templates, dynamic content, tokens, and A/B testing. We ensure seamless integration with Marketo's form functionality, tracking pixels, and all standard marketing automation features.",
+    title: "Are your templates compatible with all of our marketing platform's features?",
+    text: "Absolutely! All our templates are built specifically for the platform of your choice and include full compatibility with the landing page and email editors, dynamic content, tokens, and A/B testing. We ensure seamless integration with the platform's form functionality, tracking pixels, and all standard marketing automation features.",
   },
   // {
   //   value: "revisions-support",
@@ -52,13 +52,13 @@ const faqItems: FAQItem[] = [
   {
     value: "brand-customization",
     title: "Can you match our existing brand and design requirements?",
-    text: "Yes! We work closely with your brand guidelines, existing design assets, and style preferences to create templates that perfectly align with your brand identity. Whether you have a complete brand guide or just a logo and color palette, we'll ensure your Marketo templates maintain consistent branding across all touchpoints.",
+    text: "Yes! We work closely with your brand guidelines, existing design assets, and style preferences to create templates that perfectly align with your brand identity. Whether you have a complete brand guide or just a logo and color palette, we'll ensure your templates maintain consistent branding across all touchpoints.",
   },
-  {
-    value: "not-marketo",
-    title: "We don’t use Marketo. Can you still work with us?",
-    text: "Absolutely. While Marketo is our primary focus, our team is also skilled in other marketing automation platforms like Salesforce Marketing Cloud (SFMC) and Pardot. If your team is on a different platform, we’re happy to discuss your setup and explore how we can best support your goals.",
-  },
+  // {
+  //   value: "not-marketo",
+  //   title: "We don’t use Marketo. Can you still work with us?",
+  //   text: "Absolutely. While Marketo is our primary focus, our team is also skilled in other marketing automation platforms like Salesforce Marketing Cloud (SFMC) and Pardot. If your team is on a different platform, we’re happy to discuss your setup and explore how we can best support your goals.",
+  // },
 ];
 
 const FAQ = () => {
@@ -97,7 +97,6 @@ const FAQ = () => {
                   >
                     <Image alt="Profile" src="/images/png/tyrell-profile.png" />
                   </Box>
-
                   <VStack align="start" gap={3}>
                     <Heading
                       as="h3"
@@ -112,7 +111,6 @@ const FAQ = () => {
                       it&apos;s the right move.
                     </Text>
                   </VStack>
-
                   <PrimaryButton
                     icon={
                       <Icon h={4}>
@@ -124,7 +122,6 @@ const FAQ = () => {
                     url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
                     variation="primary"
                   />
-
                   <VStack align="start" gap={1}>
                     <Text color="blueCustom" fontSize="sm">
                       Hate calls? 👇
@@ -143,7 +140,6 @@ const FAQ = () => {
               </Card.Body>
             </Card.Root>
           </GridItem>
-
           {/* Right Column - FAQ */}
           <GridItem mt={{ base: 8, md: 0 }}>
             <VStack align="start" gap={8}>
@@ -157,7 +153,6 @@ const FAQ = () => {
               >
                 Frequently Asked Questions
               </Heading>
-
               <Accordion.Root
                 collapsible
                 multiple

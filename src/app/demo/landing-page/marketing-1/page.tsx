@@ -52,7 +52,6 @@ const EventLandingPage: React.FC = () => {
         triggerLabel="TOGGLE SECTIONS"
         onSectionToggle={handleSectionToggle}
       />
-
       <div style={styles.container}>
         {/* Navigation */}
         <nav
@@ -68,14 +67,12 @@ const EventLandingPage: React.FC = () => {
                 </div>
                 <span style={styles.brandName}>EventPro</span>
               </div>
-
               <div data-title="Navigation CTA Button" data-toggle="nav-button">
                 <button style={styles.navButton}>Sign Up</button>
               </div>
             </div>
           </div>
         </nav>
-
         {/* Hero Section */}
         <section
           data-title="Hero Section"
@@ -96,7 +93,6 @@ const EventLandingPage: React.FC = () => {
                     unlock new opportunities that will accelerate your career.
                   </p>
                 </div>
-
                 <div style={styles.statsContainer}>
                   <div style={styles.statItem}>
                     <div style={styles.statNumber}>500+</div>
@@ -112,7 +108,6 @@ const EventLandingPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-
               <div
                 data-title="Main Form"
                 data-toggle="form"
@@ -167,7 +162,6 @@ const EventLandingPage: React.FC = () => {
             </div>
           </div>
         </section>
-
         {/* Speakers Section */}
         <section
           data-title="Speakers Section"
@@ -182,7 +176,6 @@ const EventLandingPage: React.FC = () => {
                 the future of business and technology.
               </p>
             </div>
-
             <div style={styles.speakersGrid}>
               <div style={styles.speakerCard}>
                 <div
@@ -197,7 +190,6 @@ const EventLandingPage: React.FC = () => {
                   AI Strategy Expert & Former Tesla VP
                 </p>
               </div>
-
               <div style={styles.speakerCard}>
                 <div
                   style={{
@@ -211,7 +203,6 @@ const EventLandingPage: React.FC = () => {
                   Digital Transformation Leader & Author
                 </p>
               </div>
-
               <div style={styles.speakerCard}>
                 <div
                   style={{
@@ -228,7 +219,6 @@ const EventLandingPage: React.FC = () => {
             </div>
           </div>
         </section>
-
         {/* Company Logos */}
         <section
           data-title="Testimonial Section"
@@ -248,7 +238,6 @@ const EventLandingPage: React.FC = () => {
             </div>
           </div>
         </section>
-
         {/* Customer Review */}
         <section
           data-title="Review Section"
@@ -280,7 +269,6 @@ const EventLandingPage: React.FC = () => {
             </div>
           </div>
         </section>
-
         {/* Banner Section */}
         <section
           data-title="Banner Section"
@@ -297,7 +285,6 @@ const EventLandingPage: React.FC = () => {
             <button style={styles.bannerButton}>Register Today</button>
           </div>
         </section>
-
         {/* Footer */}
         <footer
           data-title="Footer Section"
@@ -312,11 +299,9 @@ const EventLandingPage: React.FC = () => {
                 </div>
                 <span style={styles.footerBrandName}>EventPro</span>
               </div>
-
               <div style={styles.copyright}>
                 © 2025 EventPro. All rights reserved.
               </div>
-
               <div style={styles.footerLinks}>
                 <a href="#" style={styles.footerLink}>
                   Privacy Policy

@@ -77,11 +77,9 @@ const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
                 <Text fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
                   {member.greeting}
                 </Text>
-
                 <Text fontSize={{ base: "lg", md: "xl" }} fontWeight="medium">
                   {member.introduction}
                 </Text>
-
                 {member.description.map((paragraph, index) => (
                   <Text
                     key={index}
@@ -93,7 +91,6 @@ const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
                   </Text>
                 ))}
               </VStack>
-
               <Box
                 minW={{ base: "100%", lg: "fit-content" }}
                 order={{ base: -1, lg: 0 }}
@@ -107,7 +104,6 @@ const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
                     src={member.image}
                     w="100%"
                   />
-
                   {/* Specialties */}
                   <VStack
                     alignItems="start"
@@ -134,7 +130,6 @@ const Carousel: React.FC<CarouselProps> = ({ slideContent }) => {
                       ))}
                     </VStack>
                   </VStack>
-
                   {/* Languages */}
                   <VStack
                     alignItems="start"

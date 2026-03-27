@@ -52,7 +52,6 @@ export default function TermsPage() {
               The Innovative Foxes Web Studio Terms of Service
             </Text>
           </Box>
-
           {/* Content */}
           <Box bg="white" p={{ base: 8, md: 12 }} rounded="xl" shadow="sm">
             <VStack align="stretch" gap={8}>
@@ -94,9 +93,7 @@ export default function TermsPage() {
                   bound by these Terms of Service.
                 </Text>
               </Box>
-
               <Separator />
-
               {/* Information */}
               <Box>
                 <Heading
@@ -121,9 +118,7 @@ export default function TermsPage() {
                   as a result of information contained on this website.
                 </Text>
               </Box>
-
               <Separator />
-
               {/* Intellectual Property */}
               <Box>
                 <Heading
@@ -143,9 +138,7 @@ export default function TermsPage() {
                   intellectual property rights laws.
                 </Text>
               </Box>
-
               <Separator />
-
               {/* Links to Other Websites */}
               <Box>
                 <Heading
@@ -172,9 +165,7 @@ export default function TermsPage() {
                   a link that is posted on our site.
                 </Text>
               </Box>
-
               <Separator />
-
               {/* Changes to Agreement */}
               <Box>
                 <Heading
@@ -206,9 +197,7 @@ export default function TermsPage() {
                   </Text>
                 </VStack>
               </Box>
-
               <Separator />
-
               {/* Contact Us */}
               <Box>
                 <Heading

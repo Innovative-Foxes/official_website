@@ -121,7 +121,6 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
             ‹
           </div>
         </div>
-
         {/* Drawer Content */}
         <div
           style={{
@@ -149,7 +148,6 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
               {drawerTitle}
             </h2>
           </div>
-
           {/* Sections */}
           <div
             style={{ display: "flex", flexDirection: "column", gap: "20px" }}
@@ -188,7 +186,6 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
                     >
                       {section.title}
                     </span>
-
                     {/* Custom Toggle Switch */}
                     <label
                       style={{
@@ -244,7 +241,6 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
                       />
                     </label>
                   </div>
-
                   {/* Status Text */}
                   <p
                     style={{
@@ -261,7 +257,6 @@ const RightToggleDrawer: React.FC<RightToggleDrawerProps> = ({
           </div>
         </div>
       </div>
-
       {/* Backdrop */}
       {isDrawerOpen && (
         <div

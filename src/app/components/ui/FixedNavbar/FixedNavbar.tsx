@@ -16,7 +16,7 @@ import StatusPing from "../StatusPing/StatusPing";
 
 const FixedNavbar = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isNavHovered, setIsNavHovered] = useState(false);
+  const [isNavHovered, setIsNavHovered] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -64,30 +64,30 @@ const FixedNavbar = () => {
     <>
       {/* Desktop Navbar */}
       <Box
-        display={{ base: "none", lg: "block" }}
-        left="50%"
-        maxW="fit-content"
+        display={{ base: "none", md: "block" }}
+        left={0}
         opacity={isVisible ? 1 : 0}
         pointerEvents={isVisible ? "auto" : "none"}
         position="fixed"
+        right={0}
         top={4}
-        transform="translateX(-50%)"
         transition="all 0.3s ease-in-out"
         visibility={isVisible ? "visible" : "hidden"}
-        w="full"
         zIndex={1000}
       >
         <Flex
           align="center"
           backdropFilter="blur(10px)"
-          backgroundColor="rgba(255, 255, 255, 0.95)"
+          backgroundColor="rgba(255, 255, 255, 0.9)"
           bg="white"
           borderColor="gray.300/75"
           borderRadius="full"
-          borderWidth="4px"
+          borderWidth="2px"
           boxShadow="lg"
+          mx="auto"
           overflow="hidden"
           pl={3}
+          w="fit-content"
           onMouseEnter={() => setIsNavHovered(true)}
           onMouseLeave={() => setIsNavHovered(false)}
         >
@@ -110,7 +110,6 @@ const FixedNavbar = () => {
               width="auto"
             />
           </Link>
-
           {/* Expand hint icon — visible when collapsed */}
           <Box
             alignItems="center"
@@ -124,7 +123,6 @@ const FixedNavbar = () => {
           >
             <LuArrowRightFromLine size={16} />
           </Box>
-
           {/* Links — collapse when not hovered */}
           <Box
             display="flex"
@@ -162,10 +160,9 @@ const FixedNavbar = () => {
           </Box>
         </Flex>
       </Box>
-
       {/* Mobile Navbar */}
       <Box
-        display={{ base: "block", lg: "none" }}
+        display={{ base: "block", md: "none" }}
         position="fixed"
         right={4}
         top={4}
@@ -183,7 +180,6 @@ const FixedNavbar = () => {
         >
           <LuMenu />
         </IconButton>
-
         {isMobileMenuOpen && (
           <VStack
             bgColor="darkBlueCustom"

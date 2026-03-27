@@ -682,7 +682,6 @@ const InteractiveTemplate = () => {
   return (
     <Box>
       <Box bg="transparent" h={1} w="full"></Box>
-
       <div style={styles.container}>
         {/* Landing Page */}
         <Box flex={1} position="relative">
@@ -717,7 +716,6 @@ const InteractiveTemplate = () => {
               <FaUpDown />
             </Icon>
           </Box>
-
           <Box
             bg="white"
             border="4px solid #01203F"
@@ -790,7 +788,6 @@ const InteractiveTemplate = () => {
                     </motion.nav>
                   )}
                 </AnimatePresence>
-
                 {/* Hero Section */}
                 <AnimatePresence>
                   {toggles.hero && (
@@ -827,7 +824,6 @@ const InteractiveTemplate = () => {
                             </motion.div>
                           )}
                         </AnimatePresence>
-
                         <AnimatePresence>
                           {toggles.heroRight && (
                             <motion.div
@@ -872,7 +868,6 @@ const InteractiveTemplate = () => {
                     </motion.section>
                   )}
                 </AnimatePresence>
-
                 {/* Speakers Section */}
                 <AnimatePresence>
                   {toggles.speakers && (
@@ -923,7 +918,6 @@ const InteractiveTemplate = () => {
                               </motion.div>
                             )}
                           </AnimatePresence>
-
                           <AnimatePresence>
                             {toggles.speaker2 && (
                               <motion.div
@@ -955,7 +949,6 @@ const InteractiveTemplate = () => {
                               </motion.div>
                             )}
                           </AnimatePresence>
-
                           <AnimatePresence>
                             {toggles.speaker3 && (
                               <motion.div
@@ -992,7 +985,6 @@ const InteractiveTemplate = () => {
                     </motion.section>
                   )}
                 </AnimatePresence>
-
                 {/* Testimonial Section */}
                 <AnimatePresence>
                   {toggles.testimonial && (
@@ -1029,7 +1021,6 @@ const InteractiveTemplate = () => {
                     </motion.section>
                   )}
                 </AnimatePresence>
-
                 {/* Banner Section */}
                 <AnimatePresence>
                   {toggles.banner && (
@@ -1059,7 +1050,6 @@ const InteractiveTemplate = () => {
                     </motion.section>
                   )}
                 </AnimatePresence>
-
                 {/* Footer Section */}
                 <AnimatePresence>
                   {toggles.footer && (
@@ -1078,11 +1068,9 @@ const InteractiveTemplate = () => {
                             </div>
                             <span style={styles.footerBrandName}>EventPro</span>
                           </div>
-
                           <div style={styles.copyright}>
                             © 2025 EventPro. All rights reserved.
                           </div>
-
                           <div style={styles.footerLinks}>
                             <a href="#" style={styles.footerLink}>
                               Privacy Policy
@@ -1100,7 +1088,6 @@ const InteractiveTemplate = () => {
             )}
           </Box>
         </Box>
-
         {/* Toggle Controls */}
         <div>
           <div style={styles.titleContainer}>
@@ -1158,7 +1145,6 @@ const InteractiveTemplate = () => {
                     onChange={(e) => setHeroBackgroundUrl(e.target.value)}
                   />
                 </div>
-
                 {/* Color Pickers Group */}
                 <div style={styles.inputContainer}>
                   {/* Navigation Background Color Picker */}
@@ -1190,7 +1176,6 @@ const InteractiveTemplate = () => {
                       />
                     </div>
                   </div>
-
                   {/* Hero Form Background Color Picker */}
                   <div style={styles.inputContainerNoBorder}>
                     <label htmlFor="heroFormBgColor" style={styles.inputLabel}>
@@ -1220,7 +1205,6 @@ const InteractiveTemplate = () => {
                       />
                     </div>
                   </div>
-
                   {/* Hero Form Button Background Color Picker */}
                   <div>
                     <label
@@ -1258,7 +1242,6 @@ const InteractiveTemplate = () => {
                     </div>
                   </div>
                 </div>
-
                 {sectionControls.map((control) => (
                   <div
                     key={control.id}

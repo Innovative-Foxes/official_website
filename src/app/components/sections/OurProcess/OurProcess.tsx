@@ -43,7 +43,7 @@ interface ProcessStep {
 const OurProcess = () => {
   const introSlide: IntroSlide = {
     step: "Our Process",
-    title: "A smarter way to build with Marketo.",
+    title: "A smarter way to build.",
     description:
       "From kickoff to launch in five simple steps—fast, focused, and built for measurable results.",
     isIntro: true,
@@ -54,7 +54,7 @@ const OurProcess = () => {
       step: "1. Discovery Call",
       title: "A quick conversation to align",
       description:
-        "We'll hop on a 15-minute intro call to learn about your Marketo goals and share how we work. It's a no-pressure space to see if there's a fit.",
+        "We'll hop on a 15-minute intro call to learn about your marketing goals and share how we work. It's a no-pressure space to see if there's a fit.",
       showButton: true,
       highlights: [
         "Clear, open discussion",
@@ -68,7 +68,7 @@ const OurProcess = () => {
       description:
         "No vague estimates or mystery line items. You'll get a clear breakdown of scope, pricing, and timelines so you know exactly what to expect.",
       highlights: [
-        "Fixed, transparent pricing",
+        "Transparent pricing",
         "Detailed cost breakdown",
         "CFO-friendly clarity",
       ],
@@ -77,10 +77,10 @@ const OurProcess = () => {
       step: "3. Kickoff & Setup",
       title: "Setting the foundation",
       description:
-        "Once we're a go, we'll collect everything needed to move quickly—brand assets, design files, and Marketo access. We'll also establish communication channels so you always know where things stand.",
+        "Once we're a go, we'll collect everything needed to move quickly—brand assets, design files, and software access. We'll also establish communication channels so you always know where things stand.",
       highlights: [
         "Brand guidelines, fonts, and design files",
-        "Secure Marketo login",
+        "Secure software login",
         "Weekly check-ins, your way",
       ],
     },
@@ -99,7 +99,7 @@ const OurProcess = () => {
       step: "5. Delivery & Support",
       title: "From launch to long-term success",
       description:
-        "We'll deliver polished, ready-to-use Marketo assets, train your team on implementation, and provide ongoing support to keep things running smoothly.",
+        "We'll deliver polished, ready-to-use marketing assets, train your team on implementation, and provide ongoing support to keep things running smoothly.",
       highlights: [
         "Full asset delivery",
         "Live training (with recordings for later)",
@@ -168,7 +168,6 @@ const OurProcess = () => {
               </Box>
             </VStack>
           </Box>
-
           {/* Right Section - Steps Container */}
           <Box flex="1" maxW={{ base: "100%", lg: "55%" }}>
             <Box>
@@ -194,7 +193,6 @@ const OurProcess = () => {
                           >
                             {step.step}
                           </Heading>
-
                           <Heading
                             as="h4"
                             color="darkBlueCustom"
@@ -204,7 +202,6 @@ const OurProcess = () => {
                           >
                             {step.title}
                           </Heading>
-
                           <Text
                             color="darkBlueCustom"
                             fontSize={{ base: "sm", md: "md" }}
@@ -212,7 +209,6 @@ const OurProcess = () => {
                           >
                             {step.description}
                           </Text>
-
                           {step.highlights && (
                             <VStack align="start" gap={2} mt={2} w="full">
                               {step.highlights.map(
@@ -241,7 +237,6 @@ const OurProcess = () => {
                               )}
                             </VStack>
                           )}
-
                           {step.showButton && (
                             <Box mt={4}>
                               <PrimaryButton

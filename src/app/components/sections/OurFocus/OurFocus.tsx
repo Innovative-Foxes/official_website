@@ -57,7 +57,6 @@ const OurFocus = () => {
           See why we are our client&apos;s first choice
         </Text>
       </VStack>
-
       <Box
         bg="gray.100"
         borderRadius="2xl"
@@ -86,7 +85,6 @@ const OurFocus = () => {
             </Text>
           </HStack>
         </Grid>
-
         {/* Mobile Layout */}
         <Box display={{ base: "block", md: "none" }}>
           {/* Innovative Foxes Section */}
@@ -122,7 +120,6 @@ const OurFocus = () => {
               ))}
             </VStack>
           </VStack>
-
           {/* Large Agencies Section */}
           <VStack align="start" gap={4}>
             <HStack justifyContent="center" w="full">
@@ -154,7 +151,6 @@ const OurFocus = () => {
             </VStack>
           </VStack>
         </Box>
-
         {/* Desktop Layout */}
         <VStack display={{ base: "none", md: "flex" }} gap={4}>
           {comparisons.map((comparison, index) => (
@@ -175,7 +171,6 @@ const OurFocus = () => {
                   {comparison}
                 </Text>
               </HStack>
-
               <HStack alignItems="center" gap={3}>
                 <Icon as={FaTimes} boxSize={3} fill="red.500" />
                 <Text color="gray.700" flex="1" fontSize="md" lineHeight="tall">

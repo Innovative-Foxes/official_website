@@ -33,7 +33,6 @@ export default function NotFound() {
             >
               <Image alt="Logo" src="/images/png/hero-logo.png" w="80px" />
             </Link>
-
             {/* 404 Number */}
             <Heading
               as="h1"
@@ -44,7 +43,6 @@ export default function NotFound() {
             >
               404
             </Heading>
-
             {/* Error Message */}
             <VStack gap={4}>
               <Heading
@@ -55,7 +53,6 @@ export default function NotFound() {
               >
                 Page Not Found
               </Heading>
-
               <Text
                 color="gray.600"
                 fontSize={{ base: "lg", md: "xl" }}
@@ -65,7 +62,6 @@ export default function NotFound() {
                 It might have been moved, deleted, or you entered the wrong URL.
               </Text>
             </VStack>
-
             {/* Action Buttons */}
             <HStack
               flexDirection={{ base: "column", md: "row" }}
@@ -78,7 +74,6 @@ export default function NotFound() {
                 url="/"
                 variation="primary"
               />
-
               <PrimaryButton
                 label="Contact Us"
                 url="mailto:hello@innovativefoxes.com"

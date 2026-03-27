@@ -86,7 +86,6 @@ export default function ChakraLargeVerticalCardFlip({
                 <Text color="gray.600" fontSize="sm" fontStyle="italic">
                   {designPackage.turnAround} turn around 🚀
                 </Text>
-
                 <VStack align="start" gap={3} w="full">
                   <Heading
                     color="gray.900"
@@ -95,7 +94,6 @@ export default function ChakraLargeVerticalCardFlip({
                   >
                     {designPackage.title}
                   </Heading>
-
                   <Text
                     color="gray.600"
                     fontSize={{ base: "md", md: "lg" }}
@@ -104,7 +102,6 @@ export default function ChakraLargeVerticalCardFlip({
                     {designPackage.description}
                   </Text>
                 </VStack>
-
                 <Box
                   bg="darkBlueCustom"
                   borderRadius="full"
@@ -112,7 +109,6 @@ export default function ChakraLargeVerticalCardFlip({
                   h="2px"
                   w="60px"
                 />
-
                 {/* Benefits */}
                 <VStack
                   align="start"
@@ -137,7 +133,6 @@ export default function ChakraLargeVerticalCardFlip({
                   )}
                 </VStack>
               </VStack>
-
               {/* Footer */}
               <HStack align="center" justify="space-between" mt={6} w="full">
                 <VStack align="start" gap={2}>
@@ -152,7 +147,6 @@ export default function ChakraLargeVerticalCardFlip({
                     </Text>
                   </HStack>
                 </VStack>
-
                 <PrimaryButton
                   fontSize="base"
                   icon={
@@ -169,7 +163,6 @@ export default function ChakraLargeVerticalCardFlip({
               </HStack>
             </VStack>
           </Box>
-
           {/* Back Face - Design & Development Package */}
           <Box
             bg="darkBlueCustom"
@@ -204,7 +197,6 @@ export default function ChakraLargeVerticalCardFlip({
                 <Text color="gray.300" fontSize="sm" fontStyle="italic">
                   {designDevPackage.turnAround} turn around 🚀
                 </Text>
-
                 <VStack align="start" gap={3} w="full">
                   <Heading
                     color="offWhite"
@@ -213,7 +205,6 @@ export default function ChakraLargeVerticalCardFlip({
                   >
                     {designDevPackage.title}
                   </Heading>
-
                   <Text
                     color="offWhite"
                     fontSize={{ base: "md", md: "lg" }}
@@ -222,7 +213,6 @@ export default function ChakraLargeVerticalCardFlip({
                     {designDevPackage.description}
                   </Text>
                 </VStack>
-
                 <Box
                   bg="offWhite"
                   borderRadius="full"
@@ -230,7 +220,6 @@ export default function ChakraLargeVerticalCardFlip({
                   h="2px"
                   w="60px"
                 />
-
                 {/* Benefits */}
                 <VStack
                   align="start"
@@ -255,7 +244,6 @@ export default function ChakraLargeVerticalCardFlip({
                   )}
                 </VStack>
               </VStack>
-
               {/* Footer */}
               <HStack align="center" justify="space-between" mt={6} w="full">
                 <VStack align="start" gap={2}>
@@ -270,7 +258,6 @@ export default function ChakraLargeVerticalCardFlip({
                     </Text>
                   </HStack>
                 </VStack>
-
                 <PrimaryButton
                   fontSize="base"
                   icon={

@@ -33,42 +33,13 @@ const eslintConfig = [
         },
       ],
 
-      // Alphabetical imports
-      "sort-imports": [
-        "error",
-        {
-          ignoreCase: false,
-          ignoreDeclarationSort: false,
-          ignoreMemberSort: false,
-          memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-          allowSeparatedGroups: true,
-        },
-      ],
-
-      // Alphabetical props and classnames
-      "react/jsx-sort-props": [
-        "error",
-        {
-          callbacksLast: true,
-          shorthandFirst: true,
-          ignoreCase: false,
-          reservedFirst: true,
-        },
-      ],
+      // Disallow blank lines before closing JSX tags
+      "react/jsx-newline": ["error", { prevent: true }],
 
       // Remove unnecessary curly braces around string literals in JSX props
       "react/jsx-curly-brace-presence": [
         "error",
         { props: "never", children: "never" },
-      ],
-
-      // Additional sorting rules for better organization
-      "react/jsx-max-props-per-line": [
-        "error",
-        {
-          maximum: 1,
-          when: "multiline",
-        },
       ],
     },
   },

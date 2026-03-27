@@ -31,7 +31,6 @@ const NexusPayLanding = () => {
         triggerLabel="TOGGLE SECTIONS"
         onSectionToggle={handleSectionToggle}
       />
-
       <div className="landing-page">
         {/* Header */}
         <header
@@ -84,7 +83,6 @@ const NexusPayLanding = () => {
             </button>
           </div>
         </header>
-
         {/* Hero Section */}
         <section
           className="hero"
@@ -167,7 +165,6 @@ const NexusPayLanding = () => {
             </div>
           </div>
         </section>
-
         {/* Features Section */}
         <section
           className="features"
@@ -227,7 +224,6 @@ const NexusPayLanding = () => {
             </div>
           </div>
         </section>
-
         {/* Stats Section */}
         <section
           className="stats"
@@ -308,7 +304,6 @@ const NexusPayLanding = () => {
             </div>
           </div>
         </section>
-
         {/* Integration Section */}
         <section
           className="reserve"
@@ -369,7 +364,6 @@ const NexusPayLanding = () => {
             </div>
           </div>
         </section>
-
         {/* Innovation Section */}
         <section
           className="innovation"
@@ -405,7 +399,6 @@ const NexusPayLanding = () => {
             </div>
           </div>
         </section>
-
         {/* Pricing Section */}
         <section
           className="pricing"
@@ -499,7 +492,6 @@ const NexusPayLanding = () => {
             </div>
           </div>
         </section>
-
         {/* CTA Section */}
         <section
           className="final-cta"
@@ -528,7 +520,6 @@ const NexusPayLanding = () => {
             </div>
           </div>
         </section>
-
         {/* Footer */}
         <footer
           className="footer"
@@ -576,7 +567,6 @@ const NexusPayLanding = () => {
           </div>
         </footer>
       </div>
-
       <style jsx>{`
         * {
           margin: 0;
