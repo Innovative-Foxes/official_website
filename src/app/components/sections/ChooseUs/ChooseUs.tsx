@@ -4,7 +4,7 @@ import CustomContainer from "../../ui/Container/Container";
 const ChooseUs = () => {
   return (
     <CustomContainer>
-      <Box textAlign="center">
+      <Box textAlign="center" id="why-us">
         <Heading
           as="h2"
           fontSize={{ base: "3xl", md: "5xl" }}
