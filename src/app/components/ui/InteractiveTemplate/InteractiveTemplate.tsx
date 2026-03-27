@@ -682,7 +682,6 @@ const InteractiveTemplate = () => {
   return (
     <Box>
       <Box bg="transparent" h={1} w="full"></Box>
-
       <div style={styles.container}>
         {/* Landing Page */}
         <Box flex={1} position="relative">
