@@ -15,7 +15,7 @@ const MeetTeam = () => {
         "Today I bring all my experience to Innovative Foxes for you. While it may sound like a grand establishment, it's entirely run by me working alongside talented developers and designers I've come to know along the way. I prioritize quality over quantity, which is why at Innovative Foxes we ensure each team member collaborates with only one client at a time, ensuring you receive dedicated attention and top-tier solutions at a comfortable rate delivered on time.",
         "Moreover, I deeply value building long-term relationships with my clients, fostering a partnership that grows and evolves over time. I look forward to collaborating with you and I truly believe we can do some great things together!",
       ],
-      image: "/images/png/meet-team-ty-sq.png",
+      image: "/images/jpg/meet-team-ty.jpg",
       languages: ["English"],
       specialties: [
         "Landing Page Development",
@@ -37,7 +37,7 @@ const MeetTeam = () => {
         "For over a decade, I’ve honed my skills in graphic design and email development. I've mastered the art of creating experiences that not only look great but also perform flawlessly across every device and client. I specialize in platforms such as Marketo, SFMC, Hubspot, and Pardot, helping campaigns reach their full potential.",
         "Along the way, I’ve partnered with hundres of clients and teams such as Air Canada Vacations, Amazon, Bank OZK, HashiCorp, James Hardie, Meta, NYU, S&P Global, Sub-Zero, and many more.",
       ],
-      image: "/images/jpg/meet-team-eric.jpeg",
+      image: "/images/jpg/meet-team-eric-2.jpeg",
       languages: ["English", "French"],
       specialties: [
         "Email Development",
