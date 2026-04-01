@@ -16,7 +16,7 @@ import StatusPing from "../StatusPing/StatusPing";
 
 const FixedNavbar = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isNavHovered, setIsNavHovered] = useState(false);
+  const [isNavHovered, setIsNavHovered] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -65,6 +65,8 @@ const FixedNavbar = () => {
       {/* Desktop Navbar */}
       <Box
         display={{ base: "none", md: "block" }}
+        width="fit-content"
+        margin="auto"
         left={0}
         opacity={isVisible ? 1 : 0}
         pointerEvents={isVisible ? "auto" : "none"}

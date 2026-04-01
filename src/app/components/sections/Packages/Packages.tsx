@@ -31,7 +31,6 @@ const Packages = () => {
     benefits: [
       "Custom template matched perfectly to your designs",
       "Blazing-fast clean code",
-      "Up to 40 custom modules to fit marketing needs",
       "Easily edit all content on the template",
       "Fully mobile responsive",
       "Branded custom styled forms",
@@ -49,7 +48,6 @@ const Packages = () => {
     benefits: [
       "Custom template based on your brand guidelines",
       "Blazing-fast clean code, modern conversion-optimized design",
-      "Up to 40 custom modules to fit marketing needs",
       "Easily edit all content on the template",
       "Fully mobile responsive",
       "Branded custom styled forms",
@@ -121,6 +119,31 @@ const Packages = () => {
                 title="Launch without delays"
               />
             </VStack>
+            {/* SFMC/Pardot Section */}
+            <Box>
+              <Heading as="h3" fontSize="xl" lineHeight="normal" mb={4}>
+                Does your team use SFMC or Pardot instead of Marketo?
+              </Heading>
+              <Text fontSize="md" mb={6}>
+                While Marketo is our specialty, we&apos;re also experienced
+                across a variety of marketing automation platforms. Schedule a
+                call with us, we&apos;ll explore your needs and put together a
+                plan that works best for your team.
+              </Text>
+              <PrimaryButton
+                fontSize="base"
+                icon={
+                  <Icon h={3}>
+                    <FaChevronRight />
+                  </Icon>
+                }
+                label="Book A Call Now"
+                minHeight={45}
+                px={24}
+                trackConversion={true}
+                url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
+              />
+            </Box>
           </VStack>
           {/* Right Column - Package Toggle and Card */}
           <VStack align="center" gap={8}>
@@ -287,6 +310,31 @@ const Packages = () => {
                 </Icon>
               }
               title="Launch without delays"
+            />
+          </VStack>
+          {/* SFMC/Pardot Section */}
+          <VStack px={4} textAlign="center" w="100%">
+            <Heading as="h3" fontSize="2xl" lineHeight="normal" mb={4}>
+              Does your team use SFMC or Pardot instead of Marketo?
+            </Heading>
+            <Text fontSize="sm" mb={6}>
+              While Marketo is our specialty, we&apos;re also experienced across
+              a variety of marketing automation platforms. Schedule a call with
+              us, we&apos;ll explore your needs and put together a plan that
+              works best for your team.
+            </Text>
+            <PrimaryButton
+              fontSize="base"
+              icon={
+                <Icon h={3}>
+                  <FaChevronRight />
+                </Icon>
+              }
+              label="Book A Call Now"
+              minHeight={45}
+              px={24}
+              trackConversion={true}
+              url="https://cal.com/innovativefoxes/innovative-foxes-introduction"
             />
           </VStack>
         </VStack>
