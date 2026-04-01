@@ -27,7 +27,7 @@ const OurAdvantage = () => {
       id: 1,
       title: "Custom-Built, Brand-Perfect",
       content:
-        "Stop wrestling with generic off the shelf templates. We build Marketo templates 100% tailored to your brand—designed to look, feel, and perform exactly how your marketers need with cutting edge flexibility to ensure you can achieve those campaign goals.",
+        "Stop wrestling with generic off the shelf templates. We build Marketo templates 100% tailored to your brand. Designed to look, feel, and perform exactly how your marketers need with cutting edge flexibility to ensure you can achieve those campaign goals.",
       icon: <FaRocket />,
     },
     {
