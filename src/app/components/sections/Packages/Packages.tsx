@@ -12,8 +12,9 @@ import {
 } from "@chakra-ui/react";
 import CustomContainer from "../../ui/Container/Container";
 
-import { FaDesktop } from "react-icons/fa";
+import { FaChevronRight, FaDesktop } from "react-icons/fa";
 import { useState } from "react";
+import { PrimaryButton } from "../../ui/Button/Button";
 
 import ChakraLargeVerticalCardFlip from "../../ui/VerticalCardFlip/VerticalCardFlip";
 
