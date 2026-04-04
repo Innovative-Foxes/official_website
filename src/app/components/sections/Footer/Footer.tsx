@@ -25,7 +25,7 @@ const Footer = () => {
             alt="Logo"
             borderRadius="16px"
             maxW={{ base: "200px", md: "none" }}
-            src="/images/svgs/footer-logo.svg"
+            src="/images/png/footer-logo.png"
             w="100%"
           />
           <VStack

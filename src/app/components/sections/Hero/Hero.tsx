@@ -45,7 +45,12 @@ const Hero = () => {
           outline="none"
           transition="all"
         >
-          <Image alt="Logo" src="/images/png/hero-logo.png" w="80px" />
+        <Image
+          alt="Logo"
+          src="/images/png/hero-logo-v2.png"
+          w="80px"
+          filter="drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))"
+        />
         </Link>
         <Box textAlign="center">
           <Heading
