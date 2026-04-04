@@ -7,6 +7,7 @@ import Hero from "./components/sections/Hero/Hero";
 import MeetTeam from "./components/sections/MeetTeam/MeetTeam";
 import OurAdvantage from "./components/sections/OurAdvantage/OurAdvantage";
 import OurFocus from "./components/sections/OurFocus/OurFocus";
+import Testimonial from "./components/sections/Testimonial/Testimonial";
 import OurProcess from "./components/sections/OurProcess/OurProcess";
 import Packages from "./components/sections/Packages/Packages";
 
@@ -29,6 +30,7 @@ export default function Home() {
         <Packages />
         <OurProcess />
         <MeetTeam />
+        <Testimonial />
         <OurFocus />
         <FAQ />
       </Box>
