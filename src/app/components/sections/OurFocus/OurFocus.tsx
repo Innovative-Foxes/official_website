@@ -75,7 +75,7 @@ const OurFocus = () => {
             <Image
               alt="Logo"
               maxW="180px"
-              src="/images/svgs/our-focus-logo.svg"
+              src="/images/png/footer-logo-dark.png"
               w="100%"
             />
           </HStack>
@@ -88,12 +88,12 @@ const OurFocus = () => {
         {/* Mobile Layout */}
         <Box display={{ base: "block", md: "none" }}>
           {/* Innovative Foxes Section */}
-          <VStack align="start" gap={4} mb={8}>
+          <VStack align="start" gap={5} mb={8}>
             <HStack justifyContent="center" w="full">
               <Image
                 alt="Logo"
-                maxW="120px"
-                src="/images/svgs/our-focus-logo.svg"
+                maxW="180px"
+                src="/images/png/footer-logo-dark.png"
                 w="100%"
               />
             </HStack>

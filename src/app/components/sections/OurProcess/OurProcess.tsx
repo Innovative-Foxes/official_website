@@ -5,7 +5,6 @@ import {
   HStack,
   Heading,
   Icon,
-  Image,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -143,12 +142,6 @@ const OurProcess = () => {
                     gap={{ base: 2, md: 4 }}
                   >
                     Our
-                    <Image
-                      alt="Logo"
-                      maxW={{ base: "40px", md: "70px" }}
-                      src="/images/svgs/process-logo.svg"
-                      w="100%"
-                    />
                   </Text>
                   <Text as="span" color="orangeCustom" fontWeight="semibold">
                     Process

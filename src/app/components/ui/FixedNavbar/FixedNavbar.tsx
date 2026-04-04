@@ -108,7 +108,7 @@ const FixedNavbar = () => {
             <Image
               alt="Logo"
               height="40px"
-              src="/images/svgs/hero-logo.svg"
+              src="/images/png/hero-logo-v2.png"
               width="auto"
             />
           </Link>
