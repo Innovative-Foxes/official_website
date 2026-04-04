@@ -1,6 +1,8 @@
 "use client";
 import {
   Box,
+  Grid,
+  GridItem,
   HStack,
   Image,
   Link,
@@ -16,106 +18,90 @@ const Footer = () => {
     <Box
       bg="darkBlueCustom"
       mt={{ base: 20, md: 40 }}
-      pt={{ base: 12, md: 24 }}
-      py={{ base: 12, md: 20 }}
+      pt={{ base: 12, md: 20 }}
+      pb={{ base: 8, md: 12 }}
     >
       <CustomContainer>
-        <VStack alignItems={{ base: "center", md: "flex-start" }} gap={0}>
-          <Image
-            alt="Logo"
-            borderRadius="16px"
-            maxW={{ base: "200px", md: "none" }}
-            src="/images/png/footer-logo.png"
-            w="100%"
-          />
-          <VStack
-            alignItems="center"
-            color="offWhite"
-            display={{ base: "flex", md: "none" }}
-            gap={{ base: 6, lg: 16 }}
-            my={{ base: 12, md: 20 }}
+        <VStack gap={0} w="full">
+          {/* Main content */}
+          <Grid
+            templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+            gap={{ base: 10, md: 0 }}
             w="full"
           >
-            <Box textAlign="center">
-              <Text fontSize={{ base: "sm", md: "md" }}>
-                © {new Date().getFullYear()} Innovative Foxes
-              </Text>
-            </Box>
-            <Box textAlign="center">
-              <Text fontSize="sm">
-                Vancouver → <Clock timezone="US/Pacific" />
-              </Text>
-              <Text fontSize="sm">
-                Montreal → <Clock timezone="America/Montreal" />
-              </Text>
-            </Box>
-            <Box textAlign="center">
-              <Link
-                _hover={{ textDecoration: "underline" }}
-                color="orangeCustom"
-                fontSize={{ base: "sm", md: "md" }}
-                fontWeight="medium"
-                href="mailto:hello@innovativefoxes.com"
-                target="_blank"
-              >
-                hello@innovativefoxes.com
-              </Link>
-            </Box>
-          </VStack>
+            {/* Left — logo + clocks */}
+            <GridItem>
+              <VStack alignItems="flex-start" gap={8}>
+                <Link href="/">
+                  <Image
+                    alt="Innovative Foxes"
+                    h={{ base: "52px", md: "70px" }}
+                    src="/images/png/footer-logo.png"
+                    w="auto"
+                  />
+                </Link>
+                <VStack alignItems="flex-start" gap={1} color="offWhite" opacity={0.7}>
+                  <Text fontSize="xs" letterSpacing="wider" textTransform="uppercase" opacity={0.5} mb={1}>
+                    Local time
+                  </Text>
+                  <Text fontSize="sm">
+                    Vancouver&ensp;→&ensp;<Clock timezone="US/Pacific" />
+                  </Text>
+                  <Text fontSize="sm">
+                    Montreal&ensp;→&ensp;<Clock timezone="America/Montreal" />
+                  </Text>
+                </VStack>
+              </VStack>
+            </GridItem>
+            {/* Right — email CTA */}
+            <GridItem display="flex" alignItems={{ base: "flex-start", md: "flex-end" }} flexDirection="column">
+              <VStack alignItems={{ base: "flex-start", md: "flex-end" }} gap={3}>
+                <Text
+                  color="offWhite"
+                  fontSize="xs"
+                  letterSpacing="wider"
+                  opacity={0.5}
+                  textTransform="uppercase"
+                >
+                  Say hello
+                </Text>
+                <Link
+                  _hover={{ color: "white", textDecoration: "none", letterSpacing: "0.02em" }}
+                  color="orangeCustom"
+                  fontSize="lg"
+                  fontWeight="medium"
+                  href="mailto:hello@innovativefoxes.com"
+                  target="_blank"
+                  transition="all 0.2s ease"
+                >
+                  hello@innovativefoxes.com
+                </Link>
+              </VStack>
+            </GridItem>
+          </Grid>
+          <Separator borderColor="whiteAlpha.100" mt="10" />
+          {/* Bottom bar */}
           <HStack
             alignItems="center"
             color="offWhite"
-            display={{ base: "none", md: "flex" }}
-            gap={{ base: 8, lg: 16 }}
-            justifyContent="space-between"
-            my={20}
-            position="relative"
-            w="full"
-          >
-            <Box>
-              <Text>© {new Date().getFullYear()} Innovative Foxes</Text>
-            </Box>
-            <Box
-              left="50%"
-              position="absolute"
-              textAlign="center"
-              transform="translateX(-50%)"
-            >
-              <Text>
-                Vancouver → <Clock timezone="US/Pacific" />
-              </Text>
-              <Text>
-                Montreal → <Clock timezone="America/Montreal" />
-              </Text>
-            </Box>
-            <Box>
-              <Link
-                _hover={{ textDecoration: "underline" }}
-                color="orangeCustom"
-                fontWeight="medium"
-                href="mailto:hello@innovativefoxes.com"
-                target="_blank"
-              >
-                hello@innovativefoxes.com
-              </Link>
-            </Box>
-          </HStack>
-          <HStack
-            alignItems="center"
-            color="offWhite"
-            fontSize="sm"
+            flexWrap="wrap"
+            fontSize="xs"
             gap={4}
-            justifyContent="center"
-            mt={6}
+            justifyContent={{ base: "flex-start", md: "space-between" }}
+            mt={{base: 0, md: 4}}
+            opacity={0.4}
             w="full"
           >
-            <Link href="/privacy" target="_blank">
-              Privacy
-            </Link>
-            <Separator height="4" orientation="vertical" />
-            <Link href="/terms" target="_blank">
-              Terms
-            </Link>
+            <Text letterSpacing="wide">© {new Date().getFullYear()} Innovative Foxes</Text>
+            <HStack gap={4}>
+              <Link _hover={{ opacity: 1, textDecoration: "underline" }} href="/privacy" target="_blank">
+                Privacy
+              </Link>
+              <Separator height="3" orientation="vertical" />
+              <Link _hover={{ opacity: 1, textDecoration: "underline" }} href="/terms" target="_blank">
+                Terms
+              </Link>
+            </HStack>
           </HStack>
         </VStack>
       </CustomContainer>
