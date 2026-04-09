@@ -11,29 +11,137 @@ const OrbitalSVG = () => (
     preserveAspectRatio="xMidYMid slice"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <circle cx="350" cy="150" r="200" fill="none" stroke="#1e3a5f" strokeWidth="0.5" opacity="0.6" />
-    <circle cx="350" cy="150" r="140" fill="none" stroke="#1e3a5f" strokeWidth="0.5" opacity="0.5" />
-    <circle cx="350" cy="150" r="80" fill="none" stroke="#2a5080" strokeWidth="0.5" opacity="0.4" />
+    <circle
+      cx="350"
+      cy="150"
+      r="200"
+      fill="none"
+      stroke="#1e3a5f"
+      strokeWidth="0.5"
+      opacity="0.6"
+    />
+    <circle
+      cx="350"
+      cy="150"
+      r="140"
+      fill="none"
+      stroke="#1e3a5f"
+      strokeWidth="0.5"
+      opacity="0.5"
+    />
+    <circle
+      cx="350"
+      cy="150"
+      r="80"
+      fill="none"
+      stroke="#2a5080"
+      strokeWidth="0.5"
+      opacity="0.4"
+    />
     <circle cx="550" cy="150" r="3" fill="#4a80c0" opacity="0.8" />
     <circle cx="350" cy="-50" r="3" fill="#4a80c0" opacity="0.8" />
     <circle cx="150" cy="150" r="3" fill="#4a80c0" opacity="0.8" />
     <circle cx="350" cy="350" r="3" fill="#4a80c0" opacity="0.8" />
-    <rect x="290" y="110" width="120" height="80" rx="4" fill="none" stroke="#3a6090" strokeWidth="1" opacity="0.7" />
-    <line x1="290" y1="130" x2="410" y2="130" stroke="#3a6090" strokeWidth="0.5" opacity="0.5" />
-    <rect x="302" y="140" width="40" height="4" rx="2" fill="#3a6090" opacity="0.5" />
-    <rect x="302" y="150" width="60" height="4" rx="2" fill="#3a6090" opacity="0.4" />
-    <rect x="302" y="160" width="50" height="4" rx="2" fill="#3a6090" opacity="0.3" />
-    <line x1="0" y1="80" x2="700" y2="80" stroke="#1e3a5f" strokeWidth="0.5" opacity="0.3" strokeDasharray="4 6" />
-    <line x1="0" y1="200" x2="700" y2="200" stroke="#1e3a5f" strokeWidth="0.5" opacity="0.3" strokeDasharray="4 6" />
-    <line x1="150" y1="0" x2="150" y2="300" stroke="#1e3a5f" strokeWidth="0.5" opacity="0.3" strokeDasharray="4 6" />
-    <line x1="550" y1="0" x2="550" y2="300" stroke="#1e3a5f" strokeWidth="0.5" opacity="0.3" strokeDasharray="4 6" />
+    <rect
+      x="290"
+      y="110"
+      width="120"
+      height="80"
+      rx="4"
+      fill="none"
+      stroke="#3a6090"
+      strokeWidth="1"
+      opacity="0.7"
+    />
+    <line
+      x1="290"
+      y1="130"
+      x2="410"
+      y2="130"
+      stroke="#3a6090"
+      strokeWidth="0.5"
+      opacity="0.5"
+    />
+    <rect
+      x="302"
+      y="140"
+      width="40"
+      height="4"
+      rx="2"
+      fill="#3a6090"
+      opacity="0.5"
+    />
+    <rect
+      x="302"
+      y="150"
+      width="60"
+      height="4"
+      rx="2"
+      fill="#3a6090"
+      opacity="0.4"
+    />
+    <rect
+      x="302"
+      y="160"
+      width="50"
+      height="4"
+      rx="2"
+      fill="#3a6090"
+      opacity="0.3"
+    />
+    <line
+      x1="0"
+      y1="80"
+      x2="700"
+      y2="80"
+      stroke="#1e3a5f"
+      strokeWidth="0.5"
+      opacity="0.3"
+      strokeDasharray="4 6"
+    />
+    <line
+      x1="0"
+      y1="200"
+      x2="700"
+      y2="200"
+      stroke="#1e3a5f"
+      strokeWidth="0.5"
+      opacity="0.3"
+      strokeDasharray="4 6"
+    />
+    <line
+      x1="150"
+      y1="0"
+      x2="150"
+      y2="300"
+      stroke="#1e3a5f"
+      strokeWidth="0.5"
+      opacity="0.3"
+      strokeDasharray="4 6"
+    />
+    <line
+      x1="550"
+      y1="0"
+      x2="550"
+      y2="300"
+      stroke="#1e3a5f"
+      strokeWidth="0.5"
+      opacity="0.3"
+      strokeDasharray="4 6"
+    />
     <circle cx="350" cy="150" r="5" fill="#4a90d9" opacity="0.9" />
     <circle cx="350" cy="150" r="12" fill="#4a90d9" opacity="0.2" />
     <circle cx="200" cy="80" r="2" fill="#4a80c0" opacity="0.6" />
     <circle cx="480" cy="220" r="2" fill="#4a80c0" opacity="0.6" />
     <circle cx="100" cy="180" r="1.5" fill="#4a80c0" opacity="0.5" />
     <circle cx="600" cy="100" r="1.5" fill="#4a80c0" opacity="0.5" />
-    <path d="M 150 150 A 200 200 0 0 1 550 150" fill="none" stroke="#2060a0" strokeWidth="1" opacity="0.4" />
+    <path
+      d="M 150 150 A 200 200 0 0 1 550 150"
+      fill="none"
+      stroke="#2060a0"
+      strokeWidth="1"
+      opacity="0.4"
+    />
   </svg>
 );
 
@@ -45,25 +153,128 @@ const EmberSVG = () => (
     preserveAspectRatio="xMidYMid slice"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M 180 200 Q 170 160 180 120 Q 190 80 180 40" fill="none" stroke="#c06020" strokeWidth="1.5" opacity="0.4" strokeLinecap="round" />
-    <path d="M 210 200 Q 200 155 210 110 Q 220 65 210 20" fill="none" stroke="#d07030" strokeWidth="1.5" opacity="0.35" strokeLinecap="round" />
-    <path d="M 240 200 Q 230 160 240 120 Q 250 80 240 40" fill="none" stroke="#c05010" strokeWidth="1.5" opacity="0.3" strokeLinecap="round" />
-    <path d="M 140 200 L 140 260 Q 140 275 155 275 L 265 275 Q 280 275 280 260 L 280 200 Z" fill="none" stroke="#c06020" strokeWidth="1" opacity="0.5" />
-    <path d="M 280 220 Q 310 220 310 240 Q 310 260 280 260" fill="none" stroke="#c06020" strokeWidth="1" opacity="0.4" />
-    <ellipse cx="210" cy="200" rx="70" ry="15" fill="none" stroke="#c06020" strokeWidth="1" opacity="0.5" />
-    <line x1="420" y1="150" x2="500" y2="100" stroke="#8B4513" strokeWidth="0.5" opacity="0.3" strokeDasharray="3 5" />
-    <line x1="420" y1="150" x2="490" y2="200" stroke="#8B4513" strokeWidth="0.5" opacity="0.3" strokeDasharray="3 5" />
-    <line x1="420" y1="150" x2="450" y2="50" stroke="#8B4513" strokeWidth="0.5" opacity="0.3" strokeDasharray="3 5" />
-    <circle cx="420" cy="150" r="80" fill="none" stroke="#7a3010" strokeWidth="0.5" opacity="0.4" />
-    <circle cx="420" cy="150" r="50" fill="none" stroke="#8a4020" strokeWidth="0.5" opacity="0.3" />
+    <path
+      d="M 180 200 Q 170 160 180 120 Q 190 80 180 40"
+      fill="none"
+      stroke="#c06020"
+      strokeWidth="1.5"
+      opacity="0.4"
+      strokeLinecap="round"
+    />
+    <path
+      d="M 210 200 Q 200 155 210 110 Q 220 65 210 20"
+      fill="none"
+      stroke="#d07030"
+      strokeWidth="1.5"
+      opacity="0.35"
+      strokeLinecap="round"
+    />
+    <path
+      d="M 240 200 Q 230 160 240 120 Q 250 80 240 40"
+      fill="none"
+      stroke="#c05010"
+      strokeWidth="1.5"
+      opacity="0.3"
+      strokeLinecap="round"
+    />
+    <path
+      d="M 140 200 L 140 260 Q 140 275 155 275 L 265 275 Q 280 275 280 260 L 280 200 Z"
+      fill="none"
+      stroke="#c06020"
+      strokeWidth="1"
+      opacity="0.5"
+    />
+    <path
+      d="M 280 220 Q 310 220 310 240 Q 310 260 280 260"
+      fill="none"
+      stroke="#c06020"
+      strokeWidth="1"
+      opacity="0.4"
+    />
+    <ellipse
+      cx="210"
+      cy="200"
+      rx="70"
+      ry="15"
+      fill="none"
+      stroke="#c06020"
+      strokeWidth="1"
+      opacity="0.5"
+    />
+    <line
+      x1="420"
+      y1="150"
+      x2="500"
+      y2="100"
+      stroke="#8B4513"
+      strokeWidth="0.5"
+      opacity="0.3"
+      strokeDasharray="3 5"
+    />
+    <line
+      x1="420"
+      y1="150"
+      x2="490"
+      y2="200"
+      stroke="#8B4513"
+      strokeWidth="0.5"
+      opacity="0.3"
+      strokeDasharray="3 5"
+    />
+    <line
+      x1="420"
+      y1="150"
+      x2="450"
+      y2="50"
+      stroke="#8B4513"
+      strokeWidth="0.5"
+      opacity="0.3"
+      strokeDasharray="3 5"
+    />
+    <circle
+      cx="420"
+      cy="150"
+      r="80"
+      fill="none"
+      stroke="#7a3010"
+      strokeWidth="0.5"
+      opacity="0.4"
+    />
+    <circle
+      cx="420"
+      cy="150"
+      r="50"
+      fill="none"
+      stroke="#8a4020"
+      strokeWidth="0.5"
+      opacity="0.3"
+    />
     <circle cx="420" cy="150" r="6" fill="#e07030" opacity="0.8" />
     <circle cx="420" cy="150" r="14" fill="#e07030" opacity="0.15" />
     <circle cx="60" cy="100" r="2" fill="#c06020" opacity="0.5" />
     <circle cx="90" cy="250" r="2" fill="#c06020" opacity="0.4" />
     <circle cx="370" cy="50" r="1.5" fill="#c06020" opacity="0.5" />
     <circle cx="480" cy="270" r="1.5" fill="#c06020" opacity="0.4" />
-    <line x1="0" y1="50" x2="500" y2="50" stroke="#7a3010" strokeWidth="0.5" opacity="0.2" strokeDasharray="6 8" />
-    <line x1="0" y1="280" x2="500" y2="280" stroke="#7a3010" strokeWidth="0.5" opacity="0.2" strokeDasharray="6 8" />
+    <line
+      x1="0"
+      y1="50"
+      x2="500"
+      y2="50"
+      stroke="#7a3010"
+      strokeWidth="0.5"
+      opacity="0.2"
+      strokeDasharray="6 8"
+    />
+    <line
+      x1="0"
+      y1="280"
+      x2="500"
+      y2="280"
+      stroke="#7a3010"
+      strokeWidth="0.5"
+      opacity="0.2"
+      strokeDasharray="6 8"
+    />
   </svg>
 );
 
@@ -75,14 +286,74 @@ const GroveSVG = () => (
     preserveAspectRatio="xMidYMid slice"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M 100 90 Q 150 20 200 90 Q 150 160 100 90 Z" fill="none" stroke="#1a6040" strokeWidth="1" opacity="0.5" />
-    <path d="M 160 90 Q 210 20 260 90 Q 210 160 160 90 Z" fill="none" stroke="#1a6040" strokeWidth="0.75" opacity="0.35" />
-    <line x1="50" y1="180" x2="180" y2="90" stroke="#0d4028" strokeWidth="1" opacity="0.5" />
-    <line x1="180" y1="90" x2="250" y2="30" stroke="#0d4028" strokeWidth="0.75" opacity="0.4" />
-    <line x1="180" y1="90" x2="260" y2="100" stroke="#0d4028" strokeWidth="0.75" opacity="0.4" />
-    <line x1="260" y1="100" x2="320" y2="50" stroke="#0d4028" strokeWidth="0.5" opacity="0.35" />
-    <circle cx="380" cy="90" r="70" fill="none" stroke="#0d5030" strokeWidth="0.5" opacity="0.35" />
-    <circle cx="380" cy="90" r="40" fill="none" stroke="#1a6040" strokeWidth="0.5" opacity="0.3" />
+    <path
+      d="M 100 90 Q 150 20 200 90 Q 150 160 100 90 Z"
+      fill="none"
+      stroke="#1a6040"
+      strokeWidth="1"
+      opacity="0.5"
+    />
+    <path
+      d="M 160 90 Q 210 20 260 90 Q 210 160 160 90 Z"
+      fill="none"
+      stroke="#1a6040"
+      strokeWidth="0.75"
+      opacity="0.35"
+    />
+    <line
+      x1="50"
+      y1="180"
+      x2="180"
+      y2="90"
+      stroke="#0d4028"
+      strokeWidth="1"
+      opacity="0.5"
+    />
+    <line
+      x1="180"
+      y1="90"
+      x2="250"
+      y2="30"
+      stroke="#0d4028"
+      strokeWidth="0.75"
+      opacity="0.4"
+    />
+    <line
+      x1="180"
+      y1="90"
+      x2="260"
+      y2="100"
+      stroke="#0d4028"
+      strokeWidth="0.75"
+      opacity="0.4"
+    />
+    <line
+      x1="260"
+      y1="100"
+      x2="320"
+      y2="50"
+      stroke="#0d4028"
+      strokeWidth="0.5"
+      opacity="0.35"
+    />
+    <circle
+      cx="380"
+      cy="90"
+      r="70"
+      fill="none"
+      stroke="#0d5030"
+      strokeWidth="0.5"
+      opacity="0.35"
+    />
+    <circle
+      cx="380"
+      cy="90"
+      r="40"
+      fill="none"
+      stroke="#1a6040"
+      strokeWidth="0.5"
+      opacity="0.3"
+    />
     <circle cx="380" cy="90" r="5" fill="#2a9060" opacity="0.8" />
     <circle cx="380" cy="90" r="12" fill="#2a9060" opacity="0.15" />
     <circle cx="250" cy="30" r="3" fill="#2a9060" opacity="0.7" />
@@ -90,8 +361,26 @@ const GroveSVG = () => (
     <circle cx="260" cy="100" r="2" fill="#2a9060" opacity="0.5" />
     <circle cx="450" cy="30" r="1.5" fill="#2a9060" opacity="0.4" />
     <circle cx="20" cy="60" r="1.5" fill="#2a9060" opacity="0.4" />
-    <line x1="0" y1="30" x2="500" y2="30" stroke="#0d4028" strokeWidth="0.5" opacity="0.2" strokeDasharray="4 8" />
-    <line x1="0" y1="160" x2="500" y2="160" stroke="#0d4028" strokeWidth="0.5" opacity="0.2" strokeDasharray="4 8" />
+    <line
+      x1="0"
+      y1="30"
+      x2="500"
+      y2="30"
+      stroke="#0d4028"
+      strokeWidth="0.5"
+      opacity="0.2"
+      strokeDasharray="4 8"
+    />
+    <line
+      x1="0"
+      y1="160"
+      x2="500"
+      y2="160"
+      stroke="#0d4028"
+      strokeWidth="0.5"
+      opacity="0.2"
+      strokeDasharray="4 8"
+    />
   </svg>
 );
 
@@ -131,7 +420,7 @@ const cards = [
 const ShowcaseGrid = () => {
   return (
     <CustomContainer>
-      <Box id="our-work" mt={{ base: 24, md: 40 }}>
+      <Box id="our-work" mt={{ base: 16, md: 32 }}>
         {/* Header */}
         <Flex
           justify="space-between"
@@ -141,11 +430,7 @@ const ShowcaseGrid = () => {
           borderBottom="0.5px solid"
           borderColor="gray.200"
         >
-          <Text
-            fontSize="22px"
-            fontWeight={400}
-            letterSpacing="-0.02em"
-          >
+          <Text fontSize="22px" fontWeight={400} letterSpacing="-0.02em">
             Selected work
           </Text>
           <Text
@@ -269,7 +554,6 @@ const ShowcaseGrid = () => {
                   {card.tag}
                 </Box>
                 <Text
-
                   fontSize={i === 0 ? "17px" : i === 1 ? "15px" : "13px"}
                   fontWeight={400}
                   color="white"

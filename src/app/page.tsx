@@ -28,11 +28,8 @@ export default function Home() {
         </Flex>
         <ChooseUs />
         <Testimonial />
-        {/*
         <ShowcaseGrid />
-        */}
         <OurAdvantage />
-        <ShowcaseGrid />
         <Packages />
         <OurProcess />
         <MeetTeam />

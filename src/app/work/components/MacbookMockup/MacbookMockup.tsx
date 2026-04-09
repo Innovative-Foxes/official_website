@@ -52,10 +52,8 @@ const MacbookMockup = ({
           )}
         </Box>
       </Box>
-
       {/* Hinge line */}
       <Box w="100%" h="2px" bg="#0a0a0a" />
-
       {/* Base */}
       <Box w="108%" ml="-4%" position="relative">
         <Box
@@ -76,7 +74,6 @@ const MacbookMockup = ({
           borderRadius="full"
         />
       </Box>
-
       {/* Drop shadow */}
       <Box
         position="absolute"

@@ -18,7 +18,7 @@ export default function WorktechPage() {
       <FixedNavbar />
       <Box as="main" pt={{ base: 20, md: 32 }} pb={{ base: 16, md: 24 }}>
         <Box maxW="1000px" mx="auto" px={{ base: 4, lg: 4, xl: 0 }}>
-          <Box maxW="720px" m="auto">
+          <Box>
             <Link
               href="/"
               display="inline-flex"
@@ -43,26 +43,29 @@ export default function WorktechPage() {
             >
               Worktech
             </Heading>
-            <Text fontSize={{ base: "md", md: "lg" }} color="gray.600" lineHeight="tall">
+            <Text
+              fontSize={{ base: "md", md: "lg" }}
+              color="gray.600"
+              lineHeight="tall"
+            >
               A placeholder description for the Worktech project. This will be
-              updated with real project details — the story behind the work,
-              the challenges solved, and the outcomes delivered.
+              updated with real project details — the story behind the work, the
+              challenges solved, and the outcomes delivered.
             </Text>
             {/* Scope */}
             <Box mt={8}>
               <Text
                 fontSize="xs"
-                fontWeight="semibold"
+                fontWeight="bold"
                 letterSpacing="0.1em"
                 textTransform="uppercase"
-                color="gray.400"
                 mb={3}
               >
                 Scope
               </Text>
               <Flex wrap="wrap" gap={2}>
                 {scopeItems.map((item) => (
-                  <Badge key={item} variant="solid" colorPalette="blue">
+                  <Badge fontSize="xs" p={2} py={1} key={item} variant="subtle">
                     {item}
                   </Badge>
                 ))}
