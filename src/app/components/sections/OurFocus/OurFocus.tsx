@@ -48,7 +48,13 @@ const OurFocus = () => {
           lineHeight="shorter"
           textTransform="uppercase"
         >
-          All our focus is on you{" "}
+          <Text>
+            All of our{" "}
+            <Text as="span" color="orangeCustom">
+              focus
+            </Text>{" "}
+            is on you
+          </Text>
           <Icon fill="orangeCustom">
             <FaHeart />
           </Icon>

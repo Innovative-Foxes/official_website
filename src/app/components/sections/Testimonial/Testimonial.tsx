@@ -1,4 +1,4 @@
-import { Box, Heading, VStack } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import CustomContainer from "../../ui/Container/Container";
 import TestimonialCard from "./TestimonialCard";
 
@@ -15,19 +15,25 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <Box pb={{ base: 20, md: 32 }}>
+    <Box mt={{ base: 16, md: 32 }}>
+      {/*
       <VStack gap={0} mb={{ base: 6, md: 10 }}>
         <Heading
           as="h2"
-          fontSize={{ base: "3xl", md: "5xl" }}
+          fontSize={{ base: "3xl", md: "4xl" }}
           fontWeight="bold"
           lineHeight="shorter"
           textAlign="center"
           textTransform="uppercase"
         >
-          What Others Have To Say
+          What{" "}
+          <Text as="span" color="orangeCustom" fontWeight="semibold">
+            Others
+          </Text>{" "}
+          Have To Say
         </Heading>
       </VStack>
+      */}
       <CustomContainer>
         {testimonials.map((t) => (
           <TestimonialCard

@@ -128,10 +128,10 @@ const OurProcess = () => {
                 <Heading
                   as="h2"
                   fontFamily="poppins"
-                  fontSize={{ base: "4xl", md: "6xl" }}
+                  fontSize={{ base: "4xl", md: "5xl" }}
                   fontWeight="bold"
                   lineHeight="110%"
-                  mb={6}
+                  mb={4}
                   textTransform="uppercase"
                 >
                   <Text

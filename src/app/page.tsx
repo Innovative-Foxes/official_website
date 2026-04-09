@@ -30,7 +30,6 @@ export default function Home() {
         <Packages />
         <OurProcess />
         <MeetTeam />
-        <Testimonial />
         <OurFocus />
         <FAQ />
       </Box>
