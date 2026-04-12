@@ -1,142 +1,146 @@
 "use client";
-import {
-  Box,
-  Card,
-  Flex,
-  Grid,
-  Heading,
-  Icon,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import CustomContainer from "../../ui/Container/Container";
-import { FaRocket } from "react-icons/fa";
-
+import { Box, Flex, Grid, Heading, Icon, Text } from "@chakra-ui/react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import {
   FaDesktop,
   FaEnvelope,
   FaGraduationCap,
-  FaSquareCheck,
+  FaRocket,
   FaSwatchbook,
-} from "react-icons/fa6";
+} from "react-icons/fa";
+import { FaSquareCheck } from "react-icons/fa6";
+import CustomContainer from "../../ui/Container/Container";
 
-const OurAdvantage = () => {
-  // Cards
-  const cards = [
-    {
-      id: 1,
-      title: "Custom-Built, Brand-Perfect",
-      content:
-        "Stop wrestling with generic off the shelf templates. We build Marketo templates 100% tailored to your brand. Designed to look, feel, and perform exactly how your marketers need with cutting edge flexibility to ensure you can achieve those campaign goals.",
-      icon: <FaRocket />,
-    },
-    {
-      id: 2,
-      title: "Subscription/Preference Centers",
-      content:
-        "Give your audience more control over their communication settings with a custom-built subscription/preference center. Including fully branded forms and custom thank you messaging that matches your brand.",
-      icon: <FaSquareCheck />,
-    },
-    {
-      id: 3,
-      title: "High-Impact Emails",
-      content:
-        "Our email templates are built for flexibility. Swap backgrounds, update layouts, change button colors, or refresh imagery on the fly. Whatever your campaign demands, your emails will deliver.",
-      icon: <FaEnvelope />,
-    },
-    {
-      id: 4,
-      title: "Pixel-Perfect Development",
-      content:
-        "Got a design file? We’ll bring it to life. Our team transforms AdobeXD, Figma, Sketch, or Photoshop designs into flawless, responsive, blazing-fast templates that look great everywhere.",
-      icon: <FaDesktop />,
-    },
-    {
-      id: 5,
-      title: "On-Brand Design That Converts",
-      content:
-        "We don’t just design for looks, we design for results. Every template is modern, conversion-focused, and deeply rooted in your brand guidelines-helping your campaigns transforming engagement into real outcomes.",
-      icon: <FaSwatchbook />,
-    },
-    {
-      id: 6,
-      title: "Training & Handoff",
-      content:
-        "Every template comes with a training session for your team. We’ll walk you through every feature so your marketers feel confident using the new template from day one.",
-      icon: <FaGraduationCap />,
-    },
-  ];
+const cards = [
+  {
+    id: 1,
+    title: "Custom-Built, Brand-Perfect",
+    content:
+      "Stop wrestling with generic off-the-shelf templates. We build Marketo templates 100% tailored to your brand—designed to look, feel, and perform exactly how your marketers need.",
+    icon: FaRocket,
+  },
+  {
+    id: 2,
+    title: "Subscription/Preference Centers",
+    content:
+      "Give your audience control over their communication preferences with a fully branded subscription center—complete with custom thank-you messaging that matches your identity.",
+    icon: FaSquareCheck,
+  },
+  {
+    id: 3,
+    title: "High-Impact Emails",
+    content:
+      "Our email templates are built for flexibility. Swap backgrounds, update layouts, change button colors, or refresh imagery on the fly—whatever your campaign demands.",
+    icon: FaEnvelope,
+  },
+  {
+    id: 4,
+    title: "Pixel-Perfect Development",
+    content:
+      "Got a design file? We'll bring it to life. Our team transforms Figma, AdobeXD, Sketch, or Photoshop designs into flawless, responsive, blazing-fast templates.",
+    icon: FaDesktop,
+  },
+  {
+    id: 5,
+    title: "On-Brand Design That Converts",
+    content:
+      "We design for results. Every template is modern, conversion-focused, and deeply rooted in your brand guidelines—transforming engagement into real outcomes.",
+    icon: FaSwatchbook,
+  },
+  {
+    id: 6,
+    title: "Training & Handoff",
+    content:
+      "Every template comes with a training session for your team. We'll walk you through every feature so your marketers feel confident from day one.",
+    icon: FaGraduationCap,
+  },
+];
+
+const CardItem = ({
+  card,
+  index,
+}: {
+  card: (typeof cards)[0];
+  index: number;
+}) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <Box
-      bgColor="offWhite"
-      id="our-advantage"
-      mt={{ base: 24, md: 40 }}
-      pb={{ base: 24, md: 32 }}
-      pt={{ base: 16, md: 32 }}
+    <motion.div
+      ref={ref}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 32 }}
+      transition={{
+        duration: 0.55,
+        delay: (index % 2) * 0.12,
+        ease: "easeOut",
+      }}
     >
+      <Icon as={card.icon} boxSize={8} color="orangeCustom" mb={4} />
+      <Heading
+        as="h3"
+        color="darkBlueCustom"
+        fontSize={{ base: "md", md: "xl" }}
+        fontWeight="semibold"
+        mb={1}
+      >
+        {card.title}
+      </Heading>
+      <Text fontSize="md">{card.content}</Text>
+    </motion.div>
+  );
+};
+
+const OurAdvantage = () => {
+  return (
+    <Box bg="white" id="our-advantage" pt={{ base: 16, md: 32 }}>
       <CustomContainer>
-        <Box color="darkBlueCustom">
-          <Heading
-            as="h2"
-            fontSize={{ base: "3xl", md: "5xl" }}
-            fontWeight="semibold"
-            lineHeight="shorter"
-            mb={2}
-            textAlign="center"
-            textTransform="uppercase"
+        <Flex
+          align="flex-start"
+          direction={{ base: "column", lg: "row" }}
+          gap={{ base: 16, lg: 24 }}
+        >
+          {/* Left sticky panel */}
+          <Box
+            flex="0 0 auto"
+            maxW={{ base: "100%", lg: "360px" }}
+            position={{ base: "relative", lg: "sticky" }}
+            top={{ lg: "120px" }}
+            w={{ base: "100%", lg: "33%" }}
           >
-            Our Unique{" "}
-            <Text as="span" color="orangeCustom" fontWeight="semibold">
+            <Heading
+              as="h2"
+              color="darkBlueCustom"
+              fontSize={{ base: "3xl", md: "4xl", xl: "5xl" }}
+              fontWeight="bold"
+              lineHeight="1.1"
+              mb={3}
+            >
+              Our{" "}
+              <Text as="span" color="orangeCustom" fontWeight="semibold">
+                Unique
+              </Text>{" "}
               Advantage
+            </Heading>
+            <Text fontSize="lg">
+              We do not use pre-built templates. Everything we produce is 100%
+              custom and created to be brand specific.
             </Text>
-          </Heading>
-          <Text
-            fontSize={{ base: "lg", md: "xl" }}
-            m="auto"
-            maxW={{ base: "auto", md: 600 }}
-            textAlign="center"
-          >
-            We do not use pre-built templates. Everything we produce is 100%
-            custom and created to be brand specific.
-          </Text>
-        </Box>
-        <Box mt={16}>
-          <Grid
-            gap={{ base: "8", md: "12" }}
-            gapY={{ base: "8", md: "16" }}
-            templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
-          >
-            {cards.map((card) => (
-              <Card.Root
-                key={card.id}
-                bg="none"
-                border="none"
-                textAlign="center"
-              >
-                <Card.Body>
-                  <VStack>
-                    <Flex
-                      alignItems="center"
-                      borderColor="#DED7CA"
-                      borderRadius="8px"
-                      borderWidth="2px"
-                      justifyContent="center"
-                      mb={2}
-                      p={{ base: 3, md: 4 }}
-                    >
-                      <Icon color="orangeCustom" size="xl">
-                        {card.icon}
-                      </Icon>
-                    </Flex>
-                    <Heading as="h3">{card.title}</Heading>
-                    <Text fontSize="md">{card.content}</Text>
-                  </VStack>
-                </Card.Body>
-              </Card.Root>
-            ))}
-          </Grid>
-        </Box>
+          </Box>
+          {/* Right scrollable grid */}
+          <Box flex="1">
+            <Grid
+              gap={{ base: 10, md: 12 }}
+              templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)" }}
+            >
+              {cards.map((card, index) => (
+                <CardItem card={card} index={index} key={card.id} />
+              ))}
+            </Grid>
+          </Box>
+        </Flex>
       </CustomContainer>
     </Box>
   );

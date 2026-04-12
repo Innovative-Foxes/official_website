@@ -7,11 +7,13 @@ const ChooseUs = () => {
       <Box textAlign="center" id="why-us">
         <Heading
           as="h2"
-          fontSize={{ base: "3xl", md: "5xl" }}
+          fontSize={{ base: "3xl", md: "4xl" }}
           fontWeight="medium"
           lineHeight="shorter"
-          my={4}
+          pt={4}
           textTransform="uppercase"
+          maxW={{ base: "100%", md: 900 }}
+          m="auto"
         >
           Why fast-moving marketing teams choose{" "}
           <Text as="span" color="orangeCustom" fontWeight="semibold">

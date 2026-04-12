@@ -1,4 +1,4 @@
-import { Box, Heading, VStack } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import Carousel from "../../ui/Swiper/Carousel";
 import CustomContainer from "../../ui/Container/Container";
 
@@ -50,7 +50,7 @@ const MeetTeam = () => {
   ];
 
   return (
-    <Box bg="white" id="meet-the-team" my={{ base: 24, md: 40 }}>
+    <Box bg="white" id="meet-the-team" my={{ base: 16, md: 32 }}>
       <CustomContainer>
         <VStack gap={0} mb={{ base: 6, md: 10 }}>
           <Heading
@@ -61,7 +61,10 @@ const MeetTeam = () => {
             textAlign="center"
             textTransform="uppercase"
           >
-            Meet The Team
+            Meet The{" "}
+            <Text as="span" color="orangeCustom">
+              Team
+            </Text>
           </Heading>
         </VStack>
         <Box>

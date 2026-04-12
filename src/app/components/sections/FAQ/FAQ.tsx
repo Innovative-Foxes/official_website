@@ -41,7 +41,8 @@ const faqItems: FAQItem[] = [
   // },
   {
     value: "marketo-compatibility",
-    title: "Are your templates compatible with all of our marketing platform's features?",
+    title:
+      "Are your templates compatible with all of our marketing platform's features?",
     text: "Absolutely! All our templates are built specifically for the platform of your choice and include full compatibility with the landing page and email editors, dynamic content, tokens, and A/B testing. We ensure seamless integration with the platform's form functionality, tracking pixels, and all standard marketing automation features.",
   },
   // {
@@ -71,10 +72,7 @@ const FAQ = () => {
   return (
     <Box bg="white" my={{ base: 24, md: 40 }}>
       <CustomContainer>
-        <Grid
-          gap={{ base: 8, md: 16 }}
-          templateColumns={{ base: "1fr", lg: "1fr 1.5fr" }}
-        >
+        <Grid gap={16} templateColumns={{ base: "1fr", lg: "1fr 1.5fr" }}>
           {/* Left Column - Booking Card */}
           <GridItem>
             <Card.Root

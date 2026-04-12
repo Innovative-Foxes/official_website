@@ -45,18 +45,18 @@ const Hero = () => {
           outline="none"
           transition="all"
         >
-        <Image
-          alt="Logo"
-          src="/images/png/hero-logo-v2.png"
-          w="80px"
-          filter="drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))"
-        />
+          <Image
+            alt="Logo"
+            src="/images/png/hero-logo-v2.png"
+            w="80px"
+            filter="drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))"
+          />
         </Link>
         <Box textAlign="center">
           <Heading
             as="h1"
             fontSize={{ base: "3xl", md: "6xl" }}
-            fontWeight="medium"
+            fontWeight="semibold"
             lineHeight="shorter"
             my={4}
             textTransform="uppercase"

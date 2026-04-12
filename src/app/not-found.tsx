@@ -31,7 +31,7 @@ export default function NotFound() {
               outline="none"
               transition="all"
             >
-              <Image alt="Logo" src="/images/png/hero-logo.png" w="80px" />
+              <Image alt="Logo" src="/images/png/hero-logo-v2.png" w="80px" />
             </Link>
             {/* 404 Number */}
             <Heading
