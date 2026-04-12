@@ -10,7 +10,6 @@ import OurFocus from "./components/sections/OurFocus/OurFocus";
 import Testimonial from "./components/sections/Testimonial/Testimonial";
 import OurProcess from "./components/sections/OurProcess/OurProcess";
 import Packages from "./components/sections/Packages/Packages";
-import ShowcaseGrid from "./work/components/ShowcaseGrid/ShowcaseGrid";
 
 export default function Home() {
   return (
@@ -28,7 +27,9 @@ export default function Home() {
         </Flex>
         <ChooseUs />
         <Testimonial />
+        {/*
         <ShowcaseGrid />
+        */}
         <OurAdvantage />
         <Packages />
         <OurProcess />
