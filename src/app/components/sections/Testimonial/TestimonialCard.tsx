@@ -31,20 +31,20 @@ const TestimonialCard = ({
         borderRadius="full"
         display={{ base: "none", md: "block" }}
         flexShrink={0}
-        width="4px"
+        width="3px"
       />
       <VStack
         align="flex-start"
-        gap={6}
-        pl={{ base: 0, md: 12 }}
+        gap={4}
+        pl={{ base: 0, md: 6 }}
         pt={{ base: 0, md: 1 }}
       >
         {/* Quote icon */}
-        <Icon color="orangeCustom" fontSize={{base: "30px", md: "40px"}}>
+        <Icon color="orangeCustom" fontSize={{ base: "30px", md: "30px" }}>
           <FaQuoteLeft />
         </Icon>
         {/* Quote text */}
-        <Text color="darkBlueCustom" fontSize={{ base: "md", md: "xl" }}>
+        <Text color="darkBlueCustom" fontSize={{ base: "md", md: "lg" }}>
           {quote}
         </Text>
         <VStack align="flex-start" gap={2}>
@@ -78,7 +78,11 @@ const TestimonialCard = ({
           {/* Stars */}
           <Flex gap={1}>
             {Array.from({ length: 5 }).map((_, i) => (
-              <Icon key={i} color="orangeCustom" fontSize={{base: "15px", md: "20px"}}>
+              <Icon
+                key={i}
+                color="orangeCustom"
+                fontSize={{ base: "15px", md: "15px" }}
+              >
                 <FaStar />
               </Icon>
             ))}

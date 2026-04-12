@@ -1,7 +1,15 @@
 "use client";
-import { Box, Flex, Grid, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Heading, Icon, Text } from "@chakra-ui/react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import {
+  FaDesktop,
+  FaEnvelope,
+  FaGraduationCap,
+  FaRocket,
+  FaSwatchbook,
+} from "react-icons/fa";
+import { FaSquareCheck } from "react-icons/fa6";
 import CustomContainer from "../../ui/Container/Container";
 
 const cards = [
@@ -10,42 +18,42 @@ const cards = [
     title: "Custom-Built, Brand-Perfect",
     content:
       "Stop wrestling with generic off-the-shelf templates. We build Marketo templates 100% tailored to your brand—designed to look, feel, and perform exactly how your marketers need.",
-    image: { src: "https://picsum.photos/seed/custom-built/400/600" },
+    icon: FaRocket,
   },
   {
     id: 2,
     title: "Subscription/Preference Centers",
     content:
       "Give your audience control over their communication preferences with a fully branded subscription center—complete with custom thank-you messaging that matches your identity.",
-    image: { src: "https://picsum.photos/seed/subscription/400/600" },
+    icon: FaSquareCheck,
   },
   {
     id: 3,
     title: "High-Impact Emails",
     content:
       "Our email templates are built for flexibility. Swap backgrounds, update layouts, change button colors, or refresh imagery on the fly—whatever your campaign demands.",
-    image: { src: "https://picsum.photos/seed/high-impact/400/600" },
+    icon: FaEnvelope,
   },
   {
     id: 4,
     title: "Pixel-Perfect Development",
     content:
       "Got a design file? We'll bring it to life. Our team transforms Figma, AdobeXD, Sketch, or Photoshop designs into flawless, responsive, blazing-fast templates.",
-    image: { src: "https://picsum.photos/seed/pixel-perfect/400/600" },
+    icon: FaDesktop,
   },
   {
     id: 5,
     title: "On-Brand Design That Converts",
     content:
       "We design for results. Every template is modern, conversion-focused, and deeply rooted in your brand guidelines—transforming engagement into real outcomes.",
-    image: { src: "https://picsum.photos/seed/on-brand/400/600" },
+    icon: FaSwatchbook,
   },
   {
     id: 6,
     title: "Training & Handoff",
     content:
       "Every template comes with a training session for your team. We'll walk you through every feature so your marketers feel confident from day one.",
-    image: { src: "https://picsum.photos/seed/training/400/600" },
+    icon: FaGraduationCap,
   },
 ];
 
@@ -70,17 +78,7 @@ const CardItem = ({
         ease: "easeOut",
       }}
     >
-      {/* Portrait placeholder image */}
-      <Box borderRadius="12px" mb={5} overflow="hidden" w="full">
-        <Image
-          alt={card.title}
-          aspectRatio="3 / 4"
-          display="block"
-          objectFit="cover"
-          src={card.image.src}
-          w="full"
-        />
-      </Box>
+      <Icon as={card.icon} boxSize={8} color="orangeCustom" mb={4} />
       <Heading
         as="h3"
         color="darkBlueCustom"
@@ -107,10 +105,10 @@ const OurAdvantage = () => {
           {/* Left sticky panel */}
           <Box
             flex="0 0 auto"
+            maxW={{ base: "100%", lg: "360px" }}
             position={{ base: "relative", lg: "sticky" }}
             top={{ lg: "120px" }}
             w={{ base: "100%", lg: "33%" }}
-            maxW={{ base: "100%", lg: "360px" }}
           >
             <Heading
               as="h2"
