@@ -72,11 +72,64 @@ export default function WorktechPage() {
               </Flex>
             </Box>
           </Box>
-          {/* MacBook mockup */}
+          {/* Feature callout */}
+          <Box mt={{ base: 16, md: 24 }}>
+            <Heading
+              as="h2"
+              fontSize={{ base: "2xl", md: "3xl" }}
+              fontWeight="bold"
+              lineHeight="1.2"
+              letterSpacing="-0.02em"
+              mb={4}
+            >
+              Add your feature
+              <Box as="span" color="orangeCustom">
+                {" "}
+                heading{" "}
+              </Box>
+              here
+            </Heading>
+            <Text
+              fontSize={{ base: "md", md: "lg" }}
+              color="gray.500"
+              lineHeight="1.75"
+              maxW="520px"
+            >
+              Describe the feature shown in the mockup below. What problem does
+              it solve? What makes it stand out?
+            </Text>
+          </Box>
+          {/* MacBook mockup 1 */}
           <Box mt={{ base: 16, md: 24 }}>
             <MacbookMockup>
               <Image
-                src="https://placehold.co/1600x1000"
+                src="/images/jpg/showcase-1-hero.jpg"
+                alt="Project preview"
+                w="100%"
+                h="100%"
+                objectFit="cover"
+                display="block"
+              />
+            </MacbookMockup>
+          </Box>
+          {/* MacBook mockup 2 */}
+          <Box mt={{ base: 16, md: 24 }}>
+            <MacbookMockup>
+              <Image
+                src="/images/jpg/showcase-1-countdown.jpg"
+                alt="Project preview"
+                w="100%"
+                h="100%"
+                objectFit="cover"
+                display="block"
+              />
+            </MacbookMockup>
+          </Box>
+          {/* MacBook mockup 3 */}
+          <Box mt={{ base: 16, md: 24 }}>
+            <MacbookMockup>
+              <Image
+                src="/images/jpg/showcase-1-cards.jpg"
                 alt="Project preview"
                 w="100%"
                 h="100%"
