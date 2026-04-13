@@ -17,7 +17,7 @@ import StatusPing from "../StatusPing/StatusPing";
 import { motion } from "motion/react";
 
 // Create motion components
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 interface PackageData {
   title: string;

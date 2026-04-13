@@ -1,7 +1,9 @@
 import { Box, Flex, Icon, Link, Text, VStack } from "@chakra-ui/react";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 
-export interface TestimonialCardProps {
+import { FlexProps } from "@chakra-ui/react";
+
+export interface TestimonialCardProps extends FlexProps {
   quote: string;
   author: string;
   company: string;
@@ -19,11 +21,11 @@ const TestimonialCard = ({
       align="stretch"
       bg="white"
       borderRadius="2xl"
-      boxShadow="0 8px 40px rgba(0, 0, 0, 0.10)"
       direction={{ base: "column", md: "row" }}
       gap={0}
       mx="auto"
-      p={{ base: 8, md: 12 }}
+      p={8}
+      boxShadow="-10px 20px 36px #00000008, -8px 8px 27px #0000000d, -2px 2px 15px #0000000f"
     >
       {/* Orange accent bar */}
       <Box
@@ -44,7 +46,7 @@ const TestimonialCard = ({
           <FaQuoteLeft />
         </Icon>
         {/* Quote text */}
-        <Text color="darkBlueCustom" fontSize={{ base: "md", md: "lg" }}>
+        <Text color="darkBlueCustom" fontSize="md">
           {quote}
         </Text>
         <VStack align="flex-start" gap={2}>

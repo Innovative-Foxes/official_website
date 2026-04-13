@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Grid } from "@chakra-ui/react";
 import CustomContainer from "../../ui/Container/Container";
 import TestimonialCard from "./TestimonialCard";
 
@@ -11,39 +11,35 @@ const testimonials = [
     company: "Etumos",
     companyLink: "https://etumos.com/",
   },
+  {
+    id: 2,
+    quote:
+      "Innovative Foxes led the discovery and development of our new Marketo email and landing page templates, delivering a modern design that matched our brand guidelines perfectly. The resulting assets are modular and versatile enough to power a wide range of our marketing initiatives, featuring advanced functionality like the ability to easily reorder sections within the landing page editor. Their team was a pleasure to work with, combining technical expertise with a reliable on-time delivery.",
+    author: "Kelly",
+    company: "Ericsson",
+    companyLink: "https://www.ericsson.com/en",
+  },
 ];
 
 const Testimonial = () => {
   return (
     <Box mt={{ base: 16, md: 32 }}>
-      {/*
-      <VStack gap={0} mb={{ base: 6, md: 10 }}>
-        <Heading
-          as="h2"
-          fontSize={{ base: "3xl", md: "4xl" }}
-          fontWeight="bold"
-          lineHeight="shorter"
-          textAlign="center"
-          textTransform="uppercase"
-        >
-          What{" "}
-          <Text as="span" color="orangeCustom" fontWeight="semibold">
-            Others
-          </Text>{" "}
-          Have To Say
-        </Heading>
-      </VStack>
-      */}
       <CustomContainer>
-        {testimonials.map((t) => (
-          <TestimonialCard
-            key={t.id}
-            author={t.author}
-            company={t.company}
-            companyLink={t.companyLink}
-            quote={t.quote}
-          />
-        ))}
+        <Grid
+          templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+          gap={6}
+          alignItems="stretch"
+        >
+          {testimonials.map((testimonial) => (
+            <TestimonialCard
+              key={testimonial.id}
+              quote={testimonial.quote}
+              author={testimonial.author}
+              company={testimonial.company}
+              companyLink={testimonial.companyLink}
+            />
+          ))}
+        </Grid>
       </CustomContainer>
     </Box>
   );
