@@ -15,7 +15,6 @@ const TestimonialCard = ({
   author,
   company,
   companyLink,
-  ...flexProps
 }: TestimonialCardProps) => {
   return (
     <Flex
@@ -27,7 +26,6 @@ const TestimonialCard = ({
       mx="auto"
       p={8}
       boxShadow="-10px 20px 36px #00000008, -8px 8px 27px #0000000d, -2px 2px 15px #0000000f"
-      {...flexProps}
     >
       {/* Orange accent bar */}
       <Box
